@@ -1,0 +1,564 @@
+% !TeX spellcheck = en_US
+%===============================================================================
+% $Id: ifacconf.tex 19 2011-10-27 09:32:13Z jpuente $  
+% Template for IFAC meeting papers
+% Copyright (c) 2007-2008 International Federation of Automatic Control
+%===============================================================================
+\documentclass{ifacconf}
+
+\usepackage{graphicx}      % include this line if your document contains figures
+\usepackage{natbib}        % required for bibliography
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{datetime}
+
+%===============================================================================
+
+\graphicspath{ 
+{images/}
+}
+
+% Custom commands
+\providecommand{\mbf}[1]{\mathbf{#1}}
+
+\begin{document}
+\begin{frontmatter}
+
+\title{Discrete Sliding Mode control of small UAS in tight formation flight under information constraints} 
+% Title, preferably not more than 10 words.
+
+\author[First]{Jan Bolting} 
+\author[Second]{Soheib Fergani} 
+\author[Third]{Jean-Marc Biannic}
+\author[Fourth]{Francois Defay}
+\author[Fifth]{Martin Stolle}
+
+\address[First]{National Institute of Standards and Technology, 
+   Boulder, CO 80305 USA (e-mail: author@ boulder.nist.gov).}
+\address[Second]{Colorado State University, 
+   Fort Collins, CO 80523 USA (e-mail: author@lamar. colostate.edu)}
+\address[Third]{Electrical Engineering Department, 
+   Seoul National University, Seoul, Korea, (e-mail: author@snu.ac.kr)}
+
+\textcolor{red}{\Huge !!! DRAFT !!!\\ \normalsize \today \\ \currenttime}
+
+% Abstract of not more than 250 words.
+\begin{abstract}     
+The capability of autonomous formation flight has the potential to significantly enhance the utility and efficiency of small low-cost Unmanned Aerial Systems (UAS). Formations of small, inexpensive fixed-wing UAS allow for the sharing of remote sensing functionality, mission-level redundancy and range enhancements due to aerodynamic interactions widely exploited by migratory birds. 
+For the latter application, high-performance relative position control is essential.
+This becomes challenging when assuming realistic information constraints imposed by limited communication bandwidth and availability of relative localization sensors,  while preserving scalability with respect to formation size. 
+This article presents a Discrete Time Sliding Mode controller for tight formation flight and studies its
+
+State-based STCSMC\\
+State-based DSMC\\
+For both:\\
+Effects of sampling on control error\\
+Effects of sampling on mesh stability in simulation\\
+Effects of sampling on mesh stability analytically
+\end{abstract}
+
+\begin{keyword}
+Five to ten keywords, preferably chosen from the IFAC keyword list.
+\end{keyword}
+
+\end{frontmatter}
+%===============================================================================
+
+\section{Introduction}
+Tight formation flight of aircraft can enable energy savings thanks to aerodynamic performance gains. 
+The benefits of tight formation flight for bird-sized aircraft have been studied theoretically as early as in \cite{Hummel1982}. Both later theoretical (\cite{???}), wind-tunnel results  (\cite{???}) and flight tests with manned aircraft consistently confirm energy savings of the order of $10 \%$.
+
+Numerous other applications such as distributed aerial imaging benefit from accurate relative position holding. 
+
+Enabling tight formation flight for small UAS is interesting for a number of reasons. Firstly, small UAS can serve as an inexpensive testbed for larger aircraft. Secondly, small electrically driven UAS suffer from poor operational ranges.
+
+Riding the wake of another aircraft, the follower is subject to large unknown wake disturbances. Sliding mode control provides robustness against large unknown perturbations. 
+
+Sliding mode control has successfully been applied to ground vehicle platooning (\cite{???}). Higher order sliding mode has been proposed for UAS formation flight by \cite{galzi2006uav}.
+
+, DSMC, ACC on HOSMC for formations, applications of SMC for vehicle platoons
+
+\section{Model}
+
+\subsection{Coordinate frames}
+The system to be controlled is a formation of $n$ UAS flying in an arbitrary pattern. Is is assumed that
+load factors are controlled in each vehicle's body frame (index $b$). Therefore separation errors are transformed into the body frame for control purposes, decoupling the three axes. The dynamics of each vehicle are defined in a local inertial North-East-Down frame (index $e$).
+ 
+%The right choice of reference frames can significantly facilitate control design. To give one example, when performing navigation in the predecessor's body frame, variations in the predecessor's attitude will couple into follower's position control loops, increasing control action. What is more, the effect increases with inter-vehicle separation, leading to high control demands during the initial rendezvous maneuver. To avoid such disadvantages, the motion of the reference frame with respect to the inertial frame should be within the control bandwidth of the position controller. A suitable frame is a local Cartesian frame whose x axis is aligned with the follower's inertial speed projected on the horizontal plane, and whose z axis is aligned with the NED frame's z axis, the Follower Velocity Frame (FF). Its origin coincides with that of the follower's body frame. The follower's wind frame would be preferable, since the lift vector is by definition aligned with its z axis , but requires on-line wind estimation or flow sensors that usually are not available on board small UAS. It is preferable over the Predecessor Velocity Frame (PF), since to form the rotation matrix between the FF and the inertial frame the predecessor's absolute velocity does not need to be communicated to the follower.
+
+To dispose of a common reference frame for multiple members of the formation, the \textbf{Leader Speed Frame} (index $ls$) is defined. Its x axis is aligned with the formation leader's NED speed projected on the horizontal plane, its z axis is aligned with the NED frame's z axis, and its y axis completes a right-handed Cartesian coordinate system. I is used to define the separation vectors that make up the formation.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=8.4cm]{frames}    % The printed column width is 8.4 cm.
+\caption{Predecessor-follower geometry longitudinal} 
+\label{fig:frames}
+\end{center}
+\end{figure}
+
+\subsection{Vehicle Model}
+
+The continuous time vehicle position dynamics in the local inertial frame are given by
+
+\begin{align}
+\mathbf{x} &= (\mbf{p} \; \mbf{v})^T \\
+\dot{\mathbf{p}} &= \mbf{v}\\
+\dot{\mbf{v}} &= \mbf{a}_{c} + \mbf{a}_w + \mbf{g}\\
+\end{align}
+
+where $\mbf{p} \in \mathbb{R}^3$ is the vehicle position, $\mbf{v} \in \mathbb{R}^3$ is its velocity w.r.t to the local inertial frame, $\mbf{a}_w \in \mathbb{R}^3$ are accelerations induced by exogenous disturbances such as turbulence and another aircraft's wake, $\mbf{a}_{c} \in \mathbb{R}^3$ are commanded accelerations and $\mbf{g} \in \mathbb{R}^3$ is the gravity vector in the local inertial frame.
+
+It is assumed that load factors $\mbf{n}_c$ in the Follower Speed Frame (FSF) are tracked by fast inner loop controllers in the vehicle body frame.
+
+\begin{align}
+\dot{\mbf{v}} &= \mbf{R}_{eb} |\mbf{g}|\mbf{n}_c + \mbf{a}_w + \mbf{g}
+\label{eq:svmloadfactorlevel}
+\end{align}
+
+where $\mbf{R}_{eb} \in \mathbb{R}^{3 \times 3}$ is the rotation matrix from the body frame to the local inertial frame and $\mbf{n}_c = \frac{1}{|\mbf{g}|} \mbf{a}_c$ are commanded load factors. To simplify notation, is is assumed that the vehicle is trimmed, i.e. the nominal gravitational acceleration is compensated for by a trim control input $\mbf{n}_{c,0} = \mbf{R}_{be}(0 \; 0 \; -1)^{T}$ and the control input is redefined as 
+
+	\begin{align}
+\mbf{u} = \mbf{R}_{eb} |\mbf{g}|(\mbf{n}_c - \mbf{n}_{c,0})	
+\label{eq:defushort}
+\end{align}
+
+leading to 
+
+\begin{align}
+\dot{\mbf{v}} &= \mbf{R}_{eb}|\mbf{g}| 
+(
+\frac{1}{|\mbf{g}|}
+(\mbf{R}_{be} \mbf{u} + \mbf{n}_{c,0})
+) + \mbf{a}_w + \mbf{g}\\
+\dot{\mbf{v}} &= \mbf{u} + \mbf{a}_w
+\label{eq:svmshort}
+\end{align}
+
+where now $\mbf{a}_w$ also includes the small effects of imperfect knowledge of local gravitation. ???doubledefinition
+
+Considering two UAS $i$ and $i-1$, this leads to relative position error dynamics
+
+\begin{align}
+\Delta \mbf{p} &= \mbf{p}_i - \mbf{p}_{i-1} - \Delta \mbf{p}_c \\
+\Delta \dot{\mbf{p}} &= \mbf{v}_{i} - \mbf{v}_{i-1} -  \Delta \dot{\mbf{p}}_c\\ 
+\Delta \dot{\mbf{v}} &= \mbf{a}_{i} - \mbf{a}_{i-1} -  \Delta \ddot{\mbf{p}}_c\\ 
+{} &= \mbf{a}_{c,i} + \mbf{a}_{w,i} 
+ - \mbf{a}_{i-1} -  \Delta \ddot{\mbf{p}}_c\\
+{} &= \mbf{u} + \mbf{a}_{w,i}
+ - \mbf{a}_{i-1} -  \Delta \ddot{\mbf{p}}_c
+\end{align}
+
+where $\Delta \mbf{p}$ is the relative position error between UAS $i$ and its predecessor $i-1$, $\Delta \mbf{v}$ is the corresponding relative velocity error, $\Delta \mbf{p}_c$ is the desired relative position to the predecessor, $\mbf{a}$ are accelerations. 
+
+The presented model is essentially of the same type as that used in  \cite{galzi2006uav} and provides the benefit of being vehicle-agnostic, as the specific vehicle dynamics are covered by the inner loop load factor controllers. On the other hand, perturbations $\mbf{a}_w$ and control input saturations are specific to a given vehicle and mission environment.
+
+\section{Control design}
+To benefit from significant aerodynamic performance gains, a follower aircraft needs to stay within a narrow spatial window roughly defined by (see e.g. \cite{jake2003f})
+
+{\centering
+$-0.2 b < \Delta y' < -0.1 b$ \\
+$-0.1 b < \Delta z' < 0$ \\
+}
+
+while the longitudinal separation $\Delta x'$ is less critical due to slow vortex decay.
+It is thus the control objective to drive the follower UAS into this window and stay within in.
+
+\subsection{Input saturations}
+For a fixed-wing UAS, the maximum load factors are naturally limited by the maximum thrust of the engine and the aerodynamic parameters of the aircraft, such as the stall angle $\alpha_{max}$, limiting the maximum vertical load factor $n_3$. These  limitations are time-varying since, including the engine thrust, they are function of the dynamic pressure $\bar{q}(t) = \frac{1}{2}\rho(t) V_a^2(t)$.
+
+\subsection{Information constraints}
+It is assumed that observations of the relative position and relative velocity vector between each UAS and its predecessor are available. 
+
+This limitation allows to use low-cost vision-based relative localization techniques, which is a significant advantage taking into account the price range of GNSS Real Time Kinematics systems which would be required for localization with respect to the formation leader or other members of the formation that are now within the field of view of onboard vision sensors.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=8.4cm]{geometry}    % The printed column width is 8.4 cm.
+\caption{Predecessor-follower geometry} 
+\label{fig:geometry}
+\end{center}
+\end{figure}
+
+\subsection{CSMC}
+
+It is the control objective to drive the system to the sliding surface defined by 
+
+\begin{align}
+\mbf{\sigma}(t) &= \mbf{G}\mbf{x}(t)
+\label{eq:defsigmaconti-} \\
+\mbf{x}(t) &= 
+\begin{pmatrix}
+\Delta \mbf{p}(t)\\
+\Delta \mbf{v}(t)
+\end{pmatrix}
+\end{align}
+
+and, once reached, to keep it on it for all subsequent times $t \geq t^*$. With
+
+\begin{align}
+\mbf{G} = 
+\begin{bmatrix}
+\mbf{G}_1 \mbf{G}_2
+\end{bmatrix}
+\end{align}
+
+the position error dynamics in sliding mode are
+
+\begin{align}
+\mbf{0} 
+&= 
+\begin{bmatrix}
+\mbf{G}_1 \mbf{G}_2
+\end{bmatrix}
+\begin{pmatrix}
+\Delta \mbf{p}(t)\\
+\Delta \mbf{v}(t)
+\end{pmatrix} \\
+\mbf{\Delta} \dot{\mbf{p}}
+&= - \mbf{G}_2^{-1} \mbf{G}_1 \mbf{\Delta} \mbf{p}
+\label{eq:pdynwhilesliding}
+\end{align}
+
+Selecting $- \mbf{G}_2^{-1} \mbf{G}_1$ as Hurwitz ensures that $\Delta \mbf{p}$ asymptotically converges to zero while in sliding mode.
+
+Mesh stability is a feature of a three-dimensional formation of vehicles that allows separation errors to stay locally contained (see e.g. \cite{Pant2002}). In other words, separation errors between a pair of vehicles are not amplified towards the neighboring vehicle pairs. It is a well known fact (\cite{Pant2002}) that linear controllers with local feedback information are mesh unstable.
+
+While in sliding mode, the position error dynamics are by definition confined to (\ref{eq:pdynwhilesliding}), independently of adjacent separation errors, implying mesh stability if the system can be kept in sliding mode.
+
+The open loop sliding variable dynamics are
+
+\begin{align}
+\dot{{\sigma}} &= \mbf{G}
+\begin{pmatrix}
+\Delta \mbf{v} \\
+\mbf{u} + \mbf{a}_{w,i} 
+ - \mbf{a}_{i-1} -  \Delta \ddot{\mbf{p}}_c
+\end{pmatrix}\\
+& = \mbf{G} 
+\begin{pmatrix}
+\Delta \mbf{v} \\
+ - \Delta \ddot{\mbf{p}}_c
+\end{pmatrix} + \mbf{G}
+\begin{bmatrix}
+{\mbf{0}}\\
+{\mbf{I}}
+\end{bmatrix}
+(\mbf{u} + \mbf{a}_w + \mbf{a}_{k-1}) \\
+&= \mbf{G} \mbf{\Phi}_k + \mbf{G} \mbf{B}(
+\mbf{u}
+ + {\mbf\Phi}_u)
+\label{eq:sigmadynconti}\\
+&= \mbf{\Phi}'_k + \mbf{\Phi}'_u + \mbf{u}'
+\label{eq:sigmadyncontishort}
+\end{align}
+
+Accelerations of the predecessor $\mbf{a}_{i-1}$ as well as exogenous perturbations $\mbf{a}_w $ acting on the vehicle $i$ are assumed to be unknown but bounded. For notational convenience they are lumped into the disturbance vector $\mbf{\Phi}_u$
+
+\begin{align}
+\mbf{\Phi}_u &= \mbf{a}_w - \mbf{a}_{i-1}
+\end{align}
+
+while the known perturbations $\Delta \ddot{\mbf{p}}_c$ are redefined as $\mbf{\Phi}_k$
+
+\begin{align}
+\mbf{\Phi}_k &= \Delta \ddot{\mbf{p}}_c
+\end{align}
+
+further defining
+
+\begin{align}
+\mbf{u}' &= \mbf{GB}\mbf{u}
+\label{eq:defu}\\
+\mbf{\Phi}_k' &= \mbf{G}\mbf{\Phi}_k \\
+\mbf{\Phi}_u' &= \mbf{GB}\mbf{\Phi}_u 
+\end{align}
+
+Note that all perturbations are assumed to satisfy the matching condition. 
+The three axes are considered decoupled by the inner load factor controllers, allowing for SISO design.
+
+%To reduce the workload of the switching controller on the sliding surface, the equivalent control is computed, i.e. the control that keeps the system on the sliding surface in the absence of unknown perturbations, i.e. $\mbf{\Phi}_u = 0$. It results from the condition
+%
+%\begin{align}
+%\dot{\mbf{\sigma}} = \mbf{0}
+%\end{align}
+%
+%as
+%
+%\begin{align}
+%\mbf{u}_e = -(\mbf{GB})^{-1} \mbf{G} \mbf{\Phi}_k
+%\end{align}
+
+Since the inner loop load factor controllers cannot track discontinuous reference signals, a continuous control signal is mandatory.
+The system (\ref{eq:sigmadynconti}) is of relative degree $\mbf{r} = (1 \; 1 \; 1)^T$, thus continuous-time Super-Twisting Sliding Mode controllers (CSTSMC, see e.g. \cite{shtessel2014sliding}) can be applied, providing continuous control signals. 
+We apply the controller presented in \cite{galzi2006uav} extending it trivially from 2D to 3D tracking.
+The CSTSMC controller is then given by
+
+\begin{align}
+u_i' = \alpha_i |\sigma_i|^{1/2}\mathrm{sign(\sigma_i)} + \beta_i \int \mathrm{sign}(\sigma_i) dt
+\end{align}
+
+where $i = 1...3$ indicates the three decoupled axes. Adding a term that eliminates the known disturbances ${\Phi}_{k,i}'$ as in \cite{galzi2006uav}
+
+\begin{align}
+u_i' = \alpha_i |\sigma_i|^{1/2}\mathrm{sign(\sigma_i)} + \beta_i \int \mathrm{sign}(\sigma_i) dt - {\Phi}'_{k,i}
+\end{align}
+
+leads to closed loop $\mbf{\sigma}$ dynamics of
+
+\begin{align}
+\dot{\sigma}_i = \alpha_i |\sigma_i|^{1/2}\mathrm{sign(\sigma_i)} + \beta_i \int \mathrm{sign}(\sigma_i) dt + \Phi_{u,i}'
+\end{align}
+
+Provided the disturbances $\Phi_{u,i}$ are bounded by $\Phi_{u,i} \leq L_i$ controller parameters that fulfill 
+\begin{align}
+\alpha_i = 1.5 \sqrt{L_i}\\
+\beta_i = 1.1 L_i
+\label{eq:csmcgaincondition}
+\end{align}
+
+ drive the system into 2-sliding mode, i.e. $\dot{\sigma} = \sigma = 0$ in finite time. The reaching time is bounded by $t^* \leq \frac{7.6 \sigma_i(0)}{\beta_i - L_i}$, see \cite{galzi2006uav}.
+
+The actual control input $\mbf{n}_c$ is computed from (\ref{eq:defu}, \ref{eq:defushort}) as
+
+\begin{align}
+\mbf{n}_c = \frac{1}{|\mbf{g}|} \mbf{R}_{be}(\mbf{GB})^{-1} \mbf{u}' + \mbf{n}_{c,0}
+\end{align}
+
+using $\mbf{R}_{eb}^{-1} = \mbf{R}_{eb}^{T} = \mbf{R}_{be}$
+
+%\subsubsection{Sliding condition}
+%
+%Ideal sliding mode controllers completely eliminate the impact of matched perturbations by injecting a control input that perfectly follows them. To verify that the system can actually be kept in sliding mode after the reaching phase despite limited control resources, the equivalent control is computed, i.e. the control that would satisfy the sliding condition if unknown perturbations were known. For (\ref{eq:sigmadyncontishort}), it results to
+%
+%\begin{align}
+%{u}_{eq,i} = - {\Phi}_{k,i}' - {\Phi}_{u,i}'
+%\end{align}
+%
+%Provided that 
+%\begin{align}
+%\mbf{\Phi}_k' 
+%&= \mbf{G}
+%\begin{pmatrix}
+%\Delta \mbf{v} \\
+% \Delta \ddot{p}_c
+%\end{pmatrix}
+%&\leq
+%\mbf{M}\\
+% &{\Phi}_{k,i}'  
+% &\leq
+%{M}_i
+%\end{align}
+%
+%with $\mbf{M} \in \mathbb{R}^3$ and $i=1...3$, $u_{eq,i}$ is bounded by
+%
+%\begin{align}
+%|u_{eq,i}| \leq M_i + L_i 
+%\end{align}
+%
+%The unknown perturbations $\Phi_{u,i}$ are driven by exogenous disturbances $a_{w,i}$ and acceleration of the predecessor $a_{i-1,i}$. 
+%
+%!!!Finish equivalent control part
+
+%Those being bounded by (see (\ref{eq:svmloadfactorlevel})) 
+%
+%\begin{align}
+%|a_{w,i}| &\leq A_{w,i} \\
+%|a_{k-1,i}| &\leq ||\mbf{g}|\mbf{n}_c| + |\mbf{a}_w| + |\mbf{g}| 
+%\end{align}
+
+%\begin{align}
+%u_i &= u_1 +  u_2 
+%\label{eq:STSMC}\\
+%\dot{u}_1 &= 
+%\begin{array}{lr}
+%-u \hspace{2em} 
+%& \mathrm{if} \; |u| > U\\
+%-\alpha \mathrm{sign}(\sigma) \hspace{2em} 
+%& \mathrm{if} \; |u| \leq U\\
+%\end{array} \\
+%{u}_2 &= 
+%\begin{array}{lr}
+%-\lambda |\sigma_0|^{1/2} \mathrm{sign}(\sigma)
+% \hspace{2em} 
+%& \mathrm{if} \; |\sigma| > \sigma_0\\
+%-\lambda |\sigma|^{1/2} \mathrm{sign}(\sigma)
+% \hspace{2em} 
+%& \mathrm{if} \; |\sigma| \leq \sigma_0\\
+%\end{array}
+%\end{align}
+
+\subsubsection{Discretization}
+For implementation, the CSTSMC is sampled with a zero-order hold scheme. There are results for homogeneous sliding controllers such as the CSTSMC (see \cite{shtessel2014sliding}) stating that the error introduced by discrete sampling is quadratically proportional to the sampling time, i.e.
+
+\begin{align}
+\sigma = O(T^2)
+\end{align}
+
+%\begin{align}
+%u_i(k) = \alpha_i |\sigma_i(k)|^{1/2}\mathrm{sign(\sigma_i(k))} + \beta_i 
+%T
+%\sum_{p=0}^{k}
+%\mathrm{sign}(\sigma_i(p)) 
+%\end{align}
+
+\subsection{DSMC}
+Designing a sliding mode controller in the discrete time domain allows to take sampling time effects into account right from the beginning. \\
+The $\sigma$ dynamics assuming forward Euler discretization are
+
+\begin{align}
+{{\sigma}}(k+1)
+&= 
+{{\sigma}}(k)
++
+T(
+\mbf{\Phi}'_k(k) + \mbf{\Phi}'_u(k) + \mbf{u}'(k))
+\label{eq:sigmadyndiscrete}
+\end{align}
+
+Since a discrete controller has no control over what happens to the continuous system between sampling instants, ideal sliding mode is not achievable. It is however possible to drive the system into so-called quasi-sliding mode, defined by the control objective 
+
+\begin{align}
+|{\sigma}_i(k)| \leq \mbf{\epsilon}_i
+\label{eq:controlobjective}
+\end{align}
+
+for $i=1...3$, for all $k \geq k^*$ where $\epsilon$ is the width of the quasi-sliding mode boundary layer and $k^*$ is the first sample for which eq. \ref{eq:controlobjective} is satisfied, i.e. when the system transitions from the reaching phase into quasi-sliding mode.
+The proposed DSMC is based on ideas presented by the authors of \cite{monsees2001discrete}
+The following linear reaching law (proposed e.g. by \cite{Spurgeon1992}) ensures asymptotic convergence to the sliding surface
+
+\begin{align}
+\mbf{\sigma}(k+1) = \mbf{\Psi} \mbf{\sigma}(k)
+\label{eq:reachinglaw}
+\end{align}
+
+
+with a diagonal $\mbf{\Psi} \in \mathbb{R}^{3 \times 3}, 0 < \Psi_{i,i} < 1$ for $i=1...3$. The choice of $\mbf{\Psi}$ allows to trade off control effort and reaching time.
+Since (\ref{eq:reachinglaw}) is equivalent to
+
+\begin{align}
+|\mbf{\sigma}(k+1)| = \mbf{\Psi} |\mbf{\sigma}(k)|
+\end{align}
+
+the norm of the sliding variable decreases with every time step, indicating convergence to the sliding surface.
+
+The control input $\mbf{u}(k)$ required to drive the system (\ref{eq:sigmadyndiscrete}) according to the reaching law (\ref{eq:reachinglaw}) can be computed from the open-loop $\mbf{\sigma}$ dynamics to
+
+\begin{align}
+\mbf{u}'(k) &= \frac{1}{T}\mbf{\sigma}(k)(\mbf{\Psi} - \mbf{I}) - \mbf{\Phi}_k' - \mbf{\Phi}_u'
+\end{align}
+
+Note that $\mbf{u}'(k)$ contains the unknown perturbations. Assuming an estimate of the unknown perturbation $\tilde{\mbf{\Phi}}'_u(k) = \mbf{\Phi}'_u(k) + \Delta \mbf{\Phi}'_u(k)$ and closing the loop, one obtains
+
+\begin{align}
+\mbf{\sigma}(k+1) &= \mbf{\Psi} \mbf{\sigma}(k) + 
+T (\Delta \mbf{\Phi}'_u(k))  
+\end{align}
+
+Note that the reaching law (\ref{eq:reachinglaw}) can not be followed due to the estimation error $\Delta \mbf{\Phi}'_u(k)$. Instead, assuming that initially the system is outside the quasi-sliding mode band, it will approach the sliding surface at least as long as
+
+\begin{align}
+\mbf{\Psi} \mbf{\sigma}(k) & \geq T (\Delta \mbf{\Phi}_u(k))   
+\end{align}
+
+This defines the maximum boundary layer thickness as
+
+\begin{align}
+\epsilon &= 
+\mbf{\Psi}^{-1} T (\Delta \mbf{\Phi}_u(k))
+\label{eq:achievableepsilon}
+\end{align}
+
+%To verify that once inside the boundary layer, the system stays in it, consider
+%
+%\begin{align}
+%
+%\end{align}
+%
+%Note that with a diagonal $\mbf{\Psi} \in \mathbb{R}^{3 \times 3}, 0 < \Psi_{i,i} < 1$ for $i=1...3$. The choice of $\mbf{\Psi}$ allows to trade off control effort and reaching time.
+%A weaker condition 
+
+%\begin{align}
+%|\mbf{\sigma}(k+1)| < |\mbf{\sigma}(k)| 
+%\end{align}
+
+%can however be enforced by properly selecting $\mbf{\Psi}$ as
+
+A simple way to obtain an estimate of the unknown disturbances is from the previous sample by
+
+\begin{align}
+\mbf{\Phi}_u(k-1) &=
+\mbf{\sigma}(k)
+-
+\mbf{\sigma}(k-1)
+-
+T
+(\mbf{\Phi}'_k(k-1) + \mbf{u}'(k-1))
+\end{align}
+
+assuming that the disturbance rate is bounded by $|\frac{d \mbf{\Phi}'}{dt}| \leq \delta \Phi'$, assuming $\mbf{\Phi}'(k) = \mbf{\Phi}'(k-1)$ and a first-order approximation introduces an error $\Delta \mbf{\Phi}'_u(k)$ that is bounded by $|\Delta \mbf{\Phi}'_u(k)| \leq T \delta \Phi' $.
+
+Note that with (\ref{eq:achievableepsilon}), the boundary layer thickness depends quadratically on the sampling time.
+
+\section{Simulations}
+
+Both controllers have been evaluated in a simulation environment. In all cases, the vehicle dynamics have been simulated at a sampling time of $t_{sim} = 10^{-4} \, s$, while the controller sampling time has been varied.
+
+\subsection{Controller parameters}
+
+For the CSTSMC, the controller gains are computed according to (\ref{eq:csmcgaincondition}). For the DSMC, the entries of the reaching rate matrix $\mbf{\Psi}$ are selected to stay within control input limits for typical initial position errors.
+
+\subsection{Disturbance models}
+
+\subsubsection{Wake vortex disturbances}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=8.4cm]{incrementallift}    % The printed column width is 8.4 cm.
+\caption{Normalized incremental lift predicted by modified Horseshoe Vortex Model for $\Delta x' = 2b$. Note that $\Delta x', \Delta y', \Delta z'$ are wingtip to wingtip separations} 
+\label{fig:HSVMincrementalift}
+\end{center}
+\end{figure}
+
+A variety of approaches has been proposed to simulate the effects of wake trailing vortices on following UAS, mostly based on modified Horseshoe Vortex Models (HVM) ((citethemall)) or Vortex Lattice methods (VLM) ((citethemall)). For the purpose of this work, a HVM with modified core model presented in (\cite{dogan2005modeling}) is used. It is reported to provide predictions that are in good agreement of both VLM models and wind tunnel measurements while being of great simplicity. The model predicts incremental aerodynamic lift perturbations as a function of the separation vector between a UAS and its predecessor, see fig. \ref{fig:HSVMincrementalift}. 
+
+As expected, the maximum incremental lift occurs at a relative lateral position of the wingtips just outboard of the predecessor's wingtip.
+
+\subsubsection{Atmospheric turbulence}
+Atmospheric turbulence time series are generated according to the Dryden turbulence spectrum. The induced velocities are filtered by transfer functions corresponding to LQR load factor controllers designed for a small UAS ($b=2.6m$).
+
+\subsubsection{Maneuver}
+
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=8.4cm]{STSMC-1000Hz-TIMESCALESEPARATION-turbulence=1}    % The printed column width is 8.4 cm.
+\caption{CSMC controller $10^{-3} s$ sampling time} 
+\label{fig:CSMC1000Hz}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=8.4cm]{STSMC-100Hz-TIMESCALESEPARATION-turbulence=1}    % The printed column width is 8.4 cm.
+\caption{ CSMC controller $10^{-2} s$ sampling time} 
+\label{fig:CSMC100Hz}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=6.4cm]{stsmc-maxerror-z-samplingtime}    % The printed column width is 8.4 cm.
+\caption{Maximum vertical position error vs. CSMC controller sampling time} 
+\label{fig:bifurcation}
+\end{center}
+\end{figure}
+
+\bibliography{../../../library_docear/bibliography/bibliographyPhD}             % bib file to produce the bibliography
+                                                     % with bibtex (preferred)
+                                                                                                                            % in the appendices.
+\end{document}
