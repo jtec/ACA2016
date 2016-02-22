@@ -102,17 +102,17 @@ To dispose of a common reference frame for multiple members of the formation, th
 
 \subsection{Vehicle Model}
 
-The continuous time vehicle position dynamics in the local inertial frame are given by
+The continuous time vehicle position dynamics w.r.t. the local inertial frame are given by
 
 \begin{align}
 \mathbf{x} &= (\mbf{p} \; \mbf{v})^T \\
 \dot{\mathbf{p}} &= \mbf{v}\\
-\dot{\mbf{v}} &= \mbf{a}_{c} + \mbf{a}_w + \mbf{g}\\
+\dot{\mbf{v}} &= \mbf{a}_{c} + \mbf{a}_w + \mbf{g}
 \end{align}
 
 where $\mbf{p} \in \mathbb{R}^3$ is the vehicle position, $\mbf{v} \in \mathbb{R}^3$ is its velocity w.r.t to the local inertial frame, $\mbf{a}_w \in \mathbb{R}^3$ are accelerations induced by exogenous disturbances such as turbulence and another aircraft's wake, $\mbf{a}_{c} \in \mathbb{R}^3$ are commanded accelerations and $\mbf{g} \in \mathbb{R}^3$ is the gravity vector in the local inertial frame.
 
-It is assumed that load factors $\mbf{n}_c$ in the Follower Speed Frame (FSF) are tracked by fast inner loop controllers in the vehicle body frame.
+It is assumed that load factors $\mbf{n}_c$ are tracked by fast inner loop controllers in the vehicle body frame.
 
 \begin{align}
 \dot{\mbf{v}} &= \mbf{R}_{eb} |\mbf{g}|\mbf{n}_c + \mbf{a}_w + \mbf{g}
@@ -256,7 +256,7 @@ The open loop sliding variable dynamics are
 \label{eq:sigmadyncontishort}
 \end{align}
 
-Accelerations of the predecessor $\mbf{a}_{i-1}$ as well as exogenous perturbations $\mbf{a}_w $ acting on the vehicle $i$ are assumed to be unknown but bounded. For notational convenience they are lumped into the disturbance vector $\mbf{\Phi}_u$
+The  desired relative position $\Delta \mbf{p}_c$ and its second derivative are communicated to each follower. Accelerations of the predecessor $\mbf{a}_{i-1}$ as well as exogenous perturbations $\mbf{a}_w $ acting on the vehicle $i$ are assumed to be unknown but bounded. For notational convenience they are lumped into the disturbance vector $\mbf{\Phi}_u$
 
 \begin{align}
 \mbf{\Phi}_u &= \mbf{a}_w - \mbf{a}_{i-1}
@@ -523,9 +523,7 @@ For the CSTSMC, the controller gains are computed according to (\ref{eq:csmcgain
 \end{center}
 \end{figure}
 
-A variety of approaches has been proposed to simulate the effects of wake trailing vortices on following UAS, mostly based on modified Horseshoe Vortex Models (HVM) ((citethemall)) or Vortex Lattice methods (VLM) ((citethemall)). For the purpose of this work, a HVM with modified core model presented in (\cite{dogan2005modeling}) is used. It is reported to provide predictions that are in good agreement of both VLM models and wind tunnel measurements while being of great simplicity. The model predicts incremental aerodynamic lift perturbations as a function of the separation vector between a UAS and its predecessor, see fig. \ref{fig:HSVMincrementalift}. 
-
-As expected, the maximum incremental lift occurs at a relative lateral position of the wingtips just outboard of the predecessor's wingtip.
+A variety of approaches has been proposed to simulate the effects of wake trailing vortices on following UAS, mostly based on modified Horseshoe Vortex Models (HVM) ((!!!citethemall)) or Vortex Lattice methods (VLM) ((!!!citethemall)). For the purpose of this work, a HVM with modified core model presented in (\cite{dogan2005modeling}) is used. It is reported to provide predictions that are in good agreement of both VLM models and wind tunnel measurements while being of great simplicity. In the vertical channel, the model predicts incremental aerodynamic lift perturbations as a function of the separation vector between a UAS and its predecessor, see fig. \ref{fig:HSVMincrementalift}. 
 
 \subsubsection{Atmospheric turbulence}
 Atmospheric turbulence time series are generated according to the Dryden turbulence spectrum. The induced velocities are filtered by transfer functions corresponding to LQR load factor controllers designed for a small UAS ($b=2.6m$).
