@@ -1,0 +1,201 @@
+% This file was created with JabRef 2.9.2.
+% Encoding: Cp1252
+
+@TECHREPORT{Gurbux1986,
+  author = {Gurbux S. Alag and Robert W. Kempel and Joseph W. Pahle},
+  title = {Decoupling Control Synthesis for an Oblique-Wing Aircraft},
+  institution = {NASA},
+  year = {1986},
+  number = {{NASA} {T}echnical Memorandum 86801},
+  month = {June},
+  owner = {Martin},
+  timestamp = {2013.07.18}
+}
+
+@BOOK{Astrom2008,
+  title = {Feedback Systems},
+  publisher = {Princeton University Press An Introduction for Scientists and Engineers},
+  year = {2008},
+  author = {Karl Jojam Aström and Richard M. Murray},
+  owner = {mstolle},
+  timestamp = {2013.03.27}
+}
+
+@BOOK{Blakelock1991,
+  title = {Automatic Control of Aircraft and Missiles},
+  publisher = {John Wiley and Sons, Inc.},
+  year = {1991},
+  author = {John H. Blakelock},
+  owner = {mstolle},
+  timestamp = {2013.03.27}
+}
+
+@BOOK{Brockhaus2001,
+  title = {Flugregelung},
+  publisher = {Springer},
+  year = {2001},
+  author = {Rudolf Brockhaus and Wolfgang Alles and Robert Luckner},
+  edition = {3. {A}uflage},
+  owner = {mstolle},
+  timestamp = {2013.02.07}
+}
+
+@BOOK{Bruning1993,
+  title = {Flugleistungen},
+  publisher = {Springer-Verlag},
+  year = {1993},
+  author = {G. Brüning and X. Hafer and G. Sachs},
+  owner = {Martin},
+  timestamp = {2013.08.25}
+}
+
+@PHDTHESIS{Doll2001,
+  author = {Carsteb Döll},
+  title = {La Robustesse de lois de commande pour structures flexibles en aeronautique
+	et espace},
+  school = {{à l'É}cole {N}ationale {S}up{é}rieure de l'{A}{é}ronautique et de
+	l'{E}space},
+  year = {2001},
+  owner = {mstolle},
+  timestamp = {2013.02.07}
+}
+
+@MASTERSTHESIS{Foster05,
+  author = {Tyler M. Foster},
+  title = {Dynamic Stability and handling qualities of small unmanned-aerial-vehicles},
+  school = {Brigham Young University},
+  year = {2005},
+  owner = {Martin},
+  timestamp = {2013.07.16}
+}
+
+@BOOK{Hull,
+  title = {Fundamentals of {A}irplane {F}light {M}echanics},
+  publisher = {Springer},
+  author = {David G.Hull},
+  owner = {Martin},
+  timestamp = {2013.08.25}
+}
+
+@TECHREPORT{Jouhaud2012,
+  author = {F. Jouhaud and C.Döll},
+  title = {Lois de pilotage et de guidage pour {EOLE} 2},
+  institution = {ONERA Toulouse},
+  year = {2012},
+  number = {{PER}-{NT}-342-32-{ONER}},
+  month = {October},
+  owner = {mstolle},
+  timestamp = {2013.02.07}
+}
+
+@BOOK{Leonhard1981,
+  title = {Einführung in die Regelungstechnik},
+  publisher = {VIEWEG},
+  year = {1981},
+  author = {Werner Leonhard},
+  owner = {mstolle},
+  timestamp = {2013.02.07}
+}
+
+@BOOK{Liu1998,
+  title = {Eigenstructure Assignment for Control System Design},
+  publisher = {John Wiley and Sons, Inc.Wiley},
+  year = {1998},
+  author = {G.P. Liu and R. J. Patton},
+  owner = {mstolle},
+  timestamp = {2013.03.27}
+}
+
+@INPROCEEDINGS{Moore1975,
+  author = {B.C. Moore},
+  title = {On the flexibility offered by state feedback in multivariable systems
+	beyond closed loop eigenvalue assignment},
+  booktitle = {Proceedings of the 1975 IEEE Conference on Decision and Control Including
+	the 14th Symposium on Adaptive Processes},
+  year = {1975},
+  pages = {207-214},
+  owner = {mstolle},
+  timestamp = {2013.02.07}
+}
+
+@ARTICLE{Deyst07,
+  author = {Sanghyuk Park and John Deyst and J.P.How},
+  title = {{P}erformance and {L}yapunov {S}tability of a {N}onlinear {P}ath-{F}ollowing
+	{G}uidance {M}ethod},
+  journal = {JOURNAL OF GUIDANCE, CONTROL, AND DYNAMICS},
+  year = {2007},
+  volume = {30},
+  number = {6},
+  month = {November {D}ecember},
+  owner = {Martin},
+  timestamp = {2013.07.24}
+}
+
+@BOOK{Schumacher2008,
+  title = {Grundlagen der Regelungstechnik, Umdruck zur Vorlesung an der Technischen
+	Universität Braunschweig},
+  publisher = {TU Braunschweig (Institut für Regelungstechnik)},
+  year = {2008},
+  author = {Walter Schumacher},
+  owner = {mstolle},
+  timestamp = {2013.03.27}
+}
+
+@BOOK{Stevens2003,
+  title = {{AIRCRAFT} {CONTROL} {AND} {SIMULATION}},
+  publisher = {John Wiley and Sons, Inc.},
+  year = {2003},
+  author = {Brian L. Stevens and Frank L. Lewis},
+  owner = {Martin},
+  timestamp = {2013.08.06}
+}
+
+@INPROCEEDINGS{White1995,
+  author = {B A White},
+  title = {Eigenstructure Assignment: A Survey},
+  booktitle = {Proceedings of the Institution of Mechanical Engineers, Part I: Journal
+	of Systems and Control Engineering},
+  year = {1995},
+  owner = {mstolle},
+  timestamp = {2013.04.17}
+}
+
+@STANDARD{IsraelCAAI,
+  title = {{CAAI} {UAV} {S}ystems {A}irworthiness {R}egulations},
+  organization = {{S}tate {O}f {I}srael},
+  owner = {Martin},
+  timestamp = {2013.07.17}
+}
+
+@STANDARD{USMIL1980,
+  title = {{MILITARY SPECIFICATION} {FLYING QUALITIES OF PILOTED AIRCRAFT} ({MIL}-{F}-8785{C})},
+  organization = {U.S. Military},
+  owner = {Martin},
+  timestamp = {2013.07.16}
+}
+
+@MISC{stratolaunch,
+  title = {Stratolaunch {Systems}},
+  howpublished = {http://www.stratolaunch.com/},
+  month = {August},
+  year = {2013},
+  owner = {Martin},
+  timestamp = {2013.08.05}
+}
+
+@MISC{whiteknight,
+  title = {{SPACESHIPONE} \& {WHITE KNIGHT}},
+  howpublished = {http://www.scaled.com/projects/tierone/},
+  month = {August},
+  year = {2013},
+  owner = {Martin},
+  timestamp = {2013.08.05}
+}
+
+@PROCEEDINGS{,
+  title = {Eigenstructure Assignment: A Survey},
+  year = {1995},
+  owner = {mstolle},
+  timestamp = {2013.04.17}
+}
+

@@ -1,0 +1,429 @@
+% This file was created with JabRef 2.10.
+% Encoding: Cp1252
+
+
+@Article{JerkBasedCycleSlipDetection,
+  Title                    = {Cycle slip detection in kinemetic GPS with a jerk model for land vehicles},
+  Author                   = {Toshiyuki Aoki and Yutaka Shimogaki and Tomokazu Ikki and Makoto Tanikawara and Sueo Sugimoto and Yukihiro Kubo and Koji Fujimoto},
+  Journal                  = {International Journal of Innovative Computing, Information and Control},
+  Year                     = {2009},
+  Pages                    = {153-166},
+  Volume                   = {5},
+
+  Owner                    = {mavion},
+  Timestamp                = {2013.04.24}
+}
+
+@Article{AshbyOnGPSAndRelativity,
+  Title                    = {{Relativity in the Global Positioning System}},
+  Author                   = {Neil Ashby},
+  Journal                  = {Living Reviews in Relativity},
+  Year                     = {2003},
+  Number                   = {1},
+  Volume                   = {6},
+
+  Url                      = {http://www.livingreviews.org/lrr-2003-1}
+}
+
+@TechReport{AshbyECI,
+  Title                    = {{NIST Technical Note 1385 "Global Position System Receivers and Relativity"}},
+  Author                   = {Neil Ashby and Marc Weiss},
+  Institution              = {United States National Institute of Standards and Technology},
+  Year                     = {1999},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.02.04}
+}
+
+@InProceedings{DopplerCodeSmoothingKalman,
+  Title                    = {{A Kalman Filter-based Doppler - smoothing of Code Pseudoranges in GNSS - Challenged Environments}},
+  Author                   = {Bahrami, Mojtaba and Ziebart, Marek},
+  Booktitle                = {Proceedings of the 24th International Technical Meeting of The Satellite Division of the Institute of Navigation},
+  Year                     = {2011},
+  Month                    = {september},
+  Pages                    = {2362-2372}
+}
+
+@InProceedings{DopplerRTKIEEE,
+  Title                    = {{Instantaneous Doppler - aided RTK positioning with single frequency receivers}},
+  Author                   = {Bahrami, Mojtaba and Ziebart, Marek},
+  Booktitle                = {Position Location and Navigation Symposium (PLANS), 2010 IEEE/ION},
+  Year                     = {2010},
+  Month                    = {may},
+  Pages                    = {70 -78},
+
+  Doi                      = {10.1109/PLANS.2010.5507202},
+  ISSN                     = {2153-358X},
+  Keywords                 = {Area measurement;Filters;Frequency;Kinematics;Noise level;Noise measurement;Satellite navigation systems;Signal generators;Urban areas;Working environment noise;Doppler Smoothing;Instantaneous Precise Kinematic Positioning;Integer Ambiguity Resolution;RTK;Single Frequency Receivers;}
+}
+
+@TechReport{Bolting2013,
+  Title                    = {A GPS Local - Area Augmentation System for small UAS using consumer - grade single frequency receivers},
+  Author                   = {Jan Bolting},
+  Institution              = {University of Braunschweig, Institute of Technology},
+  Year                     = {2013},
+  Type                     = {Technical report},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2015.04.12}
+}
+
+@InProceedings{TroposphericErrorObservations,
+  Title                    = {{Characterization of Atmospheric Propagation Errors for DGPS}},
+  Author                   = {A.J. Coster and M.M. Pratt and B.P. Burke and P.N. Misra},
+  Booktitle                = {Proceedings of the 54th Annual Meeting of The Institute of Navigation},
+  Year                     = {1998},
+  Pages                    = {327 - 336},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.01.28}
+}
+
+@InProceedings{SunStormIonosphericDelay,
+  Title                    = {Using {WAAS} Ionospheric Data to Estimate {LAAS} Short Baseline Gradients},
+  Author                   = {Seebany Datta-Barua and Todd Walter and Sam Pullen and Ming Luo and Juan Blanch and Per Enge},
+  Booktitle                = {Proceedings of the 2002 National Technical Meeting of The Institute of Navigation},
+  Year                     = {2002},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.01.29}
+}
+
+@Article{NovatelIKFForNascarRaces,
+  Title                    = {{NovAtel Inc. New Positioning Filter: Phase Smoothing in the Position Domain}},
+  Author                   = {Tom Ford and Jason Hamilton},
+  Journal                  = {NAVIGATION},
+  Year                     = {2003},
+  Pages                    = {65-78},
+  Volume                   = {50},
+
+  Booktitle                = {Proceedings of the 15th International Technical Meeting of the Satellite Division of The Institute of Navigation (ION GPS 2002)}
+}
+
+@InProceedings{AnalyticalAmbiguityResolutionByTripleDifferencing,
+  Title                    = {{DGPS} positioning using carrier phase for precision navigation},
+  Author                   = {Xiaogang Gu and Lipp, A.},
+  Booktitle                = {Position Location and Navigation Symposium, 1994., {IEEE}},
+  Year                     = {1994},
+  Month                    = {apr},
+  Pages                    = {410 -417}
+}
+
+@InProceedings{HatchOriginal,
+  Title                    = {{The Synergism of GPS Code and Carrier Measurements}},
+  Author                   = {{Hatch}, R.},
+  Booktitle                = {Third Geodetic Symposium on Satellite Doppler Positioning},
+  Year                     = {1982},
+  Pages                    = {1213},
+
+  Adsnote                  = {Provided by the SAO/NASA Astrophysics Data System},
+  Adsurl                   = {http://adsabs.harvard.edu/abs/1982sdp..conf.1213H}
+}
+
+@Misc{HeckerSatNav,
+  Title                    = {{Satellitennavigation - Technologien und Anwendungen, winter term 2010/2011}},
+
+  Author                   = {{Prof. Dr.-Ing. Peter} Hecker},
+  HowPublished             = {lecture script},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.02.08}
+}
+
+@Book{Kaplan,
+  Title                    = {{Understanding {GPS}: Principles and Applications}},
+  Author                   = {Kaplan, E. and Hegarty, C},
+  Publisher                = {Artech House},
+  Year                     = {2005},
+  Edition                  = {2.}
+}
+
+@InProceedings{RAIMCycleSlipDetection,
+  Title                    = {{A RAIM approach to GNSS outlier and cycle slip detection using L1 carrier phase time-differences}},
+  Author                   = {M. Kirkko-Jaakkola and J. Traugott and D. Odijk and J. Collin and G. Sachs and F. Holzapfel},
+  Booktitle                = {Proceedings of the IEEE Workshop on Signal Processing Systems},
+  Year                     = {2009},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.02.06}
+}
+
+@Book{Knuth,
+  Title                    = {{Art of Computer Programming, Volume 1: Fundamental Algorithms}},
+  Author                   = {Donald E. Knuth},
+  Publisher                = {Addison-Wesley},
+  Year                     = {1997},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.02.01}
+}
+
+@Article{GPSNoise,
+  Title                    = {{GPS Receiver System Noise}},
+  Author                   = {Richard B. Langley},
+  Journal                  = {GPS world},
+  Year                     = {1997},
+  Pages                    = {40-45},
+  Volume                   = {8},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.01.27}
+}
+
+@Article{PDHatchFilter,
+  Title                    = {{Position-domain Hatch filter for kinematic differential GPS/GNSS}},
+  Author                   = {Lee, H.K. and Rizos, C.},
+  Journal                  = {Aerospace and Electronic Systems, IEEE Transactions on},
+  Year                     = {2008},
+
+  Month                    = {january },
+  Number                   = {1},
+  Pages                    = {30 -40},
+  Volume                   = {44},
+
+  Doi                      = {10.1109/TAES.2008.4516987},
+  ISSN                     = {0018-9251},
+  Keywords                 = {Aerospace electronics;Aerospace engineering;Global Positioning System;Information filtering;Information filters;Kinematics;Position measurement;Satellite navigation systems;Signal to noise ratio;Telecommunication computing;Global Positioning System;filtering theory;kinematic differential GPS/GNSS;position-domain Hatch filter;satellite-based positioning;visible satellite set;}
+}
+
+@InProceedings{MeasurementNoiseFromSNR,
+  Title                    = {{RAIM and Complementary Kalman Filtering for GNSS Reliability Enhancement}},
+  Author                   = {Leppakoski, H. and Kuusniemi, H. and Takala, J.},
+  Booktitle                = {Position, Location, And Navigation Symposium, 2006 IEEE/ION},
+  Year                     = {2006},
+  Month                    = {25-27,},
+  Pages                    = { 948 - 956},
+
+  Doi                      = {10.1109/PLANS.2006.1650695},
+  Keywords                 = {Fault detection;Filtering;Fuses;Global Positioning System;Information security;Kalman filters;Phase measurement;Position measurement;Satellite navigation systems;Testing;}
+}
+
+@Article{TripleDifferenceCycleSlipDetection,
+  Title                    = {{On-line detection of abrupt changes in the carrier-phase measurements of GPS}},
+  Author                   = {S.P. Mertikas and C.Rizos},
+  Journal                  = {Journal of Geodesy},
+  Year                     = {1997},
+  Pages                    = {469-482},
+  Volume                   = {71},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.02.06}
+}
+
+@Article{OTFARWith12SVInView,
+  Title                    = {{Influence of Pseudorange Accuracy on Phase Ambiguity Resolution in Various GPS Modernization Scenarios}},
+  Author                   = {Milbert, Dennis},
+  Journal                  = {NAVIGATION},
+  Year                     = {2005},
+  Pages                    = {29-38},
+  Volume                   = {52},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.01.16}
+}
+
+@Article{Calgary,
+  Title                    = {Temporal impact of selected {GPS} errors on point positioning},
+  Author                   = {M. Olynik and M.G. Petovello and M.E. Cannon and G. Lachapelle},
+  Journal                  = {GPS Solutions},
+  Year                     = {2002},
+  Pages                    = {53}
+}
+
+@Book{GPSTheoryAndApplications,
+  Title                    = {Global Positioning System: Theory \& Applications (Volume One) (Progress in Astronautics and Aeronautics)},
+  Author                   = {Bradford W. Parkinson(Editor) and James J. Spilker(Editor)},
+  Publisher                = {{AIAA (American Institute of Aeronautics \& Ast}},
+  Year                     = {1996},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.01.18}
+}
+
+@Misc{NASAAboutSolarMaximumIn2013,
+  Title                    = {{A Taste of Solar Maximum}},
+
+  Author                   = {Tony Phillips},
+  HowPublished             = {http://www.nasa.gov/mission_pages/sunearth/news/taste-solarmax.html},
+  Month                    = {July},
+  Year                     = {2012},
+
+  Owner                    = {NASA},
+  Timestamp                = {2013.01.16},
+  Url                      = {http://www.nasa.gov/mission_pages/sunearth/news/taste-solarmax.html}
+}
+
+@InProceedings{IKFInspiration,
+  Title                    = {{Circumventing dynamic modeling: evaluation of the error-state Kalman filter applied to mobile robot localization}},
+  Author                   = {Stergios I. Roumeliotis and Gaurav S. Sukhatme and George A. Bekey},
+  Booktitle                = {Robotics and Automation, 1999. Proceedings. 1999 IEEE International Conference on},
+  Year                     = {1999},
+  Pages                    = {1656 -1663 vol.2},
+  Volume                   = {2}
+}
+
+@Article{Takasu2009,
+  Title                    = {{Development of the low-cost RTK-GPS receiver with an open source program package RTKLIB}},
+  Author                   = {Tomoji Takasu and Akio Yasuda},
+  Journal                  = {International Symposium on GPS/GNSS,},
+  Year                     = {2009},
+
+  Owner                    = {mavion},
+  Timestamp                = {2013.05.12}
+}
+
+@Article{Traugott2008_GPSWorld_TimeDifferencingForTrajectoryReconstruction,
+  Title                    = {{Making a Difference with GPS}},
+  Author                   = {Johannes Traugott and Dennis Odijk and Oliver Montenbruck andGottfried Sachs and Christian Tiberius},
+  Journal                  = {{GPS World}},
+  Year                     = {2008},
+  Pages                    = {48-57},
+  Volume                   = {May 2008},
+
+  Owner                    = {mavion},
+  Timestamp                = {2013.05.12}
+}
+
+@PhdThesis{Albatros,
+  Title                    = {{Precise Flight Trajectory Reconstruction Based on Time-Differential GNSS Carrier Phase Processing}},
+  Author                   = {Johannes P. Traugott},
+  School                   = {Technische Unversitaet Muenchen},
+  Year                     = {2011},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.02.04}
+}
+
+@Misc{Welch95KalmanIntroduction,
+  Title                    = {{An Introduction to the Kalman Filter}},
+
+  Author                   = {Greg Welch and Gary Bishop},
+  Year                     = {1995}
+}
+
+@Article{NAVI:NAVI317,
+  Title                    = {Hypothesis Testing for Resolving Integer Ambiguity in GPS},
+  Author                   = {WOLFE, JONATHAN D. and WILLIAMSON, WALTON R. and SPEYER, JASON L.},
+  Journal                  = {Navigation},
+  Year                     = {2003},
+  Number                   = {1},
+  Pages                    = {45--56},
+  Volume                   = {50},
+
+  Doi                      = {10.1002/j.2161-4296.2003.tb00317.x},
+  ISSN                     = {2161-4296},
+  Publisher                = {Blackwell Publishing Ltd},
+  Url                      = {http://dx.doi.org/10.1002/j.2161-4296.2003.tb00317.x}
+}
+
+@Article{RelativisticDopplerObservationModel,
+  Title                    = {{On the Relativistic Doppler Effect for Precise Velocity Determination using GPS}},
+  Author                   = {Jason Zhang and Kefei Zhang and Ron Grenfell and Rod Deakin},
+  Journal                  = {Journal of Geodesy},
+  Year                     = {2006},
+  Pages                    = {104-110},
+  Volume                   = {80},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.01.28}
+}
+
+@Article{OptimalHatchFilterForGBAS,
+  Title                    = {{A New Optimal Hatch Filter to Minimize the Effects of Ionosphere Gradients for GBAS}},
+  Author                   = {Huang Zhenggang and Huang Zhigang and Zhu Yanbo},
+  Journal                  = {Chinese Journal of Aeronautics},
+  Year                     = {2008},
+  Number                   = {6},
+  Pages                    = {526 - 532},
+  Volume                   = {21},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.01.22}
+}
+
+@InProceedings{CycleSlipDetectionTripleDifferences,
+  Title                    = {A new method of cycle slip resolution},
+  Author                   = {Liu Zhen-Kun and Dai Qiang},
+  Booktitle                = {Communication Software and Networks (ICCSN), 2011 IEEE 3rd International Conference on},
+  Year                     = {2011},
+  Month                    = {may},
+  Pages                    = {116 -119},
+
+  Doi                      = {10.1109/ICCSN.2011.6014016},
+  Keywords                 = {Argon;Q measurement;Global Positioning System;difference equations;phase measurement;GPS carrier phase dynamic measurement;cycle slip resolution;triple difference equation;baseline constraint;carrier phase;cycle slip;triple difference observable;}
+}
+
+@Manual{DatasheetRadarByRoke,
+  Title                    = {{Datatsheet MRA Type 2 radar Altimeter}},
+  Organization             = {Roke Manor Research Limited},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.01.25},
+  Url                      = {http://www.roke.co.uk/resources/datasheets/MRA-Type-2.pdf}
+}
+
+@Manual{GPSPerformanceStandard,
+  Title                    = {{Global Positioning System Standard Positioning Service Performance Standard}},
+  Edition                  = {4.},
+  Organization             = {{DoD}}
+}
+
+@Misc{Mavlink,
+  Title                    = {MAVLink communication protocol},
+  HowPublished             = {http://qgroundcontrol.org/mavlink/start},
+
+  Comment                  = {2013.02.25},
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.02.25},
+  Url                      = {http://qgroundcontrol.org/mavlink/start}
+}
+
+@Manual{MiniLaserAltimeterDatasheet,
+  Title                    = {{Datatsheet MLR100 Miniature Laser Altimeter}},
+  Organization             = {FLIR Systems},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.01.25},
+  Url                      = {http://cvs.flir.com/mini-laser-rangefinder-datasheet}
+}
+
+@Misc{websiteRtklib,
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.04.18}
+}
+
+@Manual{XBeeDatasheet,
+  Title                    = {{Datasheet XBee-PRO ZB 2.4 GHz modem}},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.02.05}
+}
+
+@Manual{LeicaVivaReceiverDatasheet,
+  Title                    = {Datasheet Leica Viva GNSS GS25 receiver},
+  Organization             = {Leica Geosystems},
+  Year                     = {2013},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.04.17}
+}
+
+@Manual{ProductSheetNovAtelOEM628,
+  Title                    = {Product Sheet NovAtel OEM628},
+  Organization             = {NovAtel},
+  Year                     = {2013},
+
+  Owner                    = {j.bolting},
+  Timestamp                = {2013.04.17},
+  Url                      = {http://www.novatel.com/assets/Documents/Papers/OEM628.pdf}
+}
+
+@Manual{ubloxDatasheet,
+  Title                    = {Datasheet ublox {LEA-6T}},
+  Month                    = {Mars},
+  Organization             = {ublox AG},
+  Year                     = {2012},
+
+  Url                      = {http://www.u-blox.com/images/downloads/Product_Docs/LEA-6_DataSheet_\%28GPS.G6-HW-09004\%29.pdf}
+}
+
