@@ -24,6 +24,7 @@
 
 % Custom commands
 \providecommand{\mbf}[1]{\mathbf{#1}}
+\newcommand{idxAgent{i}
 
 \begin{document}
 \begin{frontmatter}
@@ -94,6 +95,9 @@ Sliding mode control has successfully been applied to ground vehicle platooning 
 
 \section{Model}
 
+\subsection{Notation}
+The following indices are used. The sample index is denoted $k$
+
 \subsection{Coordinate frames}
 The system to be controlled is a formation of $n$ UAS flying in an arbitrary pattern. Is is assumed that
 load factors are controlled in each vehicle's body frame (index $b$). Therefore separation errors are transformed into the body frame for control purposes, decoupling the three axes. The dynamics of each vehicle are defined in a local inertial North-East-Down frame (index $e$).
@@ -150,19 +154,19 @@ leading to
 
 where now $\mbf{a}_w$ also includes the small effects of imperfect knowledge of local gravitation. ???doubledefinition
 
-Considering two UAS $i$ and $i-1$, this leads to relative position error dynamics
+Considering two UAS $k$ and $k-1$, this leads to relative position error dynamics
 
 \begin{align}
-\Delta \mbf{p} &= \mbf{p}_i - \mbf{p}_{i-1} - \Delta \mbf{p}_c \\
-\Delta \dot{\mbf{p}} &= \mbf{v}_{i} - \mbf{v}_{i-1} -  \Delta \dot{\mbf{p}}_c\\
-\Delta \dot{\mbf{v}} &= \mbf{a}_{i} - \mbf{a}_{i-1} -  \Delta \ddot{\mbf{p}}_c\\
-{} &= \mbf{a}_{c,i} + \mbf{a}_{w,i}
- - \mbf{a}_{i-1} -  \Delta \ddot{\mbf{p}}_c\\
-{} &= \mbf{u} + \mbf{a}_{w,i}
- - \mbf{a}_{i-1} -  \Delta \ddot{\mbf{p}}_c
+\Delta \mbf{p} &= \mbf{p}_k - \mbf{p}_{k-1} - \Delta \mbf{p}_c \\
+\Delta \dot{\mbf{p}} &= \mbf{v}_{k} - \mbf{v}_{k-1} -  \Delta \dot{\mbf{p}}_c\\
+\Delta \dot{\mbf{v}} &= \mbf{a}_{k} - \mbf{a}_{k-1} -  \Delta \ddot{\mbf{p}}_c\\
+{} &= \mbf{a}_{c,k} + \mbf{a}_{w,k}
+ - \mbf{a}_{k-1} -  \Delta \ddot{\mbf{p}}_c\\
+{} &= \mbf{u} + \mbf{a}_{w,k}
+ - \mbf{a}_{k-1} -  \Delta \ddot{\mbf{p}}_c
 \end{align}
 
-where $\Delta \mbf{p}$ is the relative position error between UAS $i$ and its predecessor $i-1$, $\Delta \mbf{v}$ is the corresponding relative velocity error, $\Delta \mbf{p}_c$ is the desired relative position to the predecessor, $\mbf{a}$ are accelerations.
+where $\Delta \mbf{p}$ is the relative position error between UAS $k$ and its predecessor $k-1$, $\Delta \mbf{v}$ is the corresponding relative velocity error, $\Delta \mbf{p}_c$ is the desired relative position to the predecessor, $\mbf{a}$ are accelerations.
 
 The presented model is essentially of the same type as that used in  \cite{galzi2006uav} and provides the benefit of being vehicle-agnostic, as the specific vehicle dynamics are covered by the inner loop load factor controllers. On the other hand, perturbations $\mbf{a}_w$ and control input saturations are specific to a given vehicle and mission environment.
 
@@ -245,8 +249,8 @@ The open loop sliding variable dynamics are
 \dot{{\sigma}} &= \mbf{G}
 \begin{pmatrix}
 \Delta \mbf{v} \\
-\mbf{u} + \mbf{a}_{w,i}
- - \mbf{a}_{i-1} -  \Delta \ddot{\mbf{p}}_c
+\mbf{u} + \mbf{a}_{w,k}
+ - \mbf{a}_{k-1} -  \Delta \ddot{\mbf{p}}_c
 \end{pmatrix}\\
 & = \mbf{G}
 \begin{pmatrix}
@@ -257,7 +261,7 @@ The open loop sliding variable dynamics are
 {\mbf{0}}\\
 {\mbf{I}}
 \end{bmatrix}
-(\mbf{u} + \mbf{a}_w + \mbf{a}_{k-1}) \\
+(\mbf{u} + \mbf{a}_{w,k} + \mbf{a}_{k-1}) \\
 &= \mbf{G} \mbf{\Phi}_k + \mbf{G} \mbf{B}(
 \mbf{u}
  + {\mbf\Phi}_u)
@@ -266,10 +270,10 @@ The open loop sliding variable dynamics are
 \label{eq:sigmadyncontishort}
 \end{align}
 
-The  desired relative position $\Delta \mbf{p}_c$ and its second derivative are communicated to each follower. Accelerations of the predecessor $\mbf{a}_{i-1}$ as well as exogenous perturbations $\mbf{a}_w $ acting on the vehicle $i$ are assumed to be unknown but bounded. For notational convenience they are lumped into the disturbance vector $\mbf{\Phi}_u$
+The  desired relative position $\Delta \mbf{p}_c$ and its second derivative are communicated to each follower. Accelerations of the predecessor $\mbf{a}_{k-1}$ as well as exogenous perturbations $\mbf{a}_w $ acting on the vehicle $i$ are assumed to be unknown but bounded. For notational convenience they are lumped into the disturbance vector $\mbf{\Phi}_u$
 
 \begin{align}
-\mbf{\Phi}_u &= \mbf{a}_w - \mbf{a}_{i-1}
+\mbf{\Phi}_u &= \mbf{a}_{w,k} - \mbf{a}_{k-1}
 \end{align}
 
 while the known perturbations $\Delta \ddot{\mbf{p}}_c$ are redefined as $\mbf{\Phi}_k$
@@ -369,7 +373,7 @@ using $\mbf{R}_{eb}^{-1} = \mbf{R}_{eb}^{T} = \mbf{R}_{be}$
 %|u_{eq,i}| \leq M_i + L_i
 %\end{align}
 %
-%The unknown perturbations $\Phi_{u,i}$ are driven by exogenous disturbances $a_{w,i}$ and acceleration of the predecessor $a_{i-1,i}$.
+%The unknown perturbations $\Phi_{u,i}$ are driven by exogenous disturbances $a_{w,i}$ and acceleration of the predecessor $a_{k-1,i}$.
 %
 %!!!Finish equivalent control part
 
@@ -515,11 +519,24 @@ Note that with (\ref{eq:achievableepsilon}), the boundary layer thickness depend
 
 \section{Simulations}
 
-Both controllers have been evaluated in a simulation environment. In all cases, the vehicle dynamics have been simulated at a sampling time of $t_{sim} = 10^{-4} \, s$, while the controller sampling time has been varied.
+Both controllers have been evaluated in a simulation environment. In all cases, the vehicle dynamics have been integrating with a Euler scheme at a sampling time of $t_{sim} = 10^{-4} \, s$, while the controller sampling time has been varied.
 
 \subsection{Controller parameters}
 
-For the CSTSMC, the controller gains are computed according to (\ref{eq:csmcgaincondition}). For the DSMC, the entries of the reaching rate matrix $\mbf{\Psi}$ are selected to stay within control input limits for typical initial position errors.
+For the CSTSMC, the controller gains are computed according to (\ref{eq:csmcgaincondition}). 
+
+The unknown perturbations $\Phi_{u,i}$ are driven by exogenous disturbances $a_{w,i}$ and acceleration of the predecessor $a_{k-1,i}$.
+
+Those being bounded by
+
+\begin{align}
+|a_{w,i}| &\leq A_{w,i} \\
+|a_{k-1,i}| &\leq A_{k-1,i}
+\end{align}
+
+To obtain the bounds on
+
+For the DSMC, the entries of the reaching rate matrix $\mbf{\Psi}$ are selected to stay within control input limits for typical initial position errors.
 
 \subsection{Disturbance models}
 
