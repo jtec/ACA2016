@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  23 FEB 2016 13:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  23 FEB 2016 13:51
 entering extended mode
 **ACA16-JB.tex
 (ACA16-JB.tex
@@ -576,99 +576,55 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 ]
+<images/frames.jpg, id=14, 1416.29124pt x 1574.88374pt>
+File: images/frames.jpg Graphic file (type jpg)
 
-! LaTeX Error: File `frames' not found.
+<use images/frames.jpg>
+Package pdftex.def Info: images/frames.jpg used on input line 110.
+(pdftex.def)             Requested size: 239.00298pt x 265.75616pt.
+ [2 <./images/frames.jpg>]
+<images/geometry.jpg, id=21, 1145.27875pt x 1431.3475pt>
+File: images/geometry.jpg Graphic file (type jpg)
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.110 \includegraphics[width=8.4cm]{frames}
-                                               % The printed column width is...
+<use images/geometry.jpg>
+Package pdftex.def Info: images/geometry.jpg used on input line 208.
+(pdftex.def)             Requested size: 239.00298pt x 298.69171pt.
+ [3 <./images/geometry.jpg>] [4]
+<images/incrementallift.pdf, id=30, 226.8475pt x 247.67531pt>
+File: images/incrementallift.pdf Graphic file (type pdf)
 
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<use images/incrementallift.pdf>
+Package pdftex.def Info: images/incrementallift.pdf used on input line 583.
+(pdftex.def)             Requested size: 239.00298pt x 260.9473pt.
+ [5 <./images/incrementallift.pdf>]
+<images/STSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=53, 315.1775pt x 
+316.39203pt>
+File: images/STSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (ty
+pe pdf)
+ <use images/STSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf>
+Package pdftex.def Info: images/STSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.p
+df used on input line 601.
+(pdftex.def)             Requested size: 239.00298pt x 239.92455pt.
 
-[2]
+<images/STSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=54, 315.1775pt x 3
+16.39203pt>
+File: images/STSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (typ
+e pdf)
+ <use images/STSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
+Package pdftex.def Info: images/STSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pd
+f used on input line 609.
+(pdftex.def)             Requested size: 239.00298pt x 239.92455pt.
 
-! LaTeX Error: File `geometry' not found.
+<images/stsmc-maxerror-z-samplingtime.pdf, id=55, 224.84pt x 221.5477pt>
+File: images/stsmc-maxerror-z-samplingtime.pdf Graphic file (type pdf)
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.208 \includegraphics[width=8.4cm]{geometry}
-                                                 % The printed column width ...
-
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[3] [4]
-
-! LaTeX Error: File `incrementallift' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.583 ...udegraphics[width=8.4cm]{incrementallift}
-                                                      % The printed column w...
-
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `STSMC-1000Hz-TIMESCALESEPARATION-turbulence=1' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.601 ...-1000Hz-TIMESCALESEPARATION-turbulence=1}
-                                                      % The printed column w...
-
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `STSMC-100Hz-TIMESCALESEPARATION-turbulence=1' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.609 ...C-100Hz-TIMESCALESEPARATION-turbulence=1}
-                                                      % The printed column w...
-
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `stsmc-maxerror-z-samplingtime' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.617 ...dth=6.4cm]{stsmc-maxerror-z-samplingtime}
-                                                      % The printed column w...
-
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-(ACA16-JB.bbl) [5]
+<use images/stsmc-maxerror-z-samplingtime.pdf>
+Package pdftex.def Info: images/stsmc-maxerror-z-samplingtime.pdf used on input
+ line 617.
+(pdftex.def)             Requested size: 182.09746pt x 179.43912pt.
+ (ACA16-JB.bbl) [6 <./images/STSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf>
+ <./images/STSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf> <./images/stsmc-ma
+xerror-z-samplingtime.pdf>]
 
 Package natbib Warning: There were undefined citations.
 
@@ -678,13 +634,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4243 strings out of 493698
- 52291 string characters out of 3141982
- 135907 words of memory out of 3000000
- 7476 multiletter control sequences out of 15000+200000
+ 4257 strings out of 493698
+ 53235 string characters out of 3141982
+ 134907 words of memory out of 3000000
+ 7500 multiletter control sequences out of 15000+200000
  12419 words of font info for 51 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 35i,16n,26p,1325b,234s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,16n,26p,1325b,264s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/P
@@ -700,9 +656,9 @@ TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ACA16-JB.pdf (5 pages, 203118 bytes).
+Output written on ACA16-JB.pdf (6 pages, 1105244 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
+ 156 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
