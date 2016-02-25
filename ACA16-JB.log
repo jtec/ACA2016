@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  25 FEB 2016 17:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  25 FEB 2016 21:26
 entering extended mode
 **ACA16-JB.tex
 (ACA16-JB.tex
@@ -597,36 +597,45 @@ File: images/incrementallift.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/incrementallift.pdf used on input line 599.
 (pdftex.def)             Requested size: 239.00298pt x 260.9473pt.
  [5]
-<images/STSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=35, 315.1775pt x 
-316.39203pt>
+<images/STSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=35, 373.89688pt x
+ 387.91927pt>
 File: images/STSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (ty
 pe pdf)
  <use images/STSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/STSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.p
 df used on input line 614.
-(pdftex.def)             Requested size: 239.00298pt x 239.92455pt.
+(pdftex.def)             Requested size: 239.00298pt x 247.96559pt.
 
-<images/STSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=36, 315.1775pt x 3
-16.39203pt>
+<images/STSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=36, 384.43625pt x 
+377.13899pt>
 File: images/STSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (typ
 e pdf)
  <use images/STSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/STSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pd
 f used on input line 622.
-(pdftex.def)             Requested size: 239.00298pt x 239.92455pt.
+(pdftex.def)             Requested size: 239.00298pt x 234.47403pt.
 
-<images/stsmc-maxerror-z-samplingtime.pdf, id=37, 224.84pt x 221.5477pt>
-File: images/stsmc-maxerror-z-samplingtime.pdf Graphic file (type pdf)
+<images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=37, 379.91937pt x 3
+87.91927pt>
+File: images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (type
+ pdf)
+ <use images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
+Package pdftex.def Info: images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf
+ used on input line 630.
+(pdftex.def)             Requested size: 239.00298pt x 244.04118pt.
 
-<use images/stsmc-maxerror-z-samplingtime.pdf>
-Package pdftex.def Info: images/stsmc-maxerror-z-samplingtime.pdf used on input
- line 630.
-(pdftex.def)             Requested size: 182.09746pt x 179.43912pt.
- (ACA16-JB.bbl [6 <./images/incrementallift.pdf> <./images/STSMC-1000Hz-TIMESCA
-LESEPARATION-turbulence=1.pdf> <./images/STSMC-100Hz-TIMESCALESEPARATION-turbul
-ence=1.pdf> <./images/stsmc-maxerror-z-samplingtime.pdf>]) [7
+<images/CSTSMC-DSMC-error-z-samplingtime.pdf, id=38, 227.85126pt x 220.55399pt>
+File: images/CSTSMC-DSMC-error-z-samplingtime.pdf Graphic file (type pdf)
+<use images/CSTSMC-DSMC-error-z-samplingtime.pdf>
+Package pdftex.def Info: images/CSTSMC-DSMC-error-z-samplingtime.pdf used on in
+put line 638.
+(pdftex.def)             Requested size: 239.00298pt x 231.35292pt.
+ (ACA16-JB.bbl) [6 <./images/incrementallift.pdf> <./images/STSMC-1000Hz-TIMESC
+ALESEPARATION-turbulence=1.pdf> <./images/STSMC-100Hz-TIMESCALESEPARATION-turbu
+lence=1.pdf>] [7
 
-]
+ <./images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf> <./images/CSTSMC-DS
+MC-error-z-samplingtime.pdf>]
 
 Package natbib Warning: There were undefined citations.
 
@@ -636,10 +645,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4258 strings out of 493698
- 53252 string characters out of 3141982
- 134915 words of memory out of 3000000
- 7501 multiletter control sequences out of 15000+200000
+ 4264 strings out of 493698
+ 53556 string characters out of 3141982
+ 134923 words of memory out of 3000000
+ 7506 multiletter control sequences out of 15000+200000
  12419 words of font info for 51 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  35i,16n,26p,1325b,264s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -658,9 +667,9 @@ TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ACA16-JB.pdf (7 pages, 1107428 bytes).
+Output written on ACA16-JB.pdf (7 pages, 1770718 bytes).
 PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
+ 182 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
