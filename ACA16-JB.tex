@@ -15,6 +15,8 @@
 \usepackage{amssymb}
 \usepackage{color}
 \usepackage{datetime}
+\usepackage{placeins}
+\usepackage{textcomp}
 
 %===============================================================================
 
@@ -94,11 +96,15 @@ This paper is structured as follows: section...
 
 \subsection{Coordinate frames}
 The system to be controlled is a formation of $n$ UAS flying in an arbitrary pattern. Is is assumed that
-load factors are controlled in each vehicle's body frame (index $b$). Therefore separation errors are transformed into the body frame for control purposes, decoupling the three axes. The dynamics of each vehicle are defined in a local inertial North-East-Down frame (index $e$).
+load factors are controlled in each vehicle's body frame (index $b$). Therefore separation errors are transformed into the body frame for control purposes, decoupling the three axes. The dynamics of each vehicle are defined in a local inertial North-East-Down frame (index $e$). 
+
+%It is convenient to note the relative separations of the vehicles in a frame that approximates the leader's wind frame (which is not available due to the absence of sensors for angle of attack and sideslip angle on small UAS). We define for this purpose the Follower Velocity frame (index $fv$). Its x axis is aligned with the follower's inertial speed projected on the horizontal plane, and its z axis is aligned with the NED frame's z axis. Its origin coincides with that of the predecessor's body frame. 
+
+%The follower's wind frame would be preferable, since the lift vector is by definition aligned with its z axis , but requires on-line wind estimation or flow sensors that usually are not available on board small UAS. It is preferable over the Predecessor Velocity Frame (PF), since to form the rotation matrix between the FF and the inertial frame the predecessor's absolute velocity does not need to be communicated to the follower.
 
 %The right choice of reference frames can significantly facilitate control design. To give one example, when performing navigation in the predecessor's body frame, variations in the predecessor's attitude will couple into follower's position control loops, increasing control action. What is more, the effect increases with inter-vehicle separation, leading to high control demands during the initial rendezvous maneuver. To avoid such disadvantages, the motion of the reference frame with respect to the inertial frame should be within the control bandwidth of the position controller. A suitable frame is a local Cartesian frame whose x axis is aligned with the follower's inertial speed projected on the horizontal plane, and whose z axis is aligned with the NED frame's z axis, the Follower Velocity Frame (FF). Its origin coincides with that of the follower's body frame. The follower's wind frame would be preferable, since the lift vector is by definition aligned with its z axis , but requires on-line wind estimation or flow sensors that usually are not available on board small UAS. It is preferable over the Predecessor Velocity Frame (PF), since to form the rotation matrix between the FF and the inertial frame the predecessor's absolute velocity does not need to be communicated to the follower.
 
-To dispose of a common reference frame for multiple members of the formation, the \textbf{Leader Speed Frame} (index $ls$) is defined. Its x axis is aligned with the formation leader's NED speed projected on the horizontal plane, its z axis is aligned with the NED frame's z axis, and its y axis completes a right-handed Cartesian coordinate system. I is used to define the separation vectors that make up the formation.
+To dispose of a common reference frame for multiple members of the formation, the \textbf{Leader velocity Frame} (index $l$) is defined. Its x axis is aligned with the formation leader's NED speed projected on the horizontal plane, its z axis is aligned with the NED frame's z axis, and its y axis completes a right-handed Cartesian coordinate system. I is used to define the separation vectors that make up the formation.
 
 \begin{figure}
 \begin{center}
@@ -178,10 +184,11 @@ The trajectory of the formation w.r.t. the local inertial frame is defined by th
 \section{Control design}
 To benefit from significant aerodynamic performance gains, a follower aircraft needs to stay within a narrow spatial window roughly defined by (see e.g. \cite{jake2003f})
 
-{\centering
-$-0.2 b < \Delta y' < -0.1 b$ \\
-$-0.1 b < \Delta z' < 0$ \\
-}
+\begin{align}
+-0.2 b < \Delta y' < -0.1 b \\
+-0.1 b < \Delta z' < 0 
+\label{eq:windowz}
+\end{align}
 
 while the longitudinal separation $\Delta x'$ is less critical due to slow vortex decay.
 It is thus the control objective to drive the follower UAS into this window and stay within in.
@@ -200,14 +207,6 @@ These saturations are time-varying since, including the engine thrust, they are 
 It is assumed that observations of the relative position and relative velocity vector between each UAS and its predecessor are available.
 
 This limitation allows to use low-cost vision-based relative localization techniques, which is a significant advantage taking into account the price range of GNSS Real Time Kinematics systems which would be required for localization with respect to the formation leader or other members of the formation that are now within the field of view of onboard vision sensors.
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=8.4cm]{geometry}    % The printed column width is 8.4 cm.
-\caption{Predecessor-follower geometry}
-\label{fig:geometry}
-\end{center}
-\end{figure}
 
 \subsection{CSMC}
 
@@ -530,7 +529,8 @@ Note that with (\ref{eq:achievableepsilon}), the boundary layer thickness depend
 \section{Simulations}
 \label{sec:simulations}
 
-Both controllers have been evaluated in a simulation environment. In all cases, the vehicle dynamics have been integrated with a forward Euler scheme at a sampling time of $t_{sim} = 10^{-4} \, s$, while the controller sampling time has been varied. While three-dimensional predecessor tracking is performed, only the vertical channel $\Delta p_3$ is considered here for clarity.
+Both controllers have been evaluated in a simulation environment implemented in Matlab\textsuperscript{\tiny \textregistered}/Simulink\textsuperscript{\tiny \textregistered} 
+. In all cases, the closed loop vehicle dynamics have been integrated with a forward Euler scheme. While three-dimensional predecessor tracking is performed, only the vertical channel $\Delta p_3$ is considered here for clarity.
 
 \subsection{Controller parameters}
 
@@ -579,9 +579,9 @@ L_\idxAxis &= U_\idxAxis + 2 A_{w,\idxAxis}
 
 Note that the bounds on $u_{eq,\idxAxis} $ exceed the control saturations $U_\idxAxis$.
 
-For the first vehicle pair, which is formed by the virtual leader and the first aircraft, the predecessor control input bounds expressed by (\ref{eq:assumptionpredecessorinputs}) can easily be tightened by limiting the second derivative of the virtual leader's trajectory. 
+For the first vehicle pair, which is formed by the virtual leader and the first aircraft, the predecessor control input bounds expressed by (\ref{eq:assumptionpredecessorinputs}) can easily be tightened by limiting the second derivative of the virtual leader's trajectory. For the following vehicle pairs, control inputs depend on the sampled closed loop behavior of the controller, which is quite different for the two controllers compared here, as we will see in section \ref{sec:simulations}.
 
-\textcolor{red}{!!!Explain what happens to following pairs, since control input of i becomes predecessor commanded acceleration of i+1 -> fundamentally not mesh stable. Expected result: tracking accuracy can be guaranteed for a certain number of pairs, once exceeded, controls saturate}
+%\textcolor{red}{!!!Explain what happens to following pairs, since control input of i becomes predecessor commanded acceleration of i+1 -> fundamentally not mesh stable. Expected result: tracking accuracy can be guaranteed for a certain number of pairs, once exceeded, controls saturate}
 
 For the DSMC, the entries of the reaching rate matrix $\mbf{\Psi}$ are selected on line to stay within control input limits given the initial error state.
 
@@ -598,12 +598,27 @@ For the DSMC, the entries of the reaching rate matrix $\mbf{\Psi}$ are selected 
 \end{figure}
 
 A variety of approaches has been proposed to simulate the effects of wake trailing vortices on following UAS, mostly based on modified Horseshoe Vortex Models (HVM) ((!!!citethemall)) or Vortex Lattice methods (VLM) ((!!!citethemall)). For the purpose of this work, a HVM with modified core model presented in (\cite{dogan2005modeling}) is used. It is reported to provide predictions that are in good agreement of both VLM models and wind tunnel measurements while being of great simplicity. In the vertical channel, the model predicts incremental aerodynamic lift perturbations as a function of the separation vector between a UAS and its predecessor, see fig. \ref{fig:HSVMincrementalift}.
-A variety of approaches has been proposed to simulate the effects of wake trailing vortices on following UAS, mostly based on modified Horseshoe Vortex Models (HVM) ((citethemall)) or Vortex Lattice methods (VLM) ((citethemall)). For the purpose of this work, a HVM with modified core model presented in (\cite{dogan2005modeling}) is used. It is reported to provide predictions that are in good agreement of both VLM models and wind tunnel measurements while being of great simplicity. The model predicts incremental aerodynamic lift perturbations as a function of the separation vector between a UAS and its predecessor, see fig. \ref{fig:HSVMincrementalift}.
 
 \subsubsection{Atmospheric turbulence}
-Atmospheric turbulence time series are generated according to the Dryden turbulence spectrum. The induced velocities are filtered by transfer functions corresponding to closed loop LQR load factor controllers designed for a small UAS ($b=2.6m$).
+Atmospheric turbulence time series are generated according to the Dryden turbulence spectrum. The induced velocities are filtered by transfer functions corresponding to closed loop LQR load factor controllers designed for a small UAS ($b=2.6m$). See fig. \ref{fig:nwztimeseries} for an example time series of the resulting total vertical load factor perturbations $n_{w,3} = \frac{a_{w,3}}{|\mbf{g}|}$.
 
-\subsubsection{Maneuver}
+\begin{figure}
+\begin{center}
+\includegraphics[width=8.4cm]{nwz-timeseries}    % The printed column width is 8.4 cm.
+\caption{ DSMC controller $10^{-2} s$ sampling time}
+\label{fig:nwztimeseries}
+\end{center}
+\end{figure}
+
+\subsubsection{Benchmark maneuver}
+
+To evaluate the control performance, a benchmark maneuver is performed by a formation of 5 UAS. The vehicles start in a staggered formation with relative separations of $\Delta \mbf{p}_{c,j} = \mbf{R}_{el} (-2b \; b \; b)^T$ for $j=1...4$, where $\mbf{R}_{el}$ denotes the rotation matrix from the leader velocity frame to the local inertial frame. At $t=5 \; s$ the vertical separation is driven to zero, i.e. $\Delta \mbf{p}_{c,j} = \mbf{R}_{el}(-2b \; b \; 0)^T$, and each UAS thus enters the zone of maximum incremental lift, see fig. \ref{fig:HSVMincrementalift}. This corresponds to the perturbation $\Delta \ddot{\mbf{p}}_c$. At $t=11 \;s$ the formation leader performs a climb by $10 \; m$, corresponding to the perturbation $\mbf{a}_{\idxPredecessor}$.
+
+The benchmark maneuver is run with the CSTSMC controller at $T=10^{-3} \; s$ and $T=10^{-2} \; s$. The latter sampling frequency is considered realistic for implementation on board a small UAS. The tracking error $\Delta z = \Delta p_3$ as well the absolute vertical position and the control input is presented in figs. \ref{fig:CSMC1000Hz}, \ref{fig:CSMC100Hz}. While tracking performance is very good in both cases and the tracking error $\Delta z$ stays well within the bounds indicated by (\ref{eq:windowz}), it degrades as expected with lower sampling times. Note that the inputs saturate for large parts of the maneuver, indicating heavy chattering. 
+
+The DSMC, on the other hand provides tracking performance at $T = 10^{-2}$ comparable to that of the CSTSMC at $T = 10^{-2}$, see fig. (\ref{fig:DSMC100Hz}).
+
+This superior performance with respect to lower sampling times is systematically investigated by evaluating the maximum control error and the rms control error over a grid of sampling times, as shown in fig. \ref{fig:errorvssamplingtime}. Note that the rms error and maximum error stays for all sampling times below those of the CSTSMC and evolves more smoothly as the sampling time is varied.
 
 \begin{figure}
 \begin{center}
@@ -633,9 +648,11 @@ Atmospheric turbulence time series are generated according to the Dryden turbule
 \begin{center}
 \includegraphics[width=8.4cm]{CSTSMC-DSMC-error-z-samplingtime.pdf}    % The printed column width is 8.4 cm.
 \caption{Vertical position error measures vs. controller sampling time for CSTSMC and DSMC}
-\label{fig:cst}
+\label{fig:errorvssamplingtime}
 \end{center}
 \end{figure}
+
+\FloatBarrier
 
 \bibliography{./bibliography/bibliographyPhD}             % bib file to produce the bibliography
                                                      % with bibtex (preferred)
