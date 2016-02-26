@@ -616,7 +616,7 @@ To evaluate the control performance, a benchmark maneuver is performed by a form
 
 The benchmark maneuver is run with the CSTSMC controller at $T=10^{-3} \; s$ and $T=10^{-2} \; s$. The latter sampling frequency is considered realistic for implementation on board a small UAS. The tracking error $\Delta z = \Delta p_3$ as well the absolute vertical position and the control input is presented in figs. \ref{fig:CSMC1000Hz}, \ref{fig:CSMC100Hz}. While tracking performance is very good in both cases and the tracking error $\Delta z$ stays well within the bounds indicated by (\ref{eq:windowz}), it degrades as expected with lower sampling times. Note that the inputs saturate for large parts of the maneuver, indicating heavy chattering. 
 
-The DSMC, on the other hand provides tracking performance at $T = 10^{-2}$ comparable to that of the CSTSMC at $T = 10^{-2}$, see fig. (\ref{fig:DSMC100Hz}).
+The DSMC, on the other hand provides tracking performance at $T = 10^{-2}$ comparable to that of the CSTSMC at $T = 10^{-2}$, see fig. (\ref{fig:DSMC100Hz}). The inputs stay at all times confined to the saturation limits and no chattering is to observed.
 
 This superior performance with respect to lower sampling times is systematically investigated by evaluating the maximum control error and the rms control error over a grid of sampling times, as shown in fig. \ref{fig:errorvssamplingtime}. Note that the rms error and maximum error stays for all sampling times below those of the CSTSMC and evolves more smoothly as the sampling time is varied.
 
