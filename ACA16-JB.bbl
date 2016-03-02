@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -30,6 +30,11 @@ Giulietti, F., Pollini, L., and Innocenti, M. (2000).
 \newblock Autonomous formation flight.
 \newblock \emph{Control Systems, IEEE}, 20(6), 34--44.
 
+\bibitem[{Hummel(1982)}]{Hummel1982}
+Hummel, D. (1982).
+\newblock Aerodynamic aspects of formation flight in birds.
+\newblock \emph{Journal of theoretical Biology}.
+
 \bibitem[{Jake et~al.(2003)Jake, Ray, Ennix, and Walsh}]{jake2003f}
 Jake, V., Ray, R., Ennix, K., and Walsh, K. (2003).
 \newblock F/a-18 performance beneffts measured during the autonomous formation
@@ -55,6 +60,11 @@ Rice, C., Gu, Y., Chao, H., Larrabee, T., Gururajan, S., Napolitano, M.,
 \newblock In \emph{2014 International Conference on Unmanned Aircraft Systems
   (ICUAS)}.
 
+\bibitem[{Saban et~al.(2009)Saban, F.Whidborne, and Cooke}]{Saban2009}
+Saban, D., F.Whidborne, J., and Cooke, A. (2009).
+\newblock Simulation of wake vortex effects for uavs in close formation flight.
+\newblock \emph{Aeronautical Journal}.
+
 \bibitem[{Shtessel et~al.(2014)Shtessel, Edwards, Fridman, and
   Levant}]{shtessel2014sliding}
 Shtessel, Y., Edwards, C., Fridman, L., and Levant, A. (2014).
@@ -78,6 +88,12 @@ Turpin, M., Michael, N., and Kumar, V. (2012).
 \newblock Trajectory design and control for aggressive formation flight with
   quadrotors.
 \newblock \emph{Autonomous Robots}, 33(1-2), 143--156.
+
+\bibitem[{Vachon et~al.(2002)Vachon, Ray, Walsh, and Ennix}]{Vachon2002}
+Vachon, M., Ray, R., Walsh, K., and Ennix, K. (2002).
+\newblock \emph{F/A-18 aircraft performance benefits measured during the
+  autonomous formation flight project}, volume 4491.
+\newblock AIAA.
 
 \bibitem[{Weimerskirch et~al.(2001)Weimerskirch, Martin, Clerquin, Alexandre,
   and Jiraskova}]{weimerskirch2001energy}
