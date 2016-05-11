@@ -115,7 +115,7 @@ This paper is structured as follows: section \ref{sec:model} presents the aircra
 \subsection{Coordinate frames}
 The main objective of this work is to provide an efficient control strategy for a formation of $n$ UAS flying in an arbitrary pattern. It is assumed that load factors are tracked (by low level controllers) in each vehicle's body frame (index $b$). 
 %Therefore separation errors are transformed into the body frame for control purposes, decoupling the three axes. 
-The dynamics of each vehicle are defined in a local inertial North-East-Down frame (NED, index $e$). 
+The dynamics of each vehicle are defined in a local inertial North-East-Down frame (NED, index $e$, z axis aligned with the local gravity vector, x axis pointing north, y axis pointing east). 
 %It is convenient to note the relative separations of the vehicles in a frame that approximates the leader's wind frame (which is not available due to the absence of sensors for angle of attack and sideslip angle on small UAS). We define for this purpose the Follower Velocity frame (index $fv$). Its x axis is aligned with the follower's inertial speed projected on the horizontal plane, and its z axis is aligned with the NED frame's z axis. Its origin coincides with that of the predecessor's body frame. 
 
 %The follower's wind frame would be preferable, since the lift vector is by definition aligned with its z axis , but requires on-line wind estimation or flow sensors that usually are not available on board small UAS. It is preferable over the Predecessor Velocity Frame (PF), since to form the rotation matrix between the FF and the inertial frame the predecessor's absolute velocity does not need to be communicated to the follower.

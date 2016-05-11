@@ -28,6 +28,7 @@ energy savings.
 p2c2
 Fig 2.
 Indicate what is north and east in the �e� frame.
+-> Done, added explanation (Jan).
 
 Caption to be expanded to explain. Say what is \Delta p_c
 
