@@ -1,0 +1,8 @@
+The contribution addresses an interesting topic in
+formation flying. 
+
+So far the results are mainly supported
+by MATLAB-simulations, therefore it would be recommended to
+prove the relevance of results in real flight experiments.
+
+answer: not in the given time frame.

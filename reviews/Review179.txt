@@ -1,0 +1,129 @@
+General:
+=======
+Interesting paper with good results. The paper will benefit
+from a bit better explanation in places, systematic
+notation and a few more intermediate steps. It would also
+be good to explain why such high sampling rate is needed
+for the outer loop wrt to its BW and what are the relations
+to the inner BW as well as coupling with the inner loop,
+which is there in reality.
+Please be systematic with vector/matrix bracket notation.
+Both () and [] are used for the same. [] is recommended,
+but please noel one.
+In 3.3 it appear that all content is just repeat from the
+Galzi paper; is that correct ?
+
+Details:
+======
+p2column1
+�Some interesting control�.�, 
+would be good to say something about what is interesting,
+else better to leave it out.
+
+1st sentence of 2.1 belongs better in the introduction
+
+Please say where the follower need to keep pos. const. for
+energy savings.
+
+p2c2
+Fig 2.
+Indicate what is north and east in the �e� frame.
+
+Caption to be expanded to explain. Say what is \Delta p_c
+
+Will be useful to also indicate p_i and p_{i-1} as used
+later and would specify the 2 center of mass positions
+
+p2c2 above (1)
+Inertial frame is undefined. Please define clearly all
+frames used.
+
+�tracked by fast inner��
+please explain what tracking means in this context; what is
+controller wrt what by the inner loops
+
+Eq. (7)
+Please do not reuse variables adding new things to them as
+in last term. Use a new one so the reader has a clear
+definition of a variable through the paper.
+
+p3c1
+\Delta p(t) does not seem to be the relative position error
+between i and i-1. Only if \Delta p_c = 0. Please make text
+clearer.
+
+What are the stability margins for the inner loops desired
+?
+Outer loop is not linear so asymptotic is used, but it
+gives no margins. Can a metric for the margin be provided ?
+What is the BW relationship between inner/outer loops ?
+
+2.3
+Max thrust�. but should control surfaces not be addressed
+as they are more the actuators than thrust or ?
+
+p3c1
+sec. 3
+wind frame is undefined !!!
+Make definition and illustration of \Delta p�
+
+p3c2
+(27) also here variables are recycled and not contain more
+than earlier. Recommended to avoid and define new variable
+
+p4c1
+Please define/explain what is �matching condition�.
+
+3.3
+Why can the inner loop controller not track��. Please
+explain why.
+
+Please explain better the relative degree r=[1,1,1]^T. It
+is not clear to the reader.
+
+(34) please use same font for all the �p� indices
+
+(37-38) are not so very clear. Please provide a bit more
+explanation.
+
+What is the justification to use a simple Euler
+discretisation rather than a proper Z-transform, the latter
+being 100% correct at the sampling points ?
+
+p4c2
+Can you not obtain a sliding that is correct at the samples
+by means of a Z-transform ?
+
+\Phi�(k) below (45) not so clear as \Phi�(k) = \Phi�(k-1)
+means it is constant ?
+
+Please explain how you get (47).
+
+p5c1
+(49-52) need better explanation as it is not really clear
+what is done here.
+
+Any problems with local minima in (53). Please address the
+issue.
+
+What is the justification to use a simple and not very
+accurate forward Euler for simulation, when the default
+solver in Matlab is using a Kutta Merson or similar with
+better precision ?
+
+Can you say something about sensitivity to sensor noise ?
+
+p5c2
+Not clear how \Delta x�, \Delta x�, y�, z� all can be wing
+tip to wing tip. Please elaborate a bit.
+
+p6c1
+What is the frequency of the �BW� since you need to sample
+at 1kHz ?
+
+The latter sampling frequency => The latter sampling time
+
+p6c2
+Please try to avoid any line markers like o, * etc, as it
+clutter the view completely. Recommend to use well
+contrasted different colors.

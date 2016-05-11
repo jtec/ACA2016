@@ -1,0 +1,48 @@
+Generally, the paper presents well the implementation of
+Discrete Sliding mode control for UAS formation flight
+under information constraints.
+ 
+Some points 
+
+Abstract
+-Correct the acronym: Predictive Discrete sliding mode
+control :PDSMC
+-In this paper, information constraint is because of
+limited type of sensors in small UAS, which will give
+relatively small information about the flight dyanamics of
+the systems. But in the abstract the authors mentioned
+about communication bandwidth constraints, which is not
+addressed in the entire paper.
+
+Section 1 
+At description of the paper output at the end of  the
+introduction part,  the statement that describe the DSMS,
+PDSMS and TSCMS are too long and confusing. The authors are
+stating that they will do a comparison between the above
+sliding mode controllers, but it misses the point which
+with which are going to be compared in the result section.
+
+Section 3
+-In section 3.1, the assumption in the information
+constraint is that only relative position and relative
+velocity vector is available to between each UAS and its
+predecessor. But in the section 3.2, the authors stated, 
+�relative position,&#8710;p_c, and its first and second
+derivative is available to each follower� which contradicts
+the first assumption.
+-How valid is the point  when we consider the three axis
+are decoupled by the inner load factor controller, better
+to site some reference before proceeding to SISO design.
+-Define T as sampling period in equation (40), in the Euler
+discretization.
+-In the Remark, use comma than hyphen to separate
+explanation of a clause, it will increase the readability
+and the flow of the ideas.
+
+Section 4
+-Better to use different colors in the simulation graphs.
+-Tracking error in &#8710;z is stated as non negative in
+equation (17), but in figure 5, and 7 we have a small
+values above zero in the range of &#12310;10&#12311;^(-3), 
+small amount. Is it out just a numerical error ? (just
+being curious)
