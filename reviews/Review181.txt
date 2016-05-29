@@ -5,7 +5,7 @@ under information constraints.
 Some points 
 
 Abstract
--Correct the acronym: Predictive Discrete sliding mode
+done -Correct the acronym: Predictive Discrete sliding mode
 control :PDSMC
 -In this paper, information constraint is because of
 limited type of sensors in small UAS, which will give
