@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  29 MAY 2016 18:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  29 MAY 2016 19:48
 entering extended mode
 **ACA16-JB.tex
 (ACA16-JB.tex
@@ -725,7 +725,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <images/frames.pdf, id=17, 187.47655pt x 137.76773pt>
 File: images/frames.pdf Graphic file (type pdf)
  <use images/frames.pdf>
-Package pdftex.def Info: images/frames.pdf used on input line 129.
+Package pdftex.def Info: images/frames.pdf used on input line 131.
 (pdftex.def)             Requested size: 210.55022pt x 154.72763pt.
 
 [2 <./images/frames.pdf>] [3] [4]
@@ -733,23 +733,23 @@ Package pdftex.def Info: images/frames.pdf used on input line 129.
 File: images/incrementallift.pdf Graphic file (type pdf)
 
 <use images/incrementallift.pdf>
-Package pdftex.def Info: images/incrementallift.pdf used on input line 571.
-(pdftex.def)             Requested size: 239.00298pt x 260.9473pt.
- [5 <./images/incrementallift.pdf>]
-<images/nwz-timeseries.pdf, id=75, 225.59282pt x 110.1415pt>
+Package pdftex.def Info: images/incrementallift.pdf used on input line 575.
+(pdftex.def)             Requested size: 125.19194pt x 136.68668pt.
+
+<images/nwz-timeseries.pdf, id=53, 225.59282pt x 110.1415pt>
 File: images/nwz-timeseries.pdf Graphic file (type pdf)
 
 <use images/nwz-timeseries.pdf>
-Package pdftex.def Info: images/nwz-timeseries.pdf used on input line 581.
+Package pdftex.def Info: images/nwz-timeseries.pdf used on input line 585.
 (pdftex.def)             Requested size: 225.59225pt x 110.14122pt.
 
-Overfull \hbox (3.74489pt too wide) in paragraph at lines 578--586
+Overfull \hbox (3.74489pt too wide) in paragraph at lines 582--590
  \OT1/cmr/bx/it/10 At-mo-spheric tur-bu-lence [] \OT1/cmr/m/n/10 At-mo-spheric 
 tur-bu-lence time
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 587--589
+[5 <./images/incrementallift.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 591--593
 
  []
 
@@ -760,7 +760,7 @@ File: images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (t
 ype pdf)
  <use images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.
-pdf used on input line 593.
+pdf used on input line 597.
 (pdftex.def)             Requested size: 251.8104pt x 284.54674pt.
 
 <images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=77, 384.43625pt x
@@ -769,7 +769,7 @@ File: images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (ty
 pe pdf)
  <use images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.p
-df used on input line 600.
+df used on input line 604.
 (pdftex.def)             Requested size: 251.81052pt x 284.526pt.
 
 <images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=78, 379.91937pt x 3
@@ -778,7 +778,7 @@ File: images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (type
  pdf)
  <use images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf
- used on input line 608.
+ used on input line 612.
 (pdftex.def)             Requested size: 251.81421pt x 284.52745pt.
 
 <images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=79, 379.91937pt x 
@@ -787,7 +787,7 @@ File: images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (typ
 e pdf)
  <use images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pd
-f used on input line 615.
+f used on input line 619.
 (pdftex.def)             Requested size: 251.81421pt x 284.54117pt.
 
 <images/error-z-vs-samplingtime.pdf, id=80, 229.35687pt x 290.56557pt>
@@ -795,8 +795,8 @@ File: images/error-z-vs-samplingtime.pdf Graphic file (type pdf)
 
 <use images/error-z-vs-samplingtime.pdf>
 Package pdftex.def Info: images/error-z-vs-samplingtime.pdf used on input line 
-623.
-(pdftex.def)             Requested size: 226.63704pt x 256.07535pt.
+627.
+(pdftex.def)             Requested size: 157.2135pt x 199.16928pt.
 
 <images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-turbulen
 ceonlyfirstUAS.pdf, id=81, 225.59282pt x 154.82843pt>
@@ -806,8 +806,11 @@ bulenceonlyfirstUAS.pdf Graphic file (type pdf)
 <use images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-turb
 ulenceonlyfirstUAS.pdf>
 Package pdftex.def Info: images/erroramplification-DSMC-100Hz-TIMESCALESEPARATI
-ON-turbulence=1-turbulenceonlyfirstUAS.pdf used on input line 635.
-(pdftex.def)             Requested size: 251.8223pt x 142.27614pt.
+ON-turbulence=1-turbulenceonlyfirstUAS.pdf used on input line 639.
+(pdftex.def)             Requested size: 165.83453pt x 113.81102pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -823,18 +826,18 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [6 <./images/nwz-timeseries.pdf> <./images/TSCSMC-1000Hz-TIMESCALESEPARATION-tu
 rbulence=1.pdf> <./images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>]
-[7 <./images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf> <./images/PDSMC-1
-00Hz-TIMESCALESEPARATION-turbulence=1.pdf> <./images/error-z-vs-samplingtime.pd
-f> <./images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-tur
-bulenceonlyfirstUAS.pdf>] (ACA16-JB.bbl) [8] (ACA16-JB.aux) ) 
+(ACA16-JB.bbl [7 <./images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf> <./
+images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf> <./images/error-z-vs-s
+amplingtime.pdf> <./images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-tu
+rbulence=1-turbulenceonlyfirstUAS.pdf>]) [8] (ACA16-JB.aux) ) 
 Here is how much of TeX's memory you used:
- 4856 strings out of 493698
- 63360 string characters out of 3141982
- 140717 words of memory out of 3000000
- 8080 multiletter control sequences out of 15000+200000
+ 4853 strings out of 493698
+ 63267 string characters out of 3141982
+ 140648 words of memory out of 3000000
+ 8077 multiletter control sequences out of 15000+200000
  12819 words of font info for 52 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 35i,16n,26p,1371b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,16n,26p,1325b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\j.bolti
 ng\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm0600.pk><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
@@ -853,7 +856,7 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2
 nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ACA16-JB.pdf (8 pages, 1032882 bytes).
+Output written on ACA16-JB.pdf (8 pages, 1032368 bytes).
 PDF statistics:
  269 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

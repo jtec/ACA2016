@@ -10,8 +10,10 @@ which is there in reality.
 Please be systematic with vector/matrix bracket notation.
 Both () and [] are used for the same. [] is recommended,
 but please noel one.
+
 In 3.3 it appear that all content is just repeat from the
 Galzi paper; is that correct ?
+- yes
 
 Details:
 ======
@@ -19,11 +21,14 @@ p2column1
 �Some interesting control�.�, 
 would be good to say something about what is interesting,
 else better to leave it out.
+- removed
 
 1st sentence of 2.1 belongs better in the introduction
+- moved sentence to Section 3 as problem statement.
 
 Please say where the follower need to keep pos. const. for
 energy savings.
+- See after equ. 16,17: in the predecessor's wind frame
 
 p2c2
 Fig 2.
@@ -31,100 +36,135 @@ Indicate what is north and east in the �e� frame.
 -> Done, added explanation (Jan).
 
 Caption to be expanded to explain. Say what is \Delta p_c
+- defined later, eq. 26
 
 Will be useful to also indicate p_i and p_{i-1} as used
 later and would specify the 2 center of mass positions
+- I think it's pretty clear that p = (x y z)
 
 p2c2 above (1)
 Inertial frame is undefined. Please define clearly all
 frames used.
+- replaced by "NED frame"
 
 �tracked by fast inner��
 please explain what tracking means in this context; what is
 controller wrt what by the inner loops
+- added that inner loop dynamics not taken into account.
 
 Eq. (7)
 Please do not reuse variables adding new things to them as
 in last term. Use a new one so the reader has a clear
 definition of a variable through the paper.
+- good point, !!!To be adressed!!!
 
 p3c1
 \Delta p(t) does not seem to be the relative position error
 between i and i-1. Only if \Delta p_c = 0. Please make text
 clearer.
+- ??? \Delta p(t) is the relative position error, i.e. the difference between the
+commaned and the actual relative position.
 
 What are the stability margins for the inner loops desired
 ?
 Outer loop is not linear so asymptotic is used, but it
 gives no margins. Can a metric for the margin be provided ?
 What is the BW relationship between inner/outer loops ?
+- made explicit that inner loop dynamics are not considered
 
 2.3
 Max thrust�. but should control surfaces not be addressed
 as they are more the actuators than thrust or ?
+- It can safely be assumed that the control surfaces and maximum deflections
+are sufficently large to reach the performance limits, i.e. stall.
 
 p3c1
 sec. 3
 wind frame is undefined !!!
+- standard frame in aeronautics
+
 Make definition and illustration of \Delta p�
+\Delta p is illustrated in Fig. 2
 
 p3c2
 (27) also here variables are recycled and not contain more
 than earlier. Recommended to avoid and define new variable
+- no, \Phi_u has not been used before, implicitly defined in eqs. 24, 25
 
 p4c1
 Please define/explain what is �matching condition�.
+- standard term in sliding mode control, not on 6 pages.
 
 3.3
 Why can the inner loop controller not track��. Please
 explain why.
+- really?
 
 Please explain better the relative degree r=[1,1,1]^T. It
 is not clear to the reader.
+- stanndard term in SMC
 
 (34) please use same font for all the �p� indices
+- all in italics now
 
 (37-38) are not so very clear. Please provide a bit more
 explanation.
+- cant't be clear, just very short summary of CSMC, details are in Galzi paper
 
 What is the justification to use a simple Euler
 discretisation rather than a proper Z-transform, the latter
 being 100% correct at the sampling points ?
+- z transfrom = discrete-time equivalent of Laplace transformation -> ???
+- we should look into the discretization method though
 
 p4c2
 Can you not obtain a sliding that is correct at the samples
 by means of a Z-transform ?
+- Does not remove issue of inter-sample overshoot in TSCSMC
 
 \Phi�(k) below (45) not so clear as \Phi�(k) = \Phi�(k-1)
 means it is constant ?
+- assuming \Phi(k) = \Phi(k-1) for disturbance estimation - sounds clear to me.
+- done: forgot some subscrips (Phi -> Phi_u)
 
 Please explain how you get (47).
+- no space
 
 p5c1
 (49-52) need better explanation as it is not really clear
 what is done here.
+- no space
 
 Any problems with local minima in (53). Please address the
 issue.
+- good point, but no space and not investigated yet
 
 What is the justification to use a simple and not very
 accurate forward Euler for simulation, when the default
 solver in Matlab is using a Kutta Merson or similar with
 better precision ?
+- simulating the system with standard Simulink solver drastically changes the results, more chattering
+ in the DSMC and PDSMC
+- !!! needs to be investigated further
 
 Can you say something about sensitivity to sensor noise ?
+- Added in conclusion that sensor noise will be considered in future work
 
 p5c2
 Not clear how \Delta x�, \Delta x�, y�, z� all can be wing
 tip to wing tip. Please elaborate a bit.
+- it's a vector
 
 p6c1
 What is the frequency of the �BW� since you need to sample
 at 1kHz ?
+- ???
 
 The latter sampling frequency => The latter sampling time
+- corrected
 
 p6c2
 Please try to avoid any line markers like o, * etc, as it
 clutter the view completely. Recommend to use well
 contrasted different colors.
+- this is by design to enable black&white printing

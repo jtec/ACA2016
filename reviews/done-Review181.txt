@@ -5,14 +5,18 @@ under information constraints.
 Some points 
 
 Abstract
-done -Correct the acronym: Predictive Discrete sliding mode
+-Correct the acronym: Predictive Discrete sliding mode
 control :PDSMC
--In this paper, information constraint is because of
+- done 
+
+- In this paper, information constraint is because of
 limited type of sensors in small UAS, which will give
 relatively small information about the flight dyanamics of
 the systems. But in the abstract the authors mentioned
 about communication bandwidth constraints, which is not
 addressed in the entire paper.
+- removed, pretty vague statement anyway, very high bandwidths could be achieved
+economically e.g. by using DW1000 modems
 
 Section 1 
 At description of the paper output at the end of  the
@@ -21,6 +25,7 @@ PDSMS and TSCMS are too long and confusing. The authors are
 stating that they will do a comparison between the above
 sliding mode controllers, but it misses the point which
 with which are going to be compared in the result section.
+-  sounds pretty clear to me
 
 Section 3
 -In section 3.1, the assumption in the information
@@ -30,19 +35,32 @@ predecessor. But in the section 3.2, the authors stated,
 �relative position,&#8710;p_c, and its first and second
 derivative is available to each follower� which contradicts
 the first assumption.
+- the reviewer confuses the relative position and the commanded relative position
+
 -How valid is the point  when we consider the three axis
 are decoupled by the inner load factor controller, better
 to site some reference before proceeding to SISO design.
+- valid criticism, 3 SISO controllers could be used. However, 
+ doing MIMO, equations are more elegant and succinct in vector notation.
+
 -Define T as sampling period in equation (40), in the Euler
 discretization.
+-done
+
 -In the Remark, use comma than hyphen to separate
 explanation of a clause, it will increase the readability
 and the flow of the ideas.
+- used parentheses' instead
 
 Section 4
 -Better to use different colors in the simulation graphs.
+- disagree, does not go well with black&white prints of the article
+
 -Tracking error in &#8710;z is stated as non negative in
 equation (17), but in figure 5, and 7 we have a small
 values above zero in the range of &#12310;10&#12311;^(-3), 
 small amount. Is it out just a numerical error ? (just
 being curious)
+- Equation 17 defines requirements for maximum aerodynamic gain, 
+figures 5 and 7 show actual vertical position error in simulation - looks like
+the reviewer got these two mixed up?
