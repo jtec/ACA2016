@@ -31,6 +31,8 @@
 \newcommand{\idxSample}{{\ensuremath{k}}}
 \newcommand{\idxAxis}{{\ensuremath{p}}}
 \newcommand{\Francois}{\mbox{Fran\c{c}ois Defa$\ddot{\textrm{y}}$}}
+\newcommand{\figheight}{4.8cm}
+\newcommand{\figwidth}{6cm}
 
 \begin{document}
 \begin{frontmatter}
@@ -54,12 +56,12 @@
 % Abstract of not more than 250 words.
 \begin{abstract}
 This paper is concerned with a new control strategy  based on discrete sliding mode control of small Unmanned Aerial Systems (UAS) in tight formation flight under information constraints. 
-Tight formation flight enables, among other advantages, significant performance benefits due to wake vortex interactions. 
+%Tight formation flight enables, among other advantages, significant performance benefits due to wake vortex interactions. 
 %To benefit from other aircraft's wake vortices, follower aircraft need to remain inside a small spatial window behind their predecessor. Therefore high-performance relative position control becomes an important issue.
-A discrete robust control strategy based on the sliding mode approach and a leader-follower scheme is proposed to achieve the desired flight performances while assuming realistic information constraints imposed by the availability of inexpensive relative localization sensors.
+A discrete robust control strategy based on the sliding mode approach and a leader-follower scheme is proposed to achieve the desired flight performances while assuming realistic information constraints.
 % and preserving scalability with respect to formation size.
-For the discrete sliding mode controller (DSMC), a predictive reaching law is compared to a linear reaching law. This predictive discrete sliding mode control (PDSMC) strategy allows to avoid actuator saturation by solving an optimization problem at each time step.\\
-Also, this paper presents a meaningful study and comparison of the two discrete sliding mode control designs and  time sampling continuous sliding mode control (TSCSMC). 
+A predictive reaching law is compared to a linear reaching law. This predictive discrete sliding mode control (PDSMC) strategy allows taking into account hard actuator constraints by solving an optimization problem at each time step.\\
+Also, this paper presents a meaningful study and comparison of the two discrete sliding mode control designs and time sampling continuous sliding mode control (TSCSMC). 
 % Indeed, it is important to study the performance differences between the two approaches that allow to choose the best strategy to be used to solve the considered problem. 
 Here, the comparison focuses on the effect of discrete sampling on the control error analytically and in simulation. Effects on mesh stability are evaluated in simulation.
 Simulation results of a flight scenario with two different sampling frequencies demonstrate the efficiency of the proposed control strategy and show clearly the effect of the sampling time on the formation flight performance of the UAS obtained by the considered control strategies.
@@ -94,23 +96,29 @@ The capability of autonomous formation flight has the potential to significantly
 Formations of small, inexpensive fixed-wing UAS allow for the sharing of remote sensing functionality, mission-level redundancy and range enhancements due to aerodynamic 
 interactions widely exploited by migratory birds. 
 %Aircraft formation flight can enhance the fuel efficiency thanks to the aerodynamics and the induced airflow by leading aircraft, in the same way that the migratory birds use some formation patterns. 
-Indeed, in \cite{weimerskirch2001energy} authors have measured heart rates as an estimate of energy expenditure in imprinted great white pelicans (Pelecanus onocrotalus) trained to fly in 'V' formation, and show that these birds save a significant amount of energy by flying in formation. This advantage is probably a principal reason for the evolution of formation flight in large birds that migrate in groups.\\
-\begin{figure}
-\begin{center}
-\includegraphics[width=\columnwidth,height=6cm]{juppmehrbionik}    % The printed column width is 8.4 cm.
-\vspace{-1cm}
-\caption{Formation flight: migrant birds inspiring aircraft performance evolution}
-\label{fig:birds}
-\end{center}
-\end{figure}
+%Indeed, in \cite{weimerskirch2001energy} authors have measured heart rates as an estimate of energy expenditure in imprinted great white pelicans (Pelecanus onocrotalus) trained to fly in 'V' formation, and show that these birds save a significant amount of energy by flying in formation. This advantage is probably a principal reason for the evolution of formation flight in large birds that migrate in groups.\\
+%\begin{figure}
+%\begin{center}
+%\includegraphics[width=\columnwidth]{juppmehrbionik}    % The printed column width is 8.4 cm.
+%\vspace{-1cm}
+%\caption{Formation flight: migrant birds inspiring aircraft performance evolution}
+%\label{fig:birds}
+%\end{center}
+%\end{figure}
 %Also, this strategy has a lot of advantages as sharing of remote sensing functionality, mission-level redundancy, range enhancements due to aerodynamic interactions and energy saving. 
-Based on that, the NASA AFF program has demonstrated the feasibility of this approach for manned fighter aircraft in a 2-aircraft configuration. Maximum fuel flow savings of $18\%$ for the follower are reported (\cite{Vachon2002}). This emphasizes the importance of formation flight since no structural changes have to be made to the aircraft to gain considerable fuel savings.\\
-Recently, both academical and industrial communities have been very interested in the formation flight of manned aircraft and UAS. In \cite{wolfe1996decentralized}, decentralized control is presented to increase the efficiency of formation flight of five aircraft in a single line. These controllers are derived from a linear model and tested on a linear simulation incorporating a vortex-lattice aerodynamics routine. Another interesting study in \cite{thien2008effects} focuses on the effect of the leader's position and shape on aerodynamics performances of a given V flight formation. \\
+The NASA AFF program has demonstrated the feasibility of this approach for manned fighter aircraft in a 2-aircraft configuration. Maximum fuel flow savings of $18\%$ for the follower are reported (\cite{Vachon2002}). 
+%This emphasizes the importance of formation flight since no structural changes have to be made to the aircraft to gain considerable fuel savings.\\
+Recently, both academical and industrial communities have been very interested in the formation flight of manned aircraft and UAS. In \cite{wolfe1996decentralized}, decentralized control is presented to increase the efficiency of formation flight of five aircraft in a single line.
+% These controllers are derived from a linear model and tested on a linear simulation incorporating a vortex-lattice aerodynamics routine. 
+%Another interesting study in \cite{thien2008effects} focuses on the effect of the leader's position and shape on aerodynamics performances of a given V flight formation. \\
 %Some interesting control solutions for autonomous formation flight were introduced in \cite{giulietti2000autonomous}. 
-In the last decade, a lot of researchers have focused on improving the control strategies to enhance the formation flight performance. A suitable control strategy for  controlling a team of micro-aerial vehicles moving quickly through a three-dimensional environment while maintaining a tight formation is presented in \cite{turpin2012trajectory}. Moreover, an interesting control performance analysis for autonomous close formation flight experiments has been achieved in \cite{rice2014control}.\\
-In this paper, a discrete robust sliding mode control strategy is proposed to manage the formation flight of UAS. Indeed, sliding mode control has been proved as a very efficient implementable solution for ground vehicle platooning (see \cite{ferrara2008sliding} and \cite{zou2013distributed}). Also, the sliding mode control is a very efficient and robust approach regarding environmental disturbances to ensure good position tracking performances. 
+%In the last decade, a lot of researchers have focused on improving the control strategies to enhance the formation flight performance. 
+A suitable control strategy for  controlling a team of micro-aerial vehicles moving quickly through a three-dimensional environment while maintaining a tight formation is presented in \cite{turpin2012trajectory}. \\
+%Moreover, an interesting control performance analysis for autonomous close formation flight experiments has been achieved in \cite{rice2014control}.\\
+%In this paper, a discrete robust sliding mode control strategy is proposed to manage the formation flight of UAS. Indeed, 
+Sliding mode control has been proved as a very efficient implementable solution for ground vehicle platooning (see \cite{ferrara2008sliding} and \cite{zou2013distributed}). Also, the sliding mode control is a very efficient and robust approach regarding environmental disturbances to ensure good position tracking performances. 
 Recently there has been some interest in predictive sliding mode control techniques (see e.g. \cite{perez2010robust,houda2013new}). They offer a combination of the attractive properties of Sliding Mode control - a straightforward design procedure and insensitivity to perturbations - with those of Model Predictive Control (MPC): including hard input and state constraints into the controller design.\\
-Here, the authors provide a robust discrete sliding mode control solution to manage the tight formation flight of multiple UAS considering external disturbances due to atmospheric turbulence and the predecessor's wake. Then, a comparison between two discrete time sliding mode control strategies (Discrete sliding mode control (DSMC) with linear reaching law and Predictive Discrete Sliding Mode Control (PDSMC)) and the discretization of a time continuous sliding mode controller (Time Sampled Continuous Sliding Mode Control TSCSMC) from the literature is presented. It demonstrates that the discretization of the time continuous designed controller decreases the tracking performances and the robustness regarding environmental disturbances.
+Here, the authors provide a robust discrete sliding mode control solution to manage the tight formation flight of multiple UAS considering external disturbances due to atmospheric turbulence and the predecessor's wake. A comparison between two discrete time sliding mode control strategies  and the discretization of a time continuous sliding mode controller from the literature is presented. It demonstrates that the discretization of the time continuous designed controller decreases the tracking performances and the robustness regarding environmental disturbances.
 Both the DSMC and the PDSMC are shown to offer better tracking performances for realistic sampling times.\\
 This paper is structured as follows: section \ref{sec:model} presents the aircraft model, section \ref{sec:controldesign} presents the TSCSMC, the DSMC, and the PDSMC controller designs, simulation results are given in section \ref{sec:simulations} and section \ref{sec:conclusion} provides a short summary and an outlook of future extensions to our approach.
 \section{Model}
@@ -128,7 +136,7 @@ The dynamics of each vehicle are defined in a local inertial North-East-Down fra
 Being induced by the aerodynamic flow, the wake vortices keep their position in the predecessor's wind frame. For maximum energy savings, the follower thus needs to keep its relative position constant in this frame. Since small UAS typically are not being equipped with sensors for angle of attack and side slip angle, the predecessor's planar velocity frame (index $p$) is used as an approximation. Its x axis is aligned with the NED velocity vector projected on the horizontal plane of the NED frame, its z axis is aligned with the NED frame's z axis, and its y axis completes a right-handed Cartesian coordinate system, see fig. \ref{fig:frames}. 
 \begin{figure}
 \begin{center}
-\includegraphics[width=7.4cm]{frames.pdf}    % The printed column width is 8.4 cm.
+\includegraphics[width=5.4cm]{frames.pdf}    % The printed column width is 8.4 cm.
 \caption{Predecessor-follower geometry longitudinal}
 \label{fig:frames}
 \end{center}
@@ -174,9 +182,9 @@ Considering two UAS \idxFollower  and \idxPredecessor in a leader-follower confi
  - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t)
 \end{align}
 where $\Delta \mbf{p}(t)$ is the relative position error between UAS \idxFollower and its predecessor \idxPredecessor, $\Delta \mbf{v}(t)$ is the corresponding relative velocity error, $\Delta \mbf{p}_c(t)$ is the desired relative position to the predecessor, $\mbf{a}_\idxPredecessor(t)$ are accelerations of the predecessor w.r.t. to the NED frame.
-The presented model is essentially of the same type as that used in  \cite{galzi2006uav} and provides the benefit of being vehicle-agnostic, as the specific vehicle dynamics are covered by the inner loop load factor controllers. On the other hand, perturbations $\mbf{a}_w$ and control input saturations are specific to a given vehicle and mission environment. It covers rotary wings as well as fixed wing UAS, which are the focus of this work.
-\subsubsection{\textbf{Formation trajectory}}
-The trajectory of the formation w.r.t. the local inertial frame is defined by the nominal trajectory of a virtual leader aircraft.
+The presented model is essentially of the same type as that used in  \cite{galzi2006uav} and provides the benefit of being vehicle-agnostic, as the specific vehicle dynamics are covered by the inner loop load factor controllers. On the other hand, perturbations $\mbf{a}_w$ and control input saturations are specific to a given vehicle and mission environment. %It covers rotary wings as well as fixed wing UAS, which are the focus of this work.
+%\subsubsection{\textbf{Formation trajectory}}
+%The trajectory of the formation w.r.t. the local inertial frame is defined by the nominal trajectory of a virtual leader aircraft.
 %Arbitrary shapes of the formation can be defined by the relative separation vectors $\Delta \mbf{p}$. 
 \subsection{Input saturations}
 For a fixed-wing UAS, the maximum load factors are naturally limited by the maximum thrust of the engine and the aerodynamic parameters of the aircraft, such as the stall angle $\alpha_{max}$, leading to saturations on the commanded load factors
@@ -194,7 +202,7 @@ Saturations on the virtual control input (\ref{eq:defushort}) can be derived fro
 with $\idxAxis = 1...3$.
 \section{Control design}
 \label{sec:controldesign}
-The main objective of this work is to provide an efficient control strategy for a formation of $n$ UAS flying in an arbitrary pattern.
+%The main objective of this work is to provide an efficient control strategy for a formation of $n$ UAS flying in an arbitrary pattern.
 To benefit from significant aerodynamic performance gains, a follower aircraft needs to stay within a narrow spatial window roughly defined by (see e.g. \cite{jake2003f})
 \begin{align}
 -0.2 b < \Delta y' < -0.1 b \\
@@ -202,10 +210,9 @@ To benefit from significant aerodynamic performance gains, a follower aircraft n
 \label{eq:windowz}
 \end{align}
 with the wingspan $b$, while the longitudinal separation $\Delta x'$ is less critical due to slow vortex decay. The wingtip-to-wingtip separation vector $\Delta \mbf{p'} = ( \Delta x' \; \Delta y' \; \Delta z')^T$ is defined in the predecessor wind frame.
-It is thus the control objective to drive the follower UAS into this window and stay within it.
 \subsection{Information constraints}
 It is assumed that only observations of the relative position and relative velocity vector between each UAS and its predecessor are available.
-This allows for using low-cost vision-based relative localization techniques, which is a significant advantage taking into account the price range of GNSS RTK (Global Navigation Satellite System Real Time Kinematics) systems which would be required for localization with respect to the formation leader or other members of the formation that are not within the field of view of on-board vision sensors.
+%This allows for using low-cost vision-based relative localization techniques, which is a significant advantage taking into account the price range of GNSS RTK (Global Navigation Satellite System Real Time Kinematics) systems which would be required for localization with respect to the formation leader or other members of the formation that are not within the field of view of on-board vision sensors.
 
 \subsection{Sliding surface design}
 It is the control objective to drive the system to the sliding surface defined by
@@ -213,10 +220,10 @@ It is the control objective to drive the system to the sliding surface defined b
 \mbf{\sigma}(t) &= \mbf{G}\mbf{x}(t)
 \label{eq:defsigmaconti-} \\
 \mbf{x}(t) &=
-\begin{pmatrix}
-\Delta \mbf{p}(t)\\
+(
+\Delta \mbf{p}(t) \;
 \Delta \mbf{v}(t)
-\end{pmatrix}
+)^T
 \end{align}
 where $ \mbf{G} \in \mathbb{R}^{3 \times 6}$ and, once reached, to keep it on it for all subsequent times $t \geq t^*$. In the following, for the continuous-time case, the dependence on time is dropped for notational convenience. With
 \begin{align}
@@ -232,16 +239,16 @@ the position error dynamics in sliding mode ($\mbf{\sigma} = \mbf{0}$) are the f
 \begin{bmatrix}
 \mbf{G}_1 \mbf{G}_2
 \end{bmatrix}
-\begin{pmatrix}
-\Delta \mbf{p}\\
+(
+\Delta \mbf{p} \;
 \Delta \mbf{v}
-\end{pmatrix} \\
+)^T \\
 \mbf{\Delta} \dot{\mbf{p}}
 &= - \mbf{G}_2^{-1} \mbf{G}_1 \mbf{\Delta} \mbf{p}
 \label{eq:pdynwhilesliding}
 \end{align}
 Selecting $- \mbf{G}_2^{-1} \mbf{G}_1$ as Hurwitz ensures that $\Delta \mbf{p}$ asymptotically converges to zero while in sliding mode.\\
-Mesh stability is a feature of a three-dimensional formation of vehicles that allows separation errors to stay locally contained (see e.g. \cite{Pant2002}). In other words, separation errors between a pair of vehicles are not amplified towards the neighboring vehicle pairs. More vehicles can be added to a mesh stable formation without changing the local controllers, providing scalability. It is a well known fact (\cite{Pant2002}) that linear controllers with local feedback information are mesh unstable.
+Mesh stability is a feature of a three-dimensional formation of vehicles that allows separation errors to stay locally contained. It is a well known fact (\cite{Pant2002}) that linear controllers with local feedback information are mesh unstable.
 While in sliding mode, the position error dynamics are by definition confined to (\ref{eq:pdynwhilesliding}), independently of adjacent separation errors, implying mesh stability if the system can be kept in sliding mode.
 The open loop sliding variable dynamics are given as follows:
 \begin{align}
@@ -276,10 +283,10 @@ The  desired relative position $\Delta \mbf{p}_c$ and its first and second deriv
 while the known perturbations are redefined as $\mbf{\Phi}_k$
 \begin{align}
 \mbf{\Phi}_k &= 
-\begin{pmatrix}
-\Delta \mbf{v} \\
+(
+\Delta \mbf{v} \;\;
  - \Delta \ddot{\mbf{p}}_c
-\end{pmatrix} 
+)^T
 \end{align}
 further defining
 \begin{align}
@@ -490,8 +497,8 @@ for $\idxAxis = 1...3$.
 Note that with (\ref{eq:achievableepsilon}), the boundary layer thickness depends quadratically on the sampling time. Note also that to minimize the boundary layer thickness, small diagonal entries of $\mbf{\Psi}$ are desirable. At the same time, the initial system state may be far off the sliding surface, limiting the choice of $\mbf{\Psi}$ to avoid control input saturations. 
 \subsection{PDSMC}
 To join these conflicting requirements, we use a time-varying reaching law based on Model Predictive Control, leading to a Predictive Discrete Sliding Mode Controller (PDSMC). 
-It is similar to what has been proposed by \cite{houda2013new}. In contrast to \cite{houda2013new}, we take hard constraints on input magnitude and rate saturations into account.
-As the linear reaching law (\ref{eq:reachinglaw}) it enforces a contraction of $\mbf{\sigma}$ towards the sliding surface at each time step. In contrast to (\ref{eq:reachinglaw}), the step towards the sliding surface is maximized by solving at each time step the optimization problem
+In contrast to the one proposed by \cite{houda2013new}, we take hard constraints on input magnitude and rate saturations into account.
+As the linear reaching law (\ref{eq:reachinglaw}) it enforces a contraction of $\mbf{\sigma}$ towards the sliding surface at each time step, but the step towards the sliding surface is maximized by solving at each time step the optimization problem
 \begin{align}
 & \underset{\mbf{u'}(\idxSample)}{\text{minimize}}
 & & |\mbf{\sigma}(\idxSample+1)| 
@@ -512,11 +519,11 @@ which can be enforced by setting
 Since $\mbf{\sigma}(\idxSample + 1)$ linearly depends on $\mbf{u}'(\idxSample)$, (\ref{eq:optimprob}) can efficiently be solved as quadratic program.
 \section{Simulations}
 \label{sec:simulations}
-The TSCSMC and the DSMC with the linear and the predictive reaching law have been evaluated in a simulation environment implemented in Matlab\textsuperscript{\tiny \textregistered}/Simulink\textsuperscript{\tiny \textregistered}. In the proposed simulation scenarios, the closed loop vehicle dynamics have been integrated with a forward Euler scheme. While three-dimensional predecessor tracking is performed, only the vertical position tracking error $\Delta p_3$ is considered here for clarity. No sensor noise is considered in this work.
-\subsection{Controller parameters}
-For the TSCSMC, the controller gains are computed according to (\ref{eq:csmcgainconditionalpha}, \ref{eq:csmcgainconditionbeta}).\\
-For the DSMC, the entries of the reaching matrix $\mbf{\Psi}$ are selected on line to stay within control input limits given the initial error state.\\
-For the PDSMC, only input and input rate saturations need to be defined.
+The TSCSMC and the DSMC with the linear and the predictive reaching law have been evaluated in a simulation environment implemented in Matlab\textsuperscript{\tiny \textregistered}/Simulink\textsuperscript{\tiny \textregistered}. In the proposed simulation scenarios, the closed loop vehicle dynamics have been integrated with a forward Euler scheme. While three-dimensional predecessor tracking is performed, only the vertical position tracking error $\Delta p_3$ is considered here for clarity.
+%\subsection{Controller parameters}
+%For the TSCSMC, the controller gains are computed according to (\ref{eq:csmcgainconditionalpha}, \ref{eq:csmcgainconditionbeta}).\\
+%For the DSMC, the entries of the reaching matrix $\mbf{\Psi}$ are selected on line to stay within control input limits given the initial error state.\\
+%For the PDSMC, only input and input rate saturations need to be defined.
 
 %, requiring the bounds $L_\idxAxis$ on the maximum unknown perturbations $\Phi'_{u,\idxAxis}$ which are driven by exogenous disturbances $a_{w,\idxAxis}$ and acceleration of the predecessor $a_{\idxPredecessor,\idxAxis}$.
 
@@ -570,38 +577,44 @@ For the PDSMC, only input and input rate saturations need to be defined.
 
 \subsubsection{\textbf{Wake vortex disturbances}}
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=4.4cm]{incrementallift}    % The printed column width is 8.4 cm.
-\caption{Normalized incremental lift predicted by modified Horseshoe Vortex Model for $\Delta x' = 2b$. Note that $\Delta x', \Delta y', \Delta z'$ are wingtip to wingtip separations}
-\label{fig:HSVMincrementalift}
-\end{center}
-\end{figure}
-A variety of approaches has been proposed to simulate the effects of trailing vortices on the following UAS, mostly based on modified Horseshoe Vortex models (HVM) (e.g. \cite{Hummel1982}) or Vortex Lattice methods (VLM) (e.g. \cite{Saban2009}). For the purpose of this work, a HVM with modified core model presented in (\cite{dogan2005modeling}) is used. It is reported to provide predictions that are in good agreement with both VLM models and wind tunnel measurements while being of great simplicity. In the vertical channel, the model predicts incremental aerodynamic lift perturbations as a function of the separation vector between a UAS and its predecessor, see fig. \ref{fig:HSVMincrementalift} for an example.
+%\begin{figure}
+%\begin{center}
+%\includegraphics[width=4.4cm]{incrementallift}    % The printed column width is 8.4 cm.
+%\caption{Normalized incremental lift predicted by modified Horseshoe Vortex Model for $\Delta x' = 2b$. Note that $\Delta x', \Delta y', \Delta z'$ are wingtip to wingtip separations}
+%\label{fig:HSVMincrementalift}
+%\end{center}
+%\end{figure}
+
+A variety of approaches has been proposed to simulate the effects of trailing vortices on the following UAS, mostly based on modified Horseshoe Vortex models (HVM) (e.g. \cite{Hummel1982}) or Vortex Lattice methods (VLM) (e.g. \cite{Saban2009}). For the purpose of this work, a HVM with modified core model presented in (\cite{dogan2005modeling}) is used. It is reported to provide predictions that are in good agreement with both VLM models and wind tunnel measurements while being of great simplicity. In the vertical channel, the model predicts incremental aerodynamic lift perturbations as a function of the separation vector between a UAS and its predecessor.
+%, see fig. \ref{fig:HSVMincrementalift} for an example.
 \subsubsection{\textbf{Atmospheric turbulence}}
-Atmospheric turbulence time series are generated according to the Dryden turbulence spectrum. The induced velocities are filtered by transfer functions corresponding to closed loop LQR load factor controllers designed for a small UAS ($b=2.6 \, m$). An ambient headwind of 20\% of the airspeed ($V_a = 15 \, \frac{m}{s}$) is assumed. See fig. \ref{fig:nwztimeseries} for an example time series of the resulting total vertical load factor perturbations $n_{w,3} = \frac{a_{w,3}}{|\mbf{g}|}$.
-\begin{figure}
-\begin{center}
-\includegraphics[scale=1]{nwz-timeseries}    % The printed column width is 8.4 cm.
-\caption{ Example time series of vertical load factor disturbances}
-\label{fig:nwztimeseries}
-\end{center}
-\end{figure}
+Atmospheric turbulence time series are generated according to the Dryden turbulence spectrum. The induced velocities are filtered by transfer functions corresponding to closed loop LQR load factor controllers designed for a small UAS ($b=2.6 \, m$). An ambient headwind of 20\% of the airspeed ($V_a = 15 \, \frac{m}{s}$) is assumed. 
+% See fig. \ref{fig:nwztimeseries} for an example time series of $n_{w,3}$.
+%\begin{figure}
+%\begin{center}
+%\includegraphics[scale=0.8]{nwz-timeseries}    % The printed column width is 8.4 cm.
+%\caption{ Example time series of vertical load factor disturbances}
+%\label{fig:nwztimeseries}
+%\end{center}
+%\end{figure}
 \subsection{{Benchmark maneuver}}
-To evaluate the control performance, a benchmark maneuver is performed by a formation of 5 UAS (vehicle index $\#\idxFollower$, the virtual leader has index 0 and is not shown). The vehicles start in a staggered formation with relative separations of $\Delta \mbf{p}_{c,j} = \mbf{R}_{el} (-2b \; b \; b)^T$ for $j=1...4$, where $\mbf{R}_{ep}$ denotes the rotation matrix from the predecessor velocity frame to the local inertial frame. At $t=5 \; s$ the vertical separation is driven to zero, i.e. $\Delta \mbf{p}_{c,j} = \mbf{R}_{el}(-2b \; b \; 0)^T$, and each UAS thus enters the zone of maximum incremental lift, see fig. \ref{fig:HSVMincrementalift}. This corresponds to the perturbation $\Delta \ddot{\mbf{p}}_c$. At $t=11 \;s$ the formation leader performs a climb by $10 \; m$, corresponding to the perturbation $\mbf{a}_{\idxPredecessor}$.
+To evaluate the control performance, a benchmark maneuver is performed by a formation of 5 UAS (vehicle index $\#\idxFollower$, the virtual leader has index 0 and is not shown). The vehicles start in a staggered formation with relative separations of $\Delta \mbf{p}_{c,j} = \mbf{R}_{el} (-2b \; b \; b)^T$ for $j=1...4$, where $\mbf{R}_{ep}$ denotes the rotation matrix from the predecessor velocity frame to the local inertial frame. At $t=5 \; s$ the vertical separation is driven to zero, i.e. $\Delta \mbf{p}_{c,j} = \mbf{R}_{el}(-2b \; b \; 0)^T$, and each UAS thus enters the zone of maximum incremental lift. 
+%This corresponds to the perturbation $\Delta \ddot{\mbf{p}}_c$. 
+At $t=11 \;s$ the formation leader performs a climb by $10 \; m$. %corresponding to the perturbation $\mbf{a}_{\idxPredecessor}$.
 The benchmark maneuver is run with the TSCSMC controller at $T=10^{-3} \; s$ and all three controllers at $T=10^{-2} \; s$. The latter sampling time is considered realistic for implementation on board a small UAS. Note that tracking errors are normalized with the wingspan $b$ and control inputs with their saturation limits.\\
 \subsection{Results}
-The tracking error $\Delta z = \Delta p_3$ achieved by the TSCSMC as well the absolute vertical position and the control input are presented in Fig. \ref{fig:CSMC1000Hz} and Fig. \ref{fig:CSMC100Hz}. While tracking performance is very good in both cases and the tracking error $\Delta z$ stays well within the bounds indicated by (\ref{eq:windowz}), it degrades as expected with larger sampling times. Heavy input chattering appears and the control inputs run into saturation for large parts of the maneuver. In the realistic $T=10^{-2} \; s$ case, steady state tracking errors appear. 
+%The tracking error $\Delta z = \Delta p_3$ achieved by the TSCSMC as well the absolute vertical position and the control input are presented in Fig. \ref{fig:CSMC1000Hz} and Fig. \ref{fig:CSMC100Hz}. 
+Tracking performance is very good in both cases for the TSCSMC and the tracking error $\Delta z$ stays well within the bounds indicated by (\ref{eq:windowz}), see Fig. \ref{fig:CSMC1000Hz},\ref{fig:CSMC100Hz}. It degrades as expected with larger sampling times. Input chattering appears and the control inputs run into saturation for large parts of the maneuver. In the $T=10^{-2} \; s$ case, steady state tracking errors appear. 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=\columnwidth,height=10cm]{TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1}    % The printed column width is 8.4 cm.
+\includegraphics[width=\figwidth,height=\figheight]{TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1}    % The printed column width is 8.4 cm.
 \caption{TSCSMC controller $10^{-3} s$ sampling time}
 \label{fig:CSMC1000Hz}
 \end{center}
 \end{figure}
 \begin{figure} [h!]
 \begin{center}
-\includegraphics[width=\columnwidth,height=10cm]{TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1}    % The printed column width is 8.4 cm.
+\includegraphics[width=\figwidth,height=\figheight]{TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1}    % The printed column width is 8.4 cm.
 \caption{ TSCSMC controller $10^{-2} s$ sampling time}
 \label{fig:CSMC100Hz}
 \end{center}
@@ -609,14 +622,14 @@ The tracking error $\Delta z = \Delta p_3$ achieved by the TSCSMC as well the ab
 The DSMC, on the other hand, provides a tracking performance at $T = 10^{-2}$ comparable to that of the TSCSMC at $T = 10^{-3}$, see Fig. \ref{fig:DSMC100Hz}. The inputs stay at all times confined to the saturation limits and no chattering is to be observed. The PDSMC improves on this performance, see fig. \ref{fig:PDSMC100Hz}.
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=\columnwidth,height=10cm]{DSMC-100Hz-TIMESCALESEPARATION-turbulence=1}    % The printed column width is 8.4 cm.
+\includegraphics[width=\figwidth,height=\figheight]{DSMC-100Hz-TIMESCALESEPARATION-turbulence=1}    % The printed column width is 8.4 cm.
 \caption{ DSMC controller $10^{-2} s$ sampling time}
 \label{fig:DSMC100Hz}
 \end{center}
 \end{figure}
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=\columnwidth,height=10cm]{PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1}    % The printed column width is 8.4 cm.
+\includegraphics[width=\figwidth,height=\figheight]{PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1}    % The printed column width is 8.4 cm.
 \caption{ PDSMC controller $10^{-2} s$ sampling time}
 \label{fig:PDSMC100Hz}
 \end{center}
@@ -624,7 +637,7 @@ The DSMC, on the other hand, provides a tracking performance at $T = 10^{-2}$ co
 This superior performance with respect to lower sampling times is systematically investigated by evaluating the maximum tracking error and the RMS tracking error over a grid of sampling times, as shown in Fig. \ref{fig:errorvssamplingtime}. Note that the RMS error and maximum error achieved by the DSMC stays for all sampling times below those of the TSCSMC and evolves more smoothly as the sampling time is varied. The PDSMC shows an evolution of the maximum error and RMS error similar to the DSMC while providing smaller error measures in both cases.\\
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[height=7cm]{error-z-vs-samplingtime.pdf}    % The printed column width is 8.4 cm.
+\includegraphics[width=6cm,height=5cm]{error-z-vs-samplingtime.pdf}    % The printed column width is 8.4 cm.
 \caption{Vertical position error measures vs. controller sampling time for TSCSMC, DSMC, PDSMC}
 \label{fig:errorvssamplingtime}
 \end{center}
@@ -636,7 +649,7 @@ Note that the maximum tracking error for $\idxFollower = 30$ still satisfies the
 %Thus while the formation is mesh unstable, due to the excellent overall tracking performance and low error amplification, tracking requirements are satisfied for modest formation sizes. It is desirable to investigate this aspect further and to provide analytical bounds on maximum tracking errors as function of the vehicle index. This could allow to drop the requirement of mesh stability and to replace it by a maximum formation size. In real world applications, formations are not unlimited in size
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[height=4cm]{erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-turbulenceonlyfirstUAS}    % The printed column width is 8.4 cm.
+\includegraphics[height=3.5cm]{erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-turbulenceonlyfirstUAS}    % The printed column width is 8.4 cm.
 \caption{ DSMC controller, vertical tracking error over vehicle index, $10^{-2} s$ sampling time}
 \label{fig:errroamplification}
 \end{center}

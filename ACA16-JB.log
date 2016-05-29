@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  29 MAY 2016 19:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  29 MAY 2016 20:50
 entering extended mode
 **ACA16-JB.tex
 (ACA16-JB.tex
@@ -665,24 +665,24 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 ) (ACA16-JB.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 37.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    ... okay on input line 37.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -698,116 +698,98 @@ LaTeX Font Info:    ... okay on input line 35.
 \makeMPintoPDFobject=\count153
 \everyMPtoPDFconversion=\toks29
 )
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 38.
-LaTeX Font Info:    Try loading font information for U+msa on input line 38.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 40.
+LaTeX Font Info:    Try loading font information for U+msa on input line 40.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 38.
+LaTeX Font Info:    Try loading font information for U+msb on input line 40.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \c@sv@footnote=\count154
 
-<images/juppmehrbionik.pdf, id=1, 792.31004pt x 453.74554pt>
-File: images/juppmehrbionik.pdf Graphic file (type pdf)
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<use images/juppmehrbionik.pdf>
-Package pdftex.def Info: images/juppmehrbionik.pdf used on input line 100.
-(pdftex.def)             Requested size: 251.80348pt x 170.71497pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
- <./images/juppmehrbionik.pdf>]
-<images/frames.pdf, id=17, 187.47655pt x 137.76773pt>
+]
+<images/frames.pdf, id=10, 187.47655pt x 137.76773pt>
 File: images/frames.pdf Graphic file (type pdf)
  <use images/frames.pdf>
-Package pdftex.def Info: images/frames.pdf used on input line 131.
-(pdftex.def)             Requested size: 210.55022pt x 154.72763pt.
+Package pdftex.def Info: images/frames.pdf used on input line 139.
+(pdftex.def)             Requested size: 153.6447pt x 112.90929pt.
 
 [2 <./images/frames.pdf>] [3] [4]
-<images/incrementallift.pdf, id=52, 226.8475pt x 247.67531pt>
-File: images/incrementallift.pdf Graphic file (type pdf)
-
-<use images/incrementallift.pdf>
-Package pdftex.def Info: images/incrementallift.pdf used on input line 575.
-(pdftex.def)             Requested size: 125.19194pt x 136.68668pt.
-
-<images/nwz-timeseries.pdf, id=53, 225.59282pt x 110.1415pt>
-File: images/nwz-timeseries.pdf Graphic file (type pdf)
-
-<use images/nwz-timeseries.pdf>
-Package pdftex.def Info: images/nwz-timeseries.pdf used on input line 585.
-(pdftex.def)             Requested size: 225.59225pt x 110.14122pt.
-
-Overfull \hbox (3.74489pt too wide) in paragraph at lines 582--590
+Overfull \hbox (3.74489pt too wide) in paragraph at lines 591--600
  \OT1/cmr/bx/it/10 At-mo-spheric tur-bu-lence [] \OT1/cmr/m/n/10 At-mo-spheric 
 tur-bu-lence time
  []
 
-[5 <./images/incrementallift.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 591--593
+
+Underfull \hbox (badness 10000) in paragraph at lines 601--605
 
  []
 
 
-<images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=76, 373.89688pt 
+<images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=46, 373.89688pt 
 x 397.71587pt>
 File: images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (t
 ype pdf)
  <use images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.
-pdf used on input line 597.
-(pdftex.def)             Requested size: 251.8104pt x 284.54674pt.
+pdf used on input line 610.
+(pdftex.def)             Requested size: 170.71667pt x 136.5749pt.
 
-<images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=77, 384.43625pt x
+<images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=47, 384.43625pt x
  397.47495pt>
 File: images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (ty
 pe pdf)
  <use images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.p
-df used on input line 604.
-(pdftex.def)             Requested size: 251.81052pt x 284.526pt.
+df used on input line 617.
+(pdftex.def)             Requested size: 170.71869pt x 136.57101pt.
 
-<images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=78, 379.91937pt x 3
+<images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=48, 379.91937pt x 3
 99.2215pt>
 File: images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (type
  pdf)
  <use images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf
- used on input line 612.
-(pdftex.def)             Requested size: 251.81421pt x 284.52745pt.
+ used on input line 625.
+(pdftex.def)             Requested size: 170.71864pt x 136.56805pt.
 
-<images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=79, 379.91937pt x 
+<images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=49, 379.91937pt x 
 396.96306pt>
 File: images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (typ
 e pdf)
  <use images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pd
-f used on input line 619.
-(pdftex.def)             Requested size: 251.81421pt x 284.54117pt.
+f used on input line 632.
+(pdftex.def)             Requested size: 170.71864pt x 136.5708pt.
 
-<images/error-z-vs-samplingtime.pdf, id=80, 229.35687pt x 290.56557pt>
+<images/error-z-vs-samplingtime.pdf, id=50, 229.35687pt x 290.56557pt>
 File: images/error-z-vs-samplingtime.pdf Graphic file (type pdf)
 
 <use images/error-z-vs-samplingtime.pdf>
 Package pdftex.def Info: images/error-z-vs-samplingtime.pdf used on input line 
-627.
-(pdftex.def)             Requested size: 157.2135pt x 199.16928pt.
+640.
+(pdftex.def)             Requested size: 170.72583pt x 142.26309pt.
 
 <images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-turbulen
-ceonlyfirstUAS.pdf, id=81, 225.59282pt x 154.82843pt>
+ceonlyfirstUAS.pdf, id=51, 225.59282pt x 154.82843pt>
 File: images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-tur
 bulenceonlyfirstUAS.pdf Graphic file (type pdf)
 
 <use images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-turb
 ulenceonlyfirstUAS.pdf>
 Package pdftex.def Info: images/erroramplification-DSMC-100Hz-TIMESCALESEPARATI
-ON-turbulence=1-turbulenceonlyfirstUAS.pdf used on input line 639.
-(pdftex.def)             Requested size: 165.83453pt x 113.81102pt.
+ON-turbulence=1-turbulenceonlyfirstUAS.pdf used on input line 652.
+(pdftex.def)             Requested size: 145.10521pt x 99.58464pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -815,50 +797,40 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6 <./images/nwz-timeseries.pdf> <./images/TSCSMC-1000Hz-TIMESCALESEPARATION-tu
-rbulence=1.pdf> <./images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>]
-(ACA16-JB.bbl [7 <./images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf> <./
-images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf> <./images/error-z-vs-s
-amplingtime.pdf> <./images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-tu
-rbulence=1-turbulenceonlyfirstUAS.pdf>]) [8] (ACA16-JB.aux) ) 
+[5 <./images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf> <./images/TSCS
+MC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf> <./images/DSMC-100Hz-TIMESCALESE
+PARATION-turbulence=1.pdf> <./images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence
+=1.pdf>] (ACA16-JB.bbl) [6 <./images/error-z-vs-samplingtime.pdf> <./images/err
+oramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-turbulenceonlyfirst
+UAS.pdf>] (ACA16-JB.aux) ) 
 Here is how much of TeX's memory you used:
- 4853 strings out of 493698
- 63267 string characters out of 3141982
- 140648 words of memory out of 3000000
- 8077 multiletter control sequences out of 15000+200000
+ 4837 strings out of 493698
+ 62814 string characters out of 3141982
+ 141635 words of memory out of 3000000
+ 8064 multiletter control sequences out of 15000+200000
  12819 words of font info for 52 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  35i,16n,26p,1325b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\j.bolti
-ng\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm0600.pk><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ACA16-JB.pdf (8 pages, 1032368 bytes).
+ <C:\Users\j.bolting\AppData\Local\MiKTeX\2.9\fonts\p
+k\ljfour\jknappen\ec\dpi600\tcrm0600.pk><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmmi5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+sy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb>
+Output written on ACA16-JB.pdf (6 pages, 436549 bytes).
 PDF statistics:
- 269 PDF objects out of 1000 (max. 8388607)
+ 214 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
