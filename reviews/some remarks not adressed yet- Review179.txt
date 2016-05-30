@@ -63,7 +63,7 @@ p3c1
 between i and i-1. Only if \Delta p_c = 0. Please make text
 clearer.
 - ??? \Delta p(t) is the relative position error, i.e. the difference between the
-commaned and the actual relative position.
+commanded and the actual relative position.
 
 What are the stability margins for the inner loops desired
 ?
