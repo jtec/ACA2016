@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  29 MAY 2016 20:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  30 MAY 2016 10:44
 entering extended mode
 **ACA16-JB.tex
 (ACA16-JB.tex
@@ -725,13 +725,13 @@ Package pdftex.def Info: images/frames.pdf used on input line 139.
 (pdftex.def)             Requested size: 153.6447pt x 112.90929pt.
 
 [2 <./images/frames.pdf>] [3] [4]
-Overfull \hbox (3.74489pt too wide) in paragraph at lines 591--600
+Overfull \hbox (3.74489pt too wide) in paragraph at lines 592--601
  \OT1/cmr/bx/it/10 At-mo-spheric tur-bu-lence [] \OT1/cmr/m/n/10 At-mo-spheric 
 tur-bu-lence time
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 601--605
+Underfull \hbox (badness 10000) in paragraph at lines 602--606
 
  []
 
@@ -742,7 +742,7 @@ File: images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (t
 ype pdf)
  <use images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.
-pdf used on input line 610.
+pdf used on input line 611.
 (pdftex.def)             Requested size: 170.71667pt x 136.5749pt.
 
 <images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=47, 384.43625pt x
@@ -751,7 +751,7 @@ File: images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (ty
 pe pdf)
  <use images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.p
-df used on input line 617.
+df used on input line 618.
 (pdftex.def)             Requested size: 170.71869pt x 136.57101pt.
 
 <images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=48, 379.91937pt x 3
@@ -760,7 +760,7 @@ File: images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (type
  pdf)
  <use images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/DSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf
- used on input line 625.
+ used on input line 626.
 (pdftex.def)             Requested size: 170.71864pt x 136.56805pt.
 
 <images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=49, 379.91937pt x 
@@ -769,7 +769,7 @@ File: images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic file (typ
 e pdf)
  <use images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
 Package pdftex.def Info: images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pd
-f used on input line 632.
+f used on input line 633.
 (pdftex.def)             Requested size: 170.71864pt x 136.5708pt.
 
 <images/error-z-vs-samplingtime.pdf, id=50, 229.35687pt x 290.56557pt>
@@ -777,7 +777,7 @@ File: images/error-z-vs-samplingtime.pdf Graphic file (type pdf)
 
 <use images/error-z-vs-samplingtime.pdf>
 Package pdftex.def Info: images/error-z-vs-samplingtime.pdf used on input line 
-640.
+641.
 (pdftex.def)             Requested size: 170.72583pt x 142.26309pt.
 
 <images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-turbulen
@@ -788,7 +788,7 @@ bulenceonlyfirstUAS.pdf Graphic file (type pdf)
 <use images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-turb
 ulenceonlyfirstUAS.pdf>
 Package pdftex.def Info: images/erroramplification-DSMC-100Hz-TIMESCALESEPARATI
-ON-turbulence=1-turbulenceonlyfirstUAS.pdf used on input line 652.
+ON-turbulence=1-turbulenceonlyfirstUAS.pdf used on input line 653.
 (pdftex.def)             Requested size: 145.10521pt x 99.58464pt.
 
 
@@ -828,7 +828,7 @@ cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 sy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
 0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb>
-Output written on ACA16-JB.pdf (6 pages, 436549 bytes).
+Output written on ACA16-JB.pdf (6 pages, 436362 bytes).
 PDF statistics:
  214 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

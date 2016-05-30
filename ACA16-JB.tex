@@ -148,8 +148,10 @@ The continuous-time vehicle position dynamics w.r.t. the NED frame are given as 
 \dot{\mathbf{p}}(t) &= \mbf{v}(t)\\
 \dot{\mbf{v}}(t) &= \mbf{a}_{c}(t) + \mbf{a}_w(t) + \mbf{g}
 \end{align}
-where $\mbf{p} \in \mathbb{R}^3$ is the vehicle position, $\mbf{v} \in \mathbb{R}^3$ is its velocity w.r.t to the local inertial frame, $\mbf{a}_w(t) \in \mathbb{R}^3$ are accelerations induced by exogenous disturbances such as turbulence and another aircraft's wake, $\mbf{a}_{c}(t) \in \mathbb{R}^3$ are commanded accelerations and $\mbf{g} \in \mathbb{R}^3$ is the gravity vector in the local inertial frame.
-It is assumed that commanded load factors $\mbf{n}_c(t) = \frac{1}{|\mbf{g}|} \mbf{a}_c(t)$ are tracked by inner loop controllers in the vehicle body frame, leading to actual load factors $\mbf{n}(t) = \mbf{n}_c(t) + \mbf{n}_w(t)$ where $\mbf{n}_w(t) = \frac{1}{|\mbf{g}|} \mbf{a}_w(t)$ are unknown parasitic load factors introduced by exogenous disturbances and imperfect tracking. Note that the tracking dynamics of the inner loops are not taken into account in this work. This leads to the following equation:
+where $\mbf{p} \in \mathbb{R}^3$ is the vehicle position, $\mbf{v} \in \mathbb{R}^3$ is its velocity w.r.t to the local inertial frame, $\mbf{a}_w(t) \in \mathbb{R}^3$ are accelerations induced by exogenous disturbances such as turbulence, wake vortices, imperfect load factor tracking and imperfect knowledge of the actual local gravity vector,  $\mbf{a}_{c}(t) \in \mathbb{R}^3$ are commanded accelerations and $\mbf{g} \in \mathbb{R}^3$ is the nominal gravity vector in the local inertial frame.
+It is assumed that commanded load factors $\mbf{n}_c(t) = \frac{1}{|\mbf{g}|} \mbf{a}_c(t)$ are tracked by inner loop controllers in the vehicle body frame.
+%, leading to actual load factors $\mbf{n}(t) = \mbf{n}_c(t) + \mbf{n}_w(t)$ where $\mbf{n}_w(t) = \frac{1}{|\mbf{g}|} \mbf{a}_w(t)$ are unknown parasitic load factors introduced by exogenous disturbances and imperfect tracking. 
+Note that the tracking dynamics of the inner loops are not taken into account in this work. This leads to the following equation:
 \begin{align}
 \dot{\mbf{v}}(t) &= \mbf{R}_{eb}(t) |\mbf{g}|\mbf{n}_c(t) + \mbf{a}_w(t) + \mbf{g}
 \label{eq:svmloadfactorlevel}
@@ -169,7 +171,6 @@ leading to
 \dot{\mbf{v}}(t) &= \mbf{u}(t) + \mbf{a}_w(t)
 \label{eq:svmshort}
 \end{align}
-where now $\mbf{a}_w(t)$ also includes the small effects of imperfect knowledge of local gravitation. 
 %???doubledefinition
 Considering two UAS \idxFollower  and \idxPredecessor in a leader-follower configuration, this leads to relative position error dynamics
 \begin{align}
