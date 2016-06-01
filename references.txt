@@ -1,0 +1,43 @@
+Dogan, A., Venkataramanan, S., and Blake, W. (2005).
+Modeling of aerodynamic coupling between aircraft in
+close proximity. Journal of Aircraft, 42(4), 941–955.
+Ferrara, A., Librino, R., Massola, A., Miglietta, M., and
+Vecchio, C. (2008). Sliding mode control for urban
+vehicles platooning. In Intelligent Vehicles Symposium,
+2008 IEEE, 877–882. IEEE.
+Galzi, D. and Shtessel, Y. (2006). UAV formations control
+using high order sliding modes. In American Control
+Conference, 2006, 6–pp. IEEE.
+Houda, B.M., Khadija, D., and Said, N.A. (2013). New
+discrete predictive sliding mode control for non minimum phase systems. International Journal of Computer
+Applications, 70(11).
+Hummel, D. (1982). Aerodynamic aspects of formation
+flight in birds. Journal of theoretical Biology.
+Jake, V., Ray, R., Ennix, K., and Walsh, K. (2003).
+F/A-18 Performance Benefits Measured During the Autonomous Formation Flight Project. Technical report,
+NASA/TM-2002-210732, Sept.
+Monsees, G. and Scherpen, J. (2001). Discrete-time sliding
+mode control with a disturbance estimator. In Proceedings of the European Control Conference, 3270–3275.
+Pant, A., Seiler, P., and Hedrick, K. (2002). Mesh stability
+of look-ahead interconnected systems. IEEE Transactions on Automatic Control, 47(2), 403–407.
+P´erez, M., Jim´enez, E., and Camacho, E.F. (2010). Robust
+stability analysis and tuning of a predictive sliding mode
+controller. European Journal of Control, 16(3), 275–288.
+Saban, D., F.Whidborne, J., and Cooke, A. (2009). Simulation of Wake Vortex Effects for UAVs in Close Formation Flight. Aeronautical Journal.
+Shtessel, Y., Edwards, C., Fridman, L., and Levant, A.
+(2014). Sliding mode control and observation. Springer.
+Spurgeon, S. (1992). Hyperplane design techniques for
+discrete-time variable structure control systems. International Journal of Control, 55(2), 445–456.
+Turpin, M., Michael, N., and Kumar, V. (2012). Trajectory
+design and control for aggressive formation flight with
+quadrotors. Autonomous Robots, 33(1-2), 143–156.
+Vachon, M., Ray, R., Walsh, K., and Ennix, K. (2002).
+F/A-18 aircraft performance benefits measured during
+the autonomous formation flight project, volume 4491.
+AIAA.
+Wolfe, J., Chichka, D., and Speyer, J. (1996). Decentralized controllers for unmanned aerial vehicle formation
+flight. AIAA paper, 96–3833.
+Zou, A.M., Kumar, K.D., and Hou, Z.G. (2013). Distributed consensus control for multi-agent systems using
+terminal sliding mode and chebyshev neural networks.
+International Journal of Robust and Nonlinear Control,
+23(3), 334–357.
