@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  30 MAY 2016 10:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  1 JUN 2016 18:55
 entering extended mode
 **ACA16-JB.tex
 (ACA16-JB.tex
@@ -804,10 +804,10 @@ PARATION-turbulence=1.pdf> <./images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence
 oramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-turbulenceonlyfirst
 UAS.pdf>] (ACA16-JB.aux) ) 
 Here is how much of TeX's memory you used:
- 4837 strings out of 493698
- 62814 string characters out of 3141982
- 141635 words of memory out of 3000000
- 8064 multiletter control sequences out of 15000+200000
+ 4828 strings out of 493698
+ 62583 string characters out of 3141982
+ 141382 words of memory out of 3000000
+ 8055 multiletter control sequences out of 15000+200000
  12819 words of font info for 52 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  35i,16n,26p,1325b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -828,7 +828,7 @@ cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 sy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
 0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb>
-Output written on ACA16-JB.pdf (6 pages, 436362 bytes).
+Output written on ACA16-JB.pdf (6 pages, 434582 bytes).
 PDF statistics:
  214 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

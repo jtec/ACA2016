@@ -113,10 +113,10 @@ Recently, both academical and industrial communities have been very interested i
 %Another interesting study in \cite{thien2008effects} focuses on the effect of the leader's position and shape on aerodynamics performances of a given V flight formation. \\
 %Some interesting control solutions for autonomous formation flight were introduced in \cite{giulietti2000autonomous}. 
 %In the last decade, a lot of researchers have focused on improving the control strategies to enhance the formation flight performance. 
-A suitable control strategy for  controlling a team of micro-aerial vehicles moving quickly through a three-dimensional environment while maintaining a tight formation is presented in \cite{turpin2012trajectory}. \\
+A suitable control strategy for  controlling a team of micro aerial vehicles moving quickly through a three-dimensional environment while maintaining a tight formation is presented in \cite{turpin2012trajectory}. \\
 %Moreover, an interesting control performance analysis for autonomous close formation flight experiments has been achieved in \cite{rice2014control}.\\
 %In this paper, a discrete robust sliding mode control strategy is proposed to manage the formation flight of UAS. Indeed, 
-Sliding mode control has been proved as a very efficient implementable solution for ground vehicle platooning (see \cite{ferrara2008sliding} and \cite{zou2013distributed}). Also, the sliding mode control is a very efficient and robust approach regarding environmental disturbances to ensure good position tracking performances. 
+Sliding mode control has been proved as a very efficient implementable solution for ground vehicle platooning (see \cite{ferrara2008sliding} and \cite{zou2013distributed}). Also sliding mode control is a very efficient and robust approach regarding environmental disturbances to ensure good position tracking performances. 
 Recently there has been some interest in predictive sliding mode control techniques (see e.g. \cite{perez2010robust,houda2013new}). They offer a combination of the attractive properties of Sliding Mode control - a straightforward design procedure and insensitivity to perturbations - with those of Model Predictive Control (MPC): including hard input and state constraints into the controller design.\\
 Here, the authors provide a robust discrete sliding mode control solution to manage the tight formation flight of multiple UAS considering external disturbances due to atmospheric turbulence and the predecessor's wake. A comparison between two discrete time sliding mode control strategies  and the discretization of a time continuous sliding mode controller from the literature is presented. It demonstrates that the discretization of the time continuous designed controller decreases the tracking performances and the robustness regarding environmental disturbances.
 Both the DSMC and the PDSMC are shown to offer better tracking performances for realistic sampling times.\\
@@ -133,7 +133,7 @@ The dynamics of each vehicle are defined in a local inertial North-East-Down fra
 
 %The right choice of reference frames can significantly facilitate control design. To give one example, when performing navigation in the predecessor's body frame, variations in the predecessor's attitude will couple into follower's position control loops, increasing control action. What is more, the effect increases with inter-vehicle separation, leading to high control demands during the initial rendezvous maneuver. To avoid such disadvantages, the motion of the reference frame with respect to the inertial frame should be within the control bandwidth of the position controller. A suitable frame is a local Cartesian frame whose x axis is aligned with the follower's inertial speed projected on the horizontal plane, and whose z axis is aligned with the NED frame's z axis, the Follower Velocity Frame (FF). Its origin coincides with that of the follower's body frame. The follower's wind frame would be preferable, since the lift vector is by definition aligned with its z axis , but requires on-line wind estimation or flow sensors that usually are not available on board small UAS. It is preferable over the Predecessor Velocity Frame (PF), since to form the rotation matrix between the FF and the inertial frame the predecessor's absolute velocity does not need to be communicated to the follower.
 %To provide a common reference frame for multiple members of the formation, the \textbf{Leader velocity Frame} (index $l$) is defined. Its x axis is aligned with the formation leader's NED speed projected on the horizontal plane of the NED frame, its z axis is aligned with the NED frame's z axis, and its y axis completes a right-handed Cartesian coordinate system. Ii is used to define the separation vectors that make up the formation. Note that by appropriate choices of inter-vehicle separation vectors any formation pattern can be achieved.
-Being induced by the aerodynamic flow, the wake vortices keep their position in the predecessor's wind frame. For maximum energy savings, the follower thus needs to keep its relative position constant in this frame. Since small UAS typically are not being equipped with sensors for angle of attack and side slip angle, the predecessor's planar velocity frame (index $p$) is used as an approximation. Its x axis is aligned with the NED velocity vector projected on the horizontal plane of the NED frame, its z axis is aligned with the NED frame's z axis, and its y axis completes a right-handed Cartesian coordinate system, see fig. \ref{fig:frames}. 
+Being induced by the aerodynamic flow, the wake vortices are approximately aligned with the predecessor's wind frame, neglecting trajectory curvature. For maximum energy savings, the follower thus needs to keep its relative position constant in this frame. Since small UAS typically are not equipped with sensors for angle of attack and side slip angle, the predecessor's planar velocity frame (index $p$) is used as an approximation. Its x axis is aligned with the NED velocity vector projected on the horizontal plane of the NED frame, its z axis is aligned with the NED frame's z axis, and its y axis completes a right-handed Cartesian coordinate system, see fig. \ref{fig:frames}. 
 \begin{figure}
 \begin{center}
 \includegraphics[width=5.4cm]{frames.pdf}    % The printed column width is 8.4 cm.
@@ -212,7 +212,7 @@ To benefit from significant aerodynamic performance gains, a follower aircraft n
 \end{align}
 with the wingspan $b$, while the longitudinal separation $\Delta x'$ is less critical due to slow vortex decay. The wingtip-to-wingtip separation vector $\Delta \mbf{p'} = ( \Delta x' \; \Delta y' \; \Delta z')^T$ is defined in the predecessor wind frame.
 \subsection{Information constraints}
-It is assumed that only observations of the relative position and relative velocity vector between each UAS and its predecessor are available.
+It is assumed that only observations of the relative position and relative velocity vectors between each UAS and its predecessor are available.
 %This allows for using low-cost vision-based relative localization techniques, which is a significant advantage taking into account the price range of GNSS RTK (Global Navigation Satellite System Real Time Kinematics) systems which would be required for localization with respect to the formation leader or other members of the formation that are not within the field of view of on-board vision sensors.
 
 \subsection{Sliding surface design}
@@ -320,7 +320,7 @@ leads to closed loop $\mbf{\sigma}$ dynamics of
 \begin{align}
 \dot{\sigma}_\idxAxis = \alpha_\idxAxis |\sigma_\idxAxis|^{1/2}\mathrm{sign}(\sigma_\idxAxis) + \beta_\idxAxis \int \mathrm{sign}(\sigma_\idxAxis) dt + \Phi_{u,\idxAxis}'
 \end{align}
-Provided the disturbances $\Phi'_{u,\idxAxis}$ are bounded by $\Phi'_{u,\idxAxis} \leq L_\idxAxis$ controller parameters that fulfill
+Provided the disturbances $\Phi'_{u,\idxAxis}$ are bounded by $\Phi'_{u,\idxAxis} \leq L_\idxAxis$, controller parameters that fulfill
 \begin{align}
 \alpha_\idxAxis = 1.5 \sqrt{L_\idxAxis}
 \label{eq:csmcgainconditionalpha}\\
@@ -425,14 +425,14 @@ with the sampling time $T$. Since a discrete controller has no control over what
 \end{align}
 
 for $\idxAxis=1...3$, for all $\idxSample \geq \idxSample^*$ where $\epsilon_\idxAxis$ are the widths of the quasi-sliding mode boundary layer and $\idxSample^*$ is the first sample for which \ref{eq:controlobjective} is satisfied, i.e. when the system transitions from the reaching phase into quasi-sliding mode.
-The proposed DSMC is based on ideas presented by the authors of \cite{monsees2001discrete}
+The proposed DSMC is based on ideas presented by the authors of \cite{monsees2001discrete}.
 The following simple linear reaching law (proposed e.g. by \cite{Spurgeon1992}) ensures asymptotic convergence to the sliding surface
 \begin{align}
 \mbf{\sigma}(\idxSample+1) = \mbf{\Psi} \mbf{\sigma}(\idxSample)
 \label{eq:reachinglaw}
 \end{align}
 with a diagonal $\mbf{\Psi} \in \mathbb{R}^{3 \times 3}, 0 < \Psi_{\idxAxis,\idxAxis} < 1$ for $\idxAxis=1...3$. The choice of $\mbf{\Psi}$ allows to trade off control effort and reaching time.
-Since (\ref{eq:reachinglaw}) is equivalent to
+Since (\ref{eq:reachinglaw}) implies
 \begin{align}
 |\mbf{\sigma}(\idxSample+1)| = \mbf{\Psi} |\mbf{\sigma}(\idxSample)|
 \end{align}
@@ -461,7 +461,7 @@ Closing the loop, one obtains
 \mbf{\sigma}(\idxSample+1) &= \mbf{\Psi} \mbf{\sigma}(\idxSample) +
 T \Delta \mbf{\Phi}'_u(\idxSample)
 \end{align}
-Note that the reaching law (\ref{eq:reachinglaw}) can not be followed due to the bounded estimation error $\Delta \mbf{\Phi}'_u(\idxSample)$. Instead, assuming that initially the system is outside the quasi-sliding mode band, it will approach the sliding surface at least as long as
+Note that the reaching law (\ref{eq:reachinglaw}) cannot be followed due to the bounded estimation error $\Delta \mbf{\Phi}'_u(\idxSample)$. Instead, assuming that initially the system is outside the quasi-sliding mode band, it will approach the sliding surface at least as long as
 \begin{align}
 (\mbf{I} - \mbf{\Psi}) \mbf{\sigma}(\idxSample) & > T^2 \delta \Phi'_u
 \end{align}
@@ -483,7 +483,7 @@ By writing the closed loop dynamics as
 +
 T \Delta \mbf{\Phi}'_u(\idxSample)
 \end{align}
-the component wise maximum step away from the sliding surface is bounded by
+the component-wise maximum step away from the sliding surface is bounded by
 \begin{align}
 |{\sigma}_\idxAxis(\idxSample+1) - {\sigma}_\idxAxis(\idxSample)|
 &\leq (1-\Psi_{\idxAxis, \idxAxis})\epsilon_\idxAxis - (1-\Psi_{\idxAxis, \idxAxis})|\sigma_\idxAxis| \\
@@ -520,7 +520,7 @@ which can be enforced by setting
 Since $\mbf{\sigma}(\idxSample + 1)$ linearly depends on $\mbf{u}'(\idxSample)$, (\ref{eq:optimprob}) can efficiently be solved as quadratic program.
 \section{Simulations}
 \label{sec:simulations}
-The TSCSMC and the DSMC with the linear and the predictive reaching law have been evaluated in a simulation environment implemented in Matlab\textsuperscript{\tiny \textregistered}/Simulink\textsuperscript{\tiny \textregistered}. In the proposed simulation scenarios, the closed loop vehicle dynamics have been integrated with a forward Euler scheme. While three-dimensional predecessor tracking is performed, only the vertical position tracking error $\Delta p_3$ is considered here for clarity.
+All three controllers have been evaluated in a simulation environment implemented in Matlab\textsuperscript{\tiny \textregistered}/Simulink\textsuperscript{\tiny \textregistered}. In the proposed simulation scenarios, the closed loop vehicle dynamics have been integrated with a forward Euler scheme. While three-dimensional predecessor tracking is performed, only the vertical position tracking error $\Delta p_3$ is considered here for clarity.
 %\subsection{Controller parameters}
 %For the TSCSMC, the controller gains are computed according to (\ref{eq:csmcgainconditionalpha}, \ref{eq:csmcgainconditionbeta}).\\
 %For the DSMC, the entries of the reaching matrix $\mbf{\Psi}$ are selected on line to stay within control input limits given the initial error state.\\
@@ -657,7 +657,7 @@ Note that the maximum tracking error for $\idxFollower = 30$ still satisfies the
 \end{figure}
 {\section{Conclusion}
 \label{sec:conclusion}
-In this article, a discrete sliding mode controller using predictive reaching law (PDSMC) for decentralized 3D trajectory tracking of multiple UAS has been presented and compared to a DSMC with linear reaching law and a discretized continuous time Super Twisting controller (TSCSMC). Analytical bounds on maximum sliding errors introduced by discrete sampling are provided for the DSMC.\\ 
+In this article, a discrete sliding mode controller using a predictive reaching law (PDSMC) for decentralized 3D trajectory tracking of multiple UAS has been presented and compared to a DSMC with linear reaching law and a discretized continuous time Super Twisting controller (TSCSMC). Analytical bounds on maximum sliding errors introduced by discrete sampling are provided for the DSMC.\\ 
 Simulation results for a vertical benchmark maneuver illustrate the superior performance of both flavours of the DSMC. This is complemented by a simple and straightforward design procedure.\\ 
 The authors intend to extend this promising approach to a broader class of systems by including inner loop dynamics, communication delays and sensor noise. It will be another focus of our future work to derive analytical bounds on the impact of sampling on mesh instability, an aspect only covered empirically in this work.
 }
