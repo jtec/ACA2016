@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  8 AUG 2016 19:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.12)  8 AUG 2016 21:04
 entering extended mode
 **talk.tex
 (talk.tex
@@ -1326,129 +1326,305 @@ Package caption Info: End \AtBeginDocument code.
 
 No file talk.fb.bbl.
 (talk.fb.aux) (talk.nav)
-! Argument of \frame has an extra }.
-<inserted text> 
-                \par 
-l.60 J.-M.~Biannic\inst{2}}
-                            \and
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
+LaTeX Font Info:    Try loading font information for U+msa on input line 62.
 
-Runaway argument?
-\setbeamercolor *{title}{fg=black} \title [About Beamer] { Discrete S\ETC.
-! Paragraph ended before \frame was complete.
-<to be read again> 
-                   \par 
-l.60 J.-M.~Biannic\inst{2}}
-                            \and
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Extra }, or forgotten \endgroup.
-<recently read> }
-                 
-l.60 J.-M.~Biannic\inst{2}}
-                            \and
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Misplaced \crcr.
-\endarray ->\crcr 
-                  \egroup \egroup \gdef \@preamble {}\CT@end 
-l.60 J.-M.~Biannic\inst{2}} \and
-                                
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Extra }, or forgotten \endgroup.
-\endarray ->\crcr \egroup 
-                          \egroup \gdef \@preamble {}\CT@end 
-l.60 J.-M.~Biannic\inst{2}} \and
-                                
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Extra }, or forgotten \endgroup.
-\endarray ->\crcr \egroup \egroup 
-                                  \gdef \@preamble {}\CT@end 
-l.60 J.-M.~Biannic\inst{2}} \and
-                                
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 60.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 60.
+LaTeX Font Info:    Try loading font information for U+msb on input line 62.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 60.
+line 62.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\sansmathaccent\ot1mathkerncmss.fd
 "
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-! Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.60 J.-M.~Biannic\inst{2}} \and
-                                
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <4> not available
+(Font)              size <5> substituted on input line 62.
+
+[1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<../../images/UAV-javelinlaunch.jpg, id=21, 3592.42125pt x 2394.9475pt>
+File: ../../images/UAV-javelinlaunch.jpg Graphic file (type jpg)
+
+<use ../../images/UAV-javelinlaunch.jpg>
+Package pdftex.def Info: ../../images/UAV-javelinlaunch.jpg used on input line 
+79.
+(pdftex.def)             Requested size: 364.14178pt x 273.12918pt.
+ [2
+
+ <../../images/UAV-javelinlaunch.jpg>] <../../images/wasp_launch.jpg, id=28, 64
+2.4pt x 398.48875pt>
+File: ../../images/wasp_launch.jpg Graphic file (type jpg)
+
+<use ../../images/wasp_launch.jpg>
+Package pdftex.def Info: ../../images/wasp_launch.jpg used on input line 96.
+(pdftex.def)             Requested size: 364.20155pt x 273.15771pt.
+ [3
+
+ <../../images/wasp_launch.jpg>]
+<../../images/dlg-9-II.png, id=34, 727.518pt x 466.74374pt>
+File: ../../images/dlg-9-II.png Graphic file (type png)
+
+<use ../../images/dlg-9-II.png>
+Package pdftex.def Info: ../../images/dlg-9-II.png used on input line 123.
+(pdftex.def)             Requested size: 364.20215pt x 273.15437pt.
+ [4
+
+ <../../images/dlg-9-II.png>]
+<../../images/juppmehrbionik.pdf, id=43, 792.31004pt x 453.74554pt>
+File: ../../images/juppmehrbionik.pdf Graphic file (type pdf)
+
+<use ../../images/juppmehrbionik.pdf>
+Package pdftex.def Info: ../../images/juppmehrbionik.pdf used on input line 130
+.
+(pdftex.def)             Requested size: 364.20108pt x 273.15642pt.
+ [5
+
+ <../../images/juppmehrbionik.pdf>]
+<../../images/NASA_AFF_1.png, id=55, 994.31474pt x 602.25pt>
+File: ../../images/NASA_AFF_1.png Graphic file (type png)
+
+<use ../../images/NASA_AFF_1.png>
+Package pdftex.def Info: ../../images/NASA_AFF_1.png used on input line 145.
+(pdftex.def)             Requested size: 364.2039pt x 273.15117pt.
+ [6
+
+ <../../images/NASA_AFF_1.png>]
+<../../images/lobsters.png, id=62, 391.4625pt x 208.3785pt>
+File: ../../images/lobsters.png Graphic file (type png)
+
+<use ../../images/lobsters.png>
+Package pdftex.def Info: ../../images/lobsters.png used on input line 151.
+(pdftex.def)             Requested size: 364.21762pt x 273.1495pt.
+ [7
+
+ <../../images/lobsters.png>]
+File: ../../images/juppmehrbionik.pdf Graphic file (type pdf)
+
+<use ../../images/juppmehrbionik.pdf>
+Package pdftex.def Info: ../../images/juppmehrbionik.pdf used on input line 176
+.
+(pdftex.def)             Requested size: 364.20108pt x 273.15642pt.
+ [8
+
+]
+
+LaTeX Warning: Citation `ARSENL50UAVS' on page 9 undefined on input line 217.
+
+<../../images/ARSENL_swarm50.jpg, id=81, 636.3775pt x 431.6125pt>
+File: ../../images/ARSENL_swarm50.jpg Graphic file (type jpg)
+
+<use ../../images/ARSENL_swarm50.jpg>
+Package pdftex.def Info: ../../images/ARSENL_swarm50.jpg used on input line 217
+.
+(pdftex.def)             Requested size: 364.1955pt x 273.15544pt.
+ [9
+
+ <../../images/ARSENL_swarm50.jpg>]
+File: ../../images/ARSENL_swarm50.jpg Graphic file (type jpg)
+
+<use ../../images/ARSENL_swarm50.jpg>
+Package pdftex.def Info: ../../images/ARSENL_swarm50.jpg used on input line 244
+.
+(pdftex.def)             Requested size: 364.1955pt x 273.15544pt.
+ [10
+
+] [11
+
+]
+<../../images/smc-principle.pdf, id=104, 532.9611pt x 342.04788pt>
+File: ../../images/smc-principle.pdf Graphic file (type pdf)
+
+<use ../../images/smc-principle.pdf>
+Package pdftex.def Info: ../../images/smc-principle.pdf used on input line 277.
+
+(pdftex.def)             Requested size: 364.206pt x 273.15851pt.
+ [12
+
+ <../../images/smc-principle.pdf>]
+[13
+
+]
+<../../images/smc-principle-chattering.pdf, id=129, 373.89688pt x 297.86281pt>
+File: ../../images/smc-principle-chattering.pdf Graphic file (type pdf)
+
+<use ../../images/smc-principle-chattering.pdf>
+Package pdftex.def Info: ../../images/smc-principle-chattering.pdf used on inpu
+t line 311.
+(pdftex.def)             Requested size: 364.21423pt x 273.15991pt.
+ [14
+
+ <../../images/smc-principle-chattering.pdf>] [15
+
+]
+<../../images/frames.pdf, id=151, 187.47655pt x 137.76773pt>
+File: ../../images/frames.pdf Graphic file (type pdf)
+
+<use ../../images/frames.pdf>
+Package pdftex.def Info: ../../images/frames.pdf used on input line 333.
+(pdftex.def)             Requested size: 125.19194pt x 92.00117pt.
+ [16
+
+ <../../images/frames.pdf>]
+<../../images/incrementallift.pdf, id=175, 226.8475pt x 247.67531pt>
+File: ../../images/incrementallift.pdf Graphic file (type pdf)
+
+<use ../../images/incrementallift.pdf>
+Package pdftex.def Info: ../../images/incrementallift.pdf used on input line 33
+8.
+(pdftex.def)             Requested size: 187.63263pt x 204.85995pt.
+ [17
+
+ <../../images/incrementallift.pdf>]
+[18
+
+]
+<../../images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=207, 373.8
+9688pt x 397.71587pt>
+File: ../../images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic f
+ile (type pdf)
+
+<use ../../images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf>
+Package pdftex.def Info: ../../images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbule
+nce=1.pdf used on input line 350.
+(pdftex.def)             Requested size: 205.43282pt x 218.51942pt.
+ [19
+
+ <../../images/TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1.pdf>]
+<../../images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=235, 384.43
+625pt x 397.47495pt>
+File: ../../images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic fi
+le (type pdf)
+
+<use ../../images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
+Package pdftex.def Info: ../../images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulen
+ce=1.pdf used on input line 355.
+(pdftex.def)             Requested size: 211.35258pt x 218.51942pt.
+ [20
+
+ <../../images/TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>] [21
+
+] [22
+
+]
+
+LaTeX Warning: Citation `Bolting2016' on page 23 undefined on input line 426.
+
+[23
+
+] [24
+
+]
+<../../images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf, id=280, 379.919
+37pt x 396.96306pt>
+File: ../../images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf Graphic fil
+e (type pdf)
+
+<use ../../images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>
+Package pdftex.def Info: ../../images/PDSMC-100Hz-TIMESCALESEPARATION-turbulenc
+e=1.pdf used on input line 440.
+(pdftex.def)             Requested size: 209.1418pt x 218.51942pt.
+ [25
+
+ <../../images/PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1.pdf>]
+<../../images/error-z-vs-samplingtime.pdf, id=307, 229.35687pt x 290.56557pt>
+File: ../../images/error-z-vs-samplingtime.pdf Graphic file (type pdf)
+
+<use ../../images/error-z-vs-samplingtime.pdf>
+Package pdftex.def Info: ../../images/error-z-vs-samplingtime.pdf used on input
+ line 445.
+(pdftex.def)             Requested size: 172.48618pt x 218.51813pt.
+ [26
+
+ <../../images/error-z-vs-samplingtime.pdf>]
+<../../images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-tu
+rbulenceonlyfirstUAS.pdf, id=328, 225.59282pt x 154.82843pt>
+File: ../../images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence
+=1-turbulenceonlyfirstUAS.pdf Graphic file (type pdf)
+
+<use ../../images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=
+1-turbulenceonlyfirstUAS.pdf>
+Package pdftex.def Info: ../../images/erroramplification-DSMC-100Hz-TIMESCALESE
+PARATION-turbulence=1-turbulenceonlyfirstUAS.pdf used on input line 450.
+(pdftex.def)             Requested size: 307.28987pt x 210.92534pt.
+ [27
+
+ <../../images/erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-t
+urbulenceonlyfirstUAS.pdf>]
+
+LaTeX Warning: Citation `Bolting2016' on page 28 undefined on input line 478.
+
+[28
+
+] <../../images/dlg-9-2.png, id=354, 926.2605pt x 570.33075pt>
+File: ../../images/dlg-9-2.png Graphic file (type png)
+
+<use ../../images/dlg-9-2.png>
+Package pdftex.def Info: ../../images/dlg-9-2.png used on input line 485.
+(pdftex.def)             Requested size: 364.19406pt x 273.14647pt.
+ [29
+
+ <../../images/dlg-9-2.png>] (talk.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30
+
+ <C:/Program Files (x86)/MiKTeX 2.9/tex/latex/beamer/base/art/beamericonarticle
+.pdf>]) [31]
+\tf@nav=\write9
+\tf@toc=\write10
+\tf@snm=\write11
+ (talk.fb.aux)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 497.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 497.
+ (talk.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 497.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 497.
+Package rerunfilecheck Info: File `talk.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
-! LaTeX Error: \begin{frame} on input line 50 ended by \end{tabular}.
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.60 J.-M.~Biannic\inst{2}} \and
-                                
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.60 J.-M.~Biannic\inst{2}} \and
-                                
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+LaTeX Warning: There were undefined references.
 
-! Undefined control sequence.
-l.61 F.~Defay\inst
-                  {1}} \and
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spell
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 497.
+ ) 
+Here is how much of TeX's memory you used:
+ 22986 strings out of 493698
+ 457575 string characters out of 3141982
+ 529103 words of memory out of 3000000
+ 25699 multiletter control sequences out of 15000+200000
+ 14458 words of font info for 52 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 56i,18n,75p,960b,734s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+Output written on talk.pdf (31 pages, 7922367 bytes).
+PDF statistics:
+ 441 PDF objects out of 1000 (max. 8388607)
+ 70 named destinations out of 1000 (max. 500000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+

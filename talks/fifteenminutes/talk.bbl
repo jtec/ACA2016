@@ -25,19 +25,14 @@ F.~Fahimi, ``Sliding-mode formation control for underactuated surface
 D.~Galzi and Y.~Shtessel, ``{UAV} formations control using high order sliding
   modes,'' in {\em American Control Conference, 2006}, pp.~6--pp, IEEE, 2006.
 
-\bibitem{houda2013new}
-B.~M. Houda, D.~Khadija, and N.~A. Said, ``New discrete predictive sliding mode
-  control for non minimum phase systems,'' {\em International Journal of
-  Computer Applications}, vol.~70, no.~11, 2013.
-
 \bibitem{dogan2005modeling}
 A.~Dogan, S.~Venkataramanan, and W.~Blake, ``Modeling of aerodynamic coupling
   between aircraft in close proximity,'' {\em Journal of Aircraft}, vol.~42,
   no.~4, pp.~941--955, 2005.
 
-\bibitem{Yang2008}
-K.~Yang and S.~Sukkarieh, ``{3D smooth path planning for a UAV in cluttered
-  natural environments},'' in {\em Intelligent Robots and Systems, 2008. IROS
-  2008. IEEE/RSJ International Conference on}, pp.~794--800, Sept 2008.
+\bibitem{houda2013new}
+B.~M. Houda, D.~Khadija, and N.~A. Said, ``New discrete predictive sliding mode
+  control for non minimum phase systems,'' {\em International Journal of
+  Computer Applications}, vol.~70, no.~11, 2013.
 
 \end{thebibliography}
