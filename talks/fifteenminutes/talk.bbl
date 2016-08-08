@@ -1,0 +1,43 @@
+\begin{thebibliography}{1}
+
+\bibitem{jake2003f}
+V.~Jake, R.~Ray, K.~Ennix, and K.~Walsh, ``{F/A-18 Performance Benefits
+  Measured During the Autonomous Formation Flight Project},'' tech. rep.,
+  NASA/TM-2002-210732, Sept, 2003.
+
+\bibitem{Park2004}
+S.~Park, {\em {Avionics and Control System Development for Mid-Air Rendezvous
+  of Two Unmanned Aerial Vehicles}}.
+\newblock PhD thesis, MIT, 2004.
+
+\bibitem{gu2006design}
+Y.~Gu, B.~Seanor, G.~Campa, M.~R. Napolitano, L.~Rowe, S.~Gururajan, and
+  S.~Wan, ``Design and flight testing evaluation of formation control laws,''
+  {\em Control Systems Technology, IEEE Transactions on}, vol.~14, no.~6,
+  pp.~1105--1112, 2006.
+
+\bibitem{Fahimi2007}
+F.~Fahimi, ``Sliding-mode formation control for underactuated surface
+  vessels,'' {\em Robotics, IEEE Transactions on}, vol.~23, no.~3,
+  pp.~617--622, 2007.
+
+\bibitem{galzi2006uav}
+D.~Galzi and Y.~Shtessel, ``{UAV} formations control using high order sliding
+  modes,'' in {\em American Control Conference, 2006}, pp.~6--pp, IEEE, 2006.
+
+\bibitem{houda2013new}
+B.~M. Houda, D.~Khadija, and N.~A. Said, ``New discrete predictive sliding mode
+  control for non minimum phase systems,'' {\em International Journal of
+  Computer Applications}, vol.~70, no.~11, 2013.
+
+\bibitem{dogan2005modeling}
+A.~Dogan, S.~Venkataramanan, and W.~Blake, ``Modeling of aerodynamic coupling
+  between aircraft in close proximity,'' {\em Journal of Aircraft}, vol.~42,
+  no.~4, pp.~941--955, 2005.
+
+\bibitem{Yang2008}
+K.~Yang and S.~Sukkarieh, ``{3D smooth path planning for a UAV in cluttered
+  natural environments},'' in {\em Intelligent Robots and Systems, 2008. IROS
+  2008. IEEE/RSJ International Conference on}, pp.~794--800, Sept 2008.
+
+\end{thebibliography}

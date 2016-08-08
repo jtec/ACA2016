@@ -1,0 +1,609 @@
+% !TeX spellcheck = en_US
+\documentclass[12pt,svgnames,table,draft=false]{beamer}
+
+\usefonttheme{structurebold}
+
+\usepackage[utf8]{inputenc}
+\usepackage{framed}
+\usepackage[caption=false]{subfig}
+\usepackage{tcolorbox}
+%\setbeamertemplate{caption}[numbered]
+%\setbeamertemplate{blocks}[rounded][shadow=false]
+%\setbeamercovered{invisible}
+\setbeamertemplate{caption}[numbered]
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{epstopdf}
+\usepackage{import}
+\usepackage{footbib}
+\usepackage[absolute]{textpos}
+% \usepackage[style=numeric-comp, backend=bibtex]{biblatex}
+
+\newcommand{\mbf}[1]{\mathbf{#1}}
+\graphicspath{ 
+{../../images/}
+}
+
+\newcommand{\Htwo}{\ensuremath{\textrm{H}_2} }
+\newcommand{\Hinf}{\ensuremath{\textrm{H}_\infty} }
+\newcommand{\Mu}{\ensuremath{\mu} \,}
+\providecommand{\mbf}[1]{\mathbf{#1}}
+\newcommand{\idxFollower}{{\ensuremath{i} }}
+\newcommand{\idxPredecessor}{{\ensuremath{i-1} }}
+\newcommand{\idxSample}{{\ensuremath{k}}}
+\newcommand{\idxAxis}{{\ensuremath{p}}}
+\newcommand{\Francois}{\mbox{Fran\c{c}ois Defa$\ddot{\textrm{y}}$}}
+  
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+
+\begin{document}
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{UAV3D_N=2_sky}
+}
+\begin{frame}
+\setbeamercolor*{title}{fg=black}
+\vspace{-8em}
+\centering
+\huge{Tight formation flight of small UAS}
+\end{frame}
+
+\usebackgroundtemplate{}
+
+\begin{frame}{Outline}
+  $\Rightarrow$ Benefits - Why tight formation flight?\\
+  \vspace{1em}
+  $\Rightarrow$ Challenges - Why another PhD? \\
+  \vspace{1em}
+  $\Rightarrow$ Sliding Mode Guidance laws \\
+  \vspace{1em}
+    $\Rightarrow$ Benchmark \\
+\end{frame}
+
+\begin{frame}{Tight formation flight of small UAS}
+	\centering
+	\Large
+	"UAS" = \textbf{U}nmanned \textbf{A}erial \textbf{S}ystems \\
+	
+	\hspace{3em}
+	
+	"small" = $b \approx 1m$
+	
+	\hspace{3em}
+		
+	"tight" = separation about $1b$
+		
+\end{frame}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{UAV-javelinlaunch}
+}
+\begin{frame}{+}
+\vspace{7em}
+\centering
+	\begin{tcolorbox}[width=.8\textwidth,colback={gray!10!}]  
+	\centering
+	\Large
+	Small UAS \\
+	= \\
+	Inexpensive \\
+	Easy to operate
+	\end{tcolorbox}  
+	
+\end{frame}
+
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{wasp_launch}
+}
+\begin{frame}{-}
+	\centering
+	\vspace{+5em}
+	\begin{tcolorbox}[width=.8\textwidth,colback={gray!10!}]  
+	\centering
+	\Large
+	Small UAS \\
+	= \\
+	Small payload  \\
+	Small endurance 
+	\end{tcolorbox}  
+\end{frame}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{Global-Hawk-NASA}
+}
+
+\begin{frame}{Thinking bigger...}
+\vspace{+15em}
+\centering
+\begin{tcolorbox}[width=.8\textwidth,colback={gray!10!}]  
+\centering
+1500 kg payload\\
+32+ hours endurance \\
+about 200 Mill. \$
+\end{tcolorbox}  
+	
+\end{frame}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{GlobalHawk-maintenance-2}
+}
+
+\begin{frame}{-}
+\vspace{+15em}
+\centering
+\begin{tcolorbox}[width=.8\textwidth,colback={gray!10!}]  
+\centering
+Large maintenance crew\\
+Needs an airstrip \\
+Stricter regulations
+\end{tcolorbox}  
+	
+\end{frame}
+
+
+
+\usebackgroundtemplate{
+}
+
+\begin{frame}{}
+\vspace{1em}
+\tikz\node[circle,draw,
+           text=white,
+           path picture={
+               \node at (path picture bounding box.center){
+                   \includegraphics[width=19em]{dlg-9}
+               };
+           }]{\,\hspace{9em}\,};
+\hspace{1em}
+\Huge{$\overset{?}{=}$}\\
+\normalsize
+\hspace{14em}
+\tikz\node[circle,draw,
+           text=white,
+           path picture={
+               \node at (path picture bounding box.center){
+                   \includegraphics[width=15em]{GlobalHawk-NASA-inflight-geardown}
+               };
+           }]{\,\hspace{9em}\,};
+
+\end{frame}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{dlg-9-II}
+}
+\begin{frame}{}
+
+\vspace{-8em}
+\centering
+\begin{tcolorbox}[width=.8\textwidth,colback={gray!10!}]  
+\centering
+\begin{itemize}
+\item Distributed payload
+\item Enhanced endurance
+\end{itemize}
+\centering
+$\Rightarrow$ \textbf{hopefully still less expensive}
+\end{tcolorbox}  
+
+\end{frame}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{juppmehrbionik}
+} 
+\begin{frame}{Inspired by migratory birds}
+
+\end{frame}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{NASA-AFF-smokevortex}
+}
+\begin{frame}{}
+
+\vspace{11em}
+\flushright
+\begin{tcolorbox}[width=.6\textwidth,colback={gray!10!}]  
+\centering
+Wingtip vortices create local updrafts
+\end{tcolorbox}  
+
+\end{frame}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{NASA_AFF_1.png}
+}
+\begin{frame}{}
+
+\vspace{-8em}
+\centering
+\begin{tcolorbox}[width=.8\textwidth,colback={gray!10!}]  
+\centering
+NASA \textbf{A}utonomus \textbf{F}ormation \textbf{F}light Program: \\
+2x F-18 $\Rightarrow$ -18 \% fuel flow  
+\end{tcolorbox}  
+
+\end{frame}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{lobsters}
+}
+\begin{frame}\frametitle{\textcolor{white}{Even lobsters do it}}
+\end{frame}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{juppmehrbionik}
+} 
+\begin{frame}\frametitle{ \hspace{2em} Why is it hard for small UAS?}
+\end{frame}
+
+\begin{frame}\frametitle{\hspace{2em} Why is it hard for small UAS?}
+\vspace{-1em}
+\centering
+
+\begin{tcolorbox}[width=.8\textwidth,colback={gray!10!}]  
+ \centering
+ $\Delta x$: peak fuel saving at $4.2 b$ downstream \cite{jake2003f}\\
+ $-0.2 b < \Delta y < -0.1 b$ \\
+ $-0.1 b < \Delta z < 0$ \\
+\end{tcolorbox}  
+
+
+\begin{tcolorbox}[width=.8\textwidth,colback={gray!10!}]  
+\begin{itemize}
+\item Heavy perturbations by vortices
+\item Focus on guidance strategies in the community
+\end{itemize}
+\end{tcolorbox}  
+
+\end{frame}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{ARSENL_swarm50}
+}
+
+\begin{frame}{State of the art - flight tested}
+\centering
+
+\begin{tcolorbox}[width=.99\textwidth,
+colback={gray!10!},
+standard jigsaw,
+title=Guidance,
+opacityback=.8,  % this works only in combination with the key "standard jigsaw"
+]  
+    \begin{itemize}
+    \item Naval Postgraduate School ARSENL lab: 50 UAVS, one operator\cite{ARSENL50UAVS}
+    \end{itemize}
+    \end{tcolorbox}
+    
+    \begin{tcolorbox}[width=.99\textwidth,
+    colback={gray!10!},
+    standard jigsaw,
+    title=Control performance,
+    opacityback=.8,  % this works only in combination with the key "standard jigsaw"
+    ]  
+        \begin{itemize}
+          \item MIT PCUAV project \cite{Park2004} (2004) $\sigma(||\Delta p||) \approx 1.9 \, m$, turbulent air, windspeed 20 \% airspeed
+    %\begin{figure}
+    %                     \centering
+    %                     \includegraphics[width=.55\textwidth]{MIT_pcuav.png}
+    %                     \caption{MIT PCUAV flight \cite{PCUAVwebsite2015}}
+    %                     \end{figure}
+    
+          \item West Virginia University \cite{gu2006design} (2004): $\sigma(\Delta p) \approx       
+          (2 \; 3 \; 1)^T
+           \, m$
+           
+        \end{itemize}
+        \end{tcolorbox}
+    
+\end{frame}
+
+\usebackgroundtemplate{}
+
+\begin{frame}
+\centering
+\Large
+\vspace{3em}
+Why another PhD?
+\end{frame}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{ARSENL_swarm50}
+}
+
+\begin{frame}{Missing parts}
+\centering
+\vspace{-6em}
+\begin{tcolorbox}[width=.99\textwidth,
+colback={gray!10!},
+standard jigsaw,
+opacityback=1,  % this works only in combination with the key "standard jigsaw"
+]  
+\begin{itemize}
+\item Lack of benchmark problems
+\item Lack of implementable control approaches for 
+\begin{itemize}
+\item dm-level relative position control in the wake 
+\item with relative state information
+\begin{itemize}
+\item Mature linear control approaches, \textbf{require leader information} for mesh stability
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+\usebackgroundtemplate{}
+\begin{frame}
+\centering
+\Large
+\vspace{3em}
+Sliding Mode Guidance laws
+\end{frame}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{smc-principle}
+}
+
+\begin{frame}\frametitle{}
+\centering
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Ideal Sliding Mode Control, width=20em,
+standard jigsaw,
+opacityback=.7]
+%\begin{tikzpicture}[remember picture, overlay]
+%    \node[inner sep=0pt] at (6.3,-1.1) {%
+%        \includegraphics[width=.13\paperwidth]{utkin}%
+%    };%
+%\end{tikzpicture}
+\begin{itemize}
+\item straightforward design
+\item input switching at infinite frequency
+\item insensitive to \textbf{matched} perturbations
+\item Recently proposed for platooning \cite{Fahimi2007} and formation flight \cite{galzi2006uav}
+\end{itemize}
+\end{tcolorbox}
+
+\end{frame}
+
+
+\usebackgroundtemplate{}
+\begin{frame}{Sliding Mode Control}
+\centering
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Potential Benefits, width=20em,
+standard jigsaw,
+opacityback=.7]
+\begin{itemize}
+\item decentralized and scalable: mesh stability with local relative states
+\item Robustness towards exogenous perturbations
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{smc-principle-chattering}
+}
+\begin{frame}\frametitle{}
+\centering
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Clash with reality, width=20em,
+standard jigsaw,
+opacityback=.7]
+\begin{itemize}
+\item discrete implementation $\Rightarrow$ no infinite switching
+\item actuator dynamics 
+\item delays
+\end{itemize}
+\centering
+$\Rightarrow$ \textbf{ Chattering} 
+\end{tcolorbox}
+\end{frame}
+
+\usebackgroundtemplate{}
+\begin{frame}
+\centering
+\Large
+\vspace{3em}
+Continuous Time Sliding Mode Control applied to the UAS guidance loop
+\end{frame}
+
+\begin{frame}{Guidance level: system dynamics}
+\centering
+\includegraphics[width=4.4cm]{frames.pdf}    % The printed column width is 8.4 cm.
+\begin{align}
+\Delta \mbf{p}(t) &= \mbf{p}_\idxFollower(t) - \mbf{p}_\idxPredecessor(t) - \Delta \mbf{p}_c(t)  \nonumber \\
+\Delta \dot{\mbf{p}}(t) &= \mbf{v}_{\idxFollower}(t) - \mbf{v}_{\idxPredecessor}(t) -  \Delta \dot{\mbf{p}}_c(t) \nonumber \\
+\Delta \dot{\mbf{v}}(t) &= \mbf{a}_\idxFollower(t) - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
+{} &= \mbf{a}_{c,\idxFollower}(t) + \mbf{a}_{w,\idxFollower}(t)
+ - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
+{} &= \mbf{u}(t) + \mbf{a}_{w,\idxFollower}(t)
+ - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber
+\end{align}
+\end{frame}
+
+\begin{frame}{Vortex perturbations}
+\centering
+\includegraphics[height=.75\paperheight]{incrementallift.pdf}    % The printed column width is 8.4 cm.
+\end{frame}
+
+\begin{frame}{Simulation: TSCSMC \cite{galzi2006uav} at 1000Hz}
+\centering
+\includegraphics[height=.6\paperwidth]{TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1}    % 
+\end{frame}
+
+\begin{frame}{Simulation: TSCSMC at 100Hz}
+\centering
+\includegraphics[height=.6\paperwidth]{TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1}    % 
+\end{frame}
+
+
+\usebackgroundtemplate{
+}
+
+\begin{frame}{Predictive Discrete Sliding Mode Control}
+\centering
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=PDSMC]
+\begin{itemize}
+\item Recent approach \cite{houda2013new}
+\item Design directly in discrete time
+\item Preserve spirit of Sliding Mode Control: moving on the sliding surface
+\item Can accommodate hard input constraints
+\item Minimizes boundary layer without tuning
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Predictive Discrete Sliding Mode Control}
+\centering
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=What it looks like, width=.8\paperwidth]
+
+\begin{align}
+\mbf{\sigma}(\idxSample) &= \mbf{G}
+\begin{pmatrix}
+\Delta \mbf{p}(\idxSample)\\
+\Delta \mbf{v}(\idxSample)
+\end{pmatrix} \nonumber
+\end{align}
+
+\begin{align}
+{{\sigma}}(\idxSample+1)
+&=
+{{\sigma}}(\idxSample)
++
+T(
+\mbf{\Phi}'_k(\idxSample) + \mbf{\Phi}'_u(\idxSample) + \mbf{u}(\idxSample))
+\nonumber
+\end{align}
+
+\begin{align}
+& \underset{\mbf{u}(\idxSample)}{\text{minimize}}
+& & |\mbf{\sigma}(\idxSample+1)| \nonumber 
+\end{align}
+
+\end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}{Predictive Discrete Sliding Mode Control}
+\centering
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Adding hard magnitude and rate constraints \cite{Bolting2016}, width=.8\paperwidth]
+
+\begin{align}
+& \underset{\mbf{u}(\idxSample)}{\text{minimize}}
+& & |\mbf{\sigma}(\idxSample+1)| \nonumber \\
+& \text{subject to}
+& & \mbf{U}_{min}(\idxSample) \leq \mbf{u}(\idxSample) \leq \mbf{U}_{max}(\idxSample) 
+\nonumber
+\end{align}
+
+\begin{align}
+|\mbf{u}(\idxSample) - \mbf{u}(\idxSample-1)| \leq \mbf{\Delta U} \nonumber
+\end{align}
+
+\begin{align}
+\mbf{U}_{max}(\idxSample) = sat(\mbf{u}(\idxSample-1) + \mbf{\Delta U}, -\mbf{U}, \mbf{U}) \nonumber \\
+\mbf{U}_{min}(\idxSample) = sat(\mbf{u}(\idxSample-1) - \mbf{\Delta U}, -\mbf{U}, \mbf{U}) \nonumber
+\end{align}
+
+\end{tcolorbox}
+\end{frame}
+
+\usebackgroundtemplate{}
+
+\begin{frame}
+\centering
+\Large
+\vspace{3em}
+How does it compare \\to\\ discretized Continuous-time Sliding Mode Control (TSCSMC)?
+\end{frame}
+
+\begin{frame}{Simulation: PDSMC at 100Hz}
+\centering
+\includegraphics[height=.6\paperwidth]{PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1}    % 
+\end{frame}
+
+\begin{frame}{Figures of Merit vs. sampling time}
+\centering
+\includegraphics[height=0.8\paperheight]{error-z-vs-samplingtime.pdf}    
+\end{frame}
+
+\begin{frame}{What about scalability?}
+\centering
+\includegraphics[width=\columnwidth]{erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-turbulenceonlyfirstUAS} 
+\end{frame}
+
+\usebackgroundtemplate{}
+\begin{frame}
+\centering
+\Large
+\vspace{3em}
+Benchmark
+\end{frame}
+
+\begin{frame}{}
+\begin{itemize}
+\item Cularis UAS dynamics model
+\item Simulink blockset, \textbf{code-generation compatible}
+\item Set of LQR baseline controllers
+\item Vortex model \cite{dogan2005modeling}
+\item C2-continuous benchmark trajectory \cite{Yang2008}
+\item Figures of merit
+\item open visualization environment UAV3D \cite{UAV3D}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusion}
+
+\begin{tcolorbox}[width=.99\textwidth,
+colback={blue!10!},
+standard jigsaw,
+opacityback=1,  % this works only in combination with the key "standard jigsaw"
+]  
+\begin{itemize}
+\item PDSMC viable for tight FF
+\item Overcomes chattering issue of existing TSCSMC, preserves attractive properties of CSMC
+\item Extended existing PDSMC approaches to respect inner loop constraints \cite{Bolting2016}
+\item Very good performance on perturbed guidance system
+\item Open formation flight benchmark
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[width=.99\textwidth,
+colback={red!10!},
+standard jigsaw,
+opacityback=1,  % this works only in combination with the key "standard jigsaw"
+]  
+\begin{itemize}
+\item Extend PDSMC further: inner loop dynamics
+\item Quantify mesh instability
+\item Possibly mitigate or remedy mesh instability
+\end{itemize}
+\end{tcolorbox}
+
+\end{frame}
+
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{dlg-9-2}
+}
+
+\begin{frame}
+\end{frame}
+
+\usebackgroundtemplate{}
+
+\frametitle{References}
+
+%\begin{frame}{References}
+\bibliographystyle{ieeetr}
+\bibliography{../../bibliography/bibliographyACA}        
+%\bibliography{./../bibliography/bibliographyPhD}  
+%\end{frame}
+
+\end{document}
