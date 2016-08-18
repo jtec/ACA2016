@@ -47,17 +47,32 @@
 %\includegraphics[width=\paperwidth,height=\paperheight]{UAV3D_N=2_sky}
 }
 
+\title{Discrete Sliding Mode control of small UAS in tight formation flight under information constraints}
 
+\author{J.Bolting\inst{1} \and S.Fergani\inst{1} \and J.-M.Biannic\inst{2} \and F.Defay\inst{1} \and M.Stolle\inst{2}}
+  
+\institute[VFU] % (optional)
+{
+\inst{1}Institut Supérieur de l'Aéronautique et de l'Espace (ISAE)  
+\and
+\inst{2}Office National d'Études et de Recherches Aérospatiales (ONERA) 
+}
+ 
+\date{IFAC ACA'16}
+
+\maketitle
 
 \usebackgroundtemplate{}
 
 \begin{frame}{Outline}
-  $\Rightarrow$ Benefits - Why tight formation flight?\\
+  $\Rightarrow$ Motivation\\
   \vspace{1em}
   $\Rightarrow$ Challenges \\
   \vspace{1em}
-  $\Rightarrow$ Sliding Mode Guidance laws \\
-  \vspace{1em}
+  $\Rightarrow$ Sliding Mode Control for relative position holding\\
+  \vspace{1em}  
+  $\Rightarrow$ Predictive Discrete Sliding Mode Guidance laws \\
+  \vspace{1em}  
   $\Rightarrow$ Overview \\
 \end{frame}
 
@@ -105,8 +120,9 @@
 \usebackgroundtemplate{
 \includegraphics[width=\paperwidth,height=\paperheight]{dlg-9-II}
 }
-\begin{frame}{}
 
+\begin{comment}
+\begin{frame}{}
 \vspace{-8em}
 \centering
 \begin{tcolorbox}[width=.8\textwidth,colback=gray!10!,title=Fleets of UAS]  
@@ -119,9 +135,41 @@
 \centering
 $\Rightarrow$ \textbf{(hopefully) less expensive}
 \end{tcolorbox}  
+\end{frame}
+\end{comment}
+
+
+\usebackgroundtemplate{} 
+\begin{frame}{Benefit of tight and large formations \cite{Hummel1982}}
+\begin{center}
+\includegraphics[width=0.6\paperwidth]{Aerodynamic-graph-rouge}
+\end{center}
+\end{frame}
+
+\begin{comment}
+\usebackgroundtemplate{
+\includegraphics[width=\paperwidth,height=\paperheight]{NASA_AFF_1.png}
+}
+\begin{frame}{}
+
+\vspace{-6em}
+\centering
+
+\begin{tcolorbox}[width=.8\textwidth,colback={gray!10!}]  
+\centering
+NASA \textbf{A}utonomus \textbf{F}ormation \textbf{F}light Program: \\
+2x F-18 $\Rightarrow$ -18 \% fuel flow  \\
+ $\Delta x$: peak fuel saving at $4.2 b$ downstream \cite{jake2003f}\\
+ $-0.2 b < \Delta y < -0.1 b$ \\
+ $-0.1 b < \Delta z < 0$ \\
+  Linear control laws, not scalable
+\end{tcolorbox}  
 
 \end{frame}
 
+\end{comment}
+
+\begin{comment}
 \usebackgroundtemplate{
 \includegraphics[width=\paperwidth,height=\paperheight]{juppmehrbionik}
 } 
@@ -129,20 +177,7 @@ $\Rightarrow$ \textbf{(hopefully) less expensive}
 
 \end{frame}
 
-\usebackgroundtemplate{
-\includegraphics[width=\paperwidth,height=\paperheight]{NASA_AFF_1.png}
-}
-\begin{frame}{}
-
-\vspace{-8em}
-\centering
-\begin{tcolorbox}[width=.8\textwidth,colback={gray!10!}]  
-\centering
-NASA \textbf{A}utonomus \textbf{F}ormation \textbf{F}light Program: \\
-2x F-18 $\Rightarrow$ -18 \% fuel flow  
-\end{tcolorbox}  
-
-\end{frame}
+\end{comment}
 
 \usebackgroundtemplate{
 \includegraphics[width=\paperwidth,height=\paperheight]{lobsters}
@@ -154,18 +189,10 @@ NASA \textbf{A}utonomus \textbf{F}ormation \textbf{F}light Program: \\
 \includegraphics[width=\paperwidth,height=\paperheight]{juppmehrbionik}
 } 
 
+\begin{comment}
 \begin{frame}\frametitle{\hspace{2em} Why is it hard for small UAS?}
 \vspace{-1em}
 \centering
-
-\begin{tcolorbox}[width=.8\textwidth,colback={gray!10!}]  
- \centering
- $\Delta x$: peak fuel saving at $4.2 b$ downstream \cite{jake2003f}\\
- $-0.2 b < \Delta y < -0.1 b$ \\
- $-0.1 b < \Delta z < 0$ \\
-\end{tcolorbox}  
-
-
 \begin{tcolorbox}[width=.8\textwidth,colback={gray!10!}]  
 \begin{itemize}
 \item Heavy perturbations by vortices
@@ -174,47 +201,7 @@ NASA \textbf{A}utonomus \textbf{F}ormation \textbf{F}light Program: \\
 \end{tcolorbox}  
 
 \end{frame}
-
-\usebackgroundtemplate{
-\includegraphics[width=\paperwidth,height=\paperheight]{ARSENL_swarm50}
-}
-
-\begin{frame}{State of the art - flight tested}
-\centering
-
-\begin{tcolorbox}[width=.99\textwidth,
-colback={gray!10!},
-standard jigsaw,
-title=Guidance,
-opacityback=.8,  % this works only in combination with the key "standard jigsaw"
-]  
-    \begin{itemize}
-    \item Naval Postgraduate School ARSENL lab: 50 UAVS, one operator\cite{ARSENL50UAVS}
-    \end{itemize}
-    \end{tcolorbox}
-    
-    \begin{tcolorbox}[width=.99\textwidth,
-    colback={gray!10!},
-    standard jigsaw,
-    title=Control performance,
-    opacityback=.8,  % this works only in combination with the key "standard jigsaw"
-    ]  
-        \begin{itemize}
-          \item MIT PCUAV project \cite{Park2004} (2004) $\sigma(||\Delta p||) \approx 1.9 \, m$, turbulent air, windspeed 20 \% airspeed
-    %\begin{figure}
-    %                     \centering
-    %                     \includegraphics[width=.55\textwidth]{MIT_pcuav.png}
-    %                     \caption{MIT PCUAV flight \cite{PCUAVwebsite2015}}
-    %                     \end{figure}
-    
-          \item West Virginia University \cite{gu2006design} (2004): $\sigma(\Delta p) \approx       
-          (2 \; 3 \; 1)^T
-           \, m$
-           
-        \end{itemize}
-        \end{tcolorbox}
-    
-\end{frame}
+\end{comment}
 
 \usebackgroundtemplate{}
 
@@ -222,7 +209,7 @@ opacityback=.8,  % this works only in combination with the key "standard jigsaw"
 \includegraphics[width=\paperwidth,height=\paperheight]{ARSENL_swarm50}
 }
 
-\begin{frame}{Missing parts}
+\begin{frame}{Why is it hard?}
 \centering
 \vspace{-6em}
 \begin{tcolorbox}[width=.99\textwidth,
@@ -231,14 +218,9 @@ standard jigsaw,
 opacityback=1,  % this works only in combination with the key "standard jigsaw"
 ]  
 \begin{itemize}
-\item Lack of implementable control approaches for 
-\begin{itemize}
-\item dm-level relative position control in the wake 
-\item with relative state information
-\begin{itemize}
-\item Mature linear control approaches, \textbf{require leader information} for mesh stability
-\end{itemize}
-\end{itemize}
+\item dm-level relative position control under heavy perturbations in the wake 
+\item desirable property: only \textbf{local} relative state information
+\item Existing linear control approaches (\cite{shaw2007controller}), require leader information for mesh stability
 \end{itemize}
 \end{tcolorbox}
 \end{frame}
@@ -248,8 +230,27 @@ opacityback=1,  % this works only in combination with the key "standard jigsaw"
 \centering
 \Large
 \vspace{3em}
-Sliding Mode Guidance laws
+\begin{center}
+One promising candidate: \\
+Sliding Mode Control\\
+performance \& mesh stability
+\end{center}
 \end{frame}
+
+\begin{frame}{Guidance level: system dynamics}
+\centering
+\includegraphics[width=4.4cm]{frames.pdf}    % The printed column width is 8.4 cm.
+\begin{align}
+\Delta \mbf{p}(t) &= \mbf{p}_\idxFollower(t) - \mbf{p}_\idxPredecessor(t) - \Delta \mbf{p}_c(t)  \nonumber \\
+\Delta \dot{\mbf{p}}(t) &= \mbf{v}_{\idxFollower}(t) - \mbf{v}_{\idxPredecessor}(t) -  \Delta \dot{\mbf{p}}_c(t) \nonumber \\
+\Delta \dot{\mbf{v}}(t) &= \mbf{a}_\idxFollower(t) - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
+{} &= \mbf{a}_{c,\idxFollower}(t) + \mbf{a}_{w,\idxFollower}(t)
+ - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
+{} &= \mbf{u}(t) + \mbf{a}_{w,\idxFollower}(t)
+ - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber
+\end{align}
+\end{frame}
+
 
 \usebackgroundtemplate{
 \includegraphics[width=\paperwidth,height=\paperheight]{smc-principle}
@@ -267,30 +268,13 @@ opacityback=.7]
 %    };%
 %\end{tikzpicture}
 \begin{itemize}
-\item straightforward design
-\item input switching at infinite frequency
-\item insensitive to \textbf{matched} perturbations
+\item Insensitive to \textbf{matched} perturbations
+\item nonlinear
 \item Recently proposed for platooning \cite{Fahimi2007} and formation flight \cite{galzi2006uav}
 \end{itemize}
 \end{tcolorbox}
 
 \end{frame}
-
-
-\usebackgroundtemplate{}
-\begin{frame}{Sliding Mode Control}
-\centering
-
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Potential Benefits, width=20em,
-standard jigsaw,
-opacityback=.7]
-\begin{itemize}
-\item Decentralized and scalable: mesh stability with local state information
-\item Robustness towards exogenous perturbations
-\end{itemize}
-\end{tcolorbox}
-\end{frame}
-
 
 \usebackgroundtemplate{
 \includegraphics[width=\paperwidth,height=\paperheight]{smc-principle-chattering}
@@ -301,42 +285,33 @@ opacityback=.7]
 standard jigsaw,
 opacityback=.7]
 \begin{itemize}
-\item discrete implementation $\Rightarrow$ no infinite switching
-\item actuator dynamics 
+\item actuator dynamics $\Rightarrow$ perturbations unmatched 
 \item delays
+\item discrete implementation $\Rightarrow$ no infinite input switching
 \end{itemize}
 \centering
-$\Rightarrow$ \textbf{ Chattering} 
+$\Rightarrow$ \textbf{ Chattering, loss of mesh stability} 
 \end{tcolorbox}
 \end{frame}
 
 \usebackgroundtemplate{}
 \begin{frame}
-\centering
 \Large
 \vspace{3em}
+\begin{center}
 Continuous Time Sliding Mode Control applied to the UAS guidance loop
+\end{center}
 \end{frame}
 
-\begin{frame}{Guidance level: system dynamics}
-\centering
-\includegraphics[width=4.4cm]{frames.pdf}    % The printed column width is 8.4 cm.
-\begin{align}
-\Delta \mbf{p}(t) &= \mbf{p}_\idxFollower(t) - \mbf{p}_\idxPredecessor(t) - \Delta \mbf{p}_c(t)  \nonumber \\
-\Delta \dot{\mbf{p}}(t) &= \mbf{v}_{\idxFollower}(t) - \mbf{v}_{\idxPredecessor}(t) -  \Delta \dot{\mbf{p}}_c(t) \nonumber \\
-\Delta \dot{\mbf{v}}(t) &= \mbf{a}_\idxFollower(t) - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
-{} &= \mbf{a}_{c,\idxFollower}(t) + \mbf{a}_{w,\idxFollower}(t)
- - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
-{} &= \mbf{u}(t) + \mbf{a}_{w,\idxFollower}(t)
- - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber
-\end{align}
-\end{frame}
-
+\begin{comment}
 \begin{frame}{Vortex perturbations: MHVM \cite{dogan2005modeling}}
-\centering
-\includegraphics[height=.75\paperheight]{incrementallift.pdf}    % The printed column width is 8.4 cm.
+\begin{center}
+\includegraphics[height=.75\paperheight]{incrementallift.pdf}
+\end{center} 
 \end{frame}
 
+\end{comment}
+\begin{comment}
 \begin{frame}{}
 \centering
 \Large
@@ -344,14 +319,17 @@ Continuous Time Sliding Mode Control applied to the UAS guidance loop
 Reference: \textbf{T}ime \textbf{S}ampled \textbf{C}ontinuous Higher Order \textbf{S}liding \textbf{M}ode \textbf{C}ontroller \cite{galzi2006uav} \\
 \end{frame}
 
-\begin{frame}{Simulation: TSCSMC \cite{galzi2006uav} at 1000Hz}
-\centering
-\includegraphics[height=.6\paperwidth]{TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1}    % 
+\end{comment}
+\begin{frame}{Longitudinal: TSCSMC \cite{galzi2006uav} at 1000Hz}
+\begin{center}
+\includegraphics[height=.6\paperwidth]{TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1}    
+\end{center}% 
 \end{frame}
 
-\begin{frame}{Simulation: TSCSMC at 100Hz}
-\centering
-\includegraphics[height=.6\paperwidth]{TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1}    % 
+\begin{frame}{Longitudinal: TSCSMC at 100Hz}
+\begin{center}
+\includegraphics[height=.6\paperwidth]{TSCSMC-100Hz-TIMESCALESEPARATION-turbulence=1}    
+\end{center}% 
 \end{frame}
 
 \usebackgroundtemplate{
@@ -363,8 +341,7 @@ Reference: \textbf{T}ime \textbf{S}ampled \textbf{C}ontinuous Higher Order \text
 \begin{itemize}
 \item Recent approach \cite{houda2013new}
 \item Design directly in discrete time
-\item Preserve spirit of Sliding Mode Control: moving on the sliding surface
-\item Can accommodate hard input constraints
+\item Preserve spirit of Sliding Mode Control: stay in boundary layer of sliding surface
 \item Minimizes boundary layer without tuning
 \end{itemize}
 \end{tcolorbox}
@@ -425,31 +402,40 @@ T(
 \end{tcolorbox}
 \end{frame}
 
+\begin{comment}
 \usebackgroundtemplate{}
 
 \begin{frame}
-\centering
 \Large
 \vspace{3em}
-How does it compare \\to\\ discretized Continuous-time Sliding Mode Control (TSCSMC)?
+
+\begin{center}
+Comparison \\to\\ discretized Continuous-time Sliding Mode Control (TSCSMC)
+\end{center}
 \end{frame}
 
+\end{comment}
 \begin{frame}{Simulation: PDSMC at 100Hz}
-\centering
+\begin{center}
 \includegraphics[height=.6\paperwidth]{PDSMC-100Hz-TIMESCALESEPARATION-turbulence=1}    % 
-\end{frame}
+
+\end{center}\end{frame}
 
 \begin{frame}{Figures of Merit vs. sampling time}
-\centering
+
+\begin{center}
 \includegraphics[height=0.8\paperheight]{error-z-vs-samplingtime.pdf}    
-\end{frame}
+
+\end{center}\end{frame}
 
 \begin{frame}{What about scalability?}
 \centering
+\begin{center}
 \includegraphics[width=\columnwidth]{erroramplification-DSMC-100Hz-TIMESCALESEPARATION-turbulence=1-turbulenceonlyfirstUAS} 
-\end{frame}
 
-\begin{frame}{Conclusion}
+\end{center}\end{frame}
+
+\begin{frame}{Conclusion \& Outlook}
 
 \begin{tcolorbox}[width=.99\textwidth,
 colback={blue!10!},
@@ -457,10 +443,8 @@ standard jigsaw,
 opacityback=1,  % this works only in combination with the key "standard jigsaw"
 ]  
 \begin{itemize}
-\item PDSMC viable for tight FF
-\item Overcomes chattering issue of existing TSCSMC, preserves attractive properties of CSMC
-\item Extended existing PDSMC approaches to respect inner loop constraints \cite{Bolting2016}
-\item Very good performance on perturbed guidance system
+\item PDSMC alleviates discretization issue of TSCSMC controller for TFF
+\item Extends existing PDSMC approaches to respect inner loop constraints 
 \end{itemize}
 \end{tcolorbox}
 
@@ -470,8 +454,8 @@ standard jigsaw,
 opacityback=1,  % this works only in combination with the key "standard jigsaw"
 ]  
 \begin{itemize}
-\item Extend PDSMC further: inner loop dynamics, lower sampling rates
-\item Quantify mesh instability
+\item Extend PDSMC further: inner loop dynamics, lower sampling rates, observation noise
+\item Better understand and quantify mesh instability
 \end{itemize}
 \end{tcolorbox}
 

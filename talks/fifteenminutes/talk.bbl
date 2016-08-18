@@ -1,20 +1,18 @@
 \begin{thebibliography}{1}
 
+\bibitem{Hummel1982}
+D.~Hummel, ``Aerodynamic aspects of formation flight in birds,'' {\em Journal
+  of theoretical Biology}, 1982.
+
 \bibitem{jake2003f}
 V.~Jake, R.~Ray, K.~Ennix, and K.~Walsh, ``{F/A-18 Performance Benefits
   Measured During the Autonomous Formation Flight Project},'' tech. rep.,
   NASA/TM-2002-210732, Sept, 2003.
 
-\bibitem{Park2004}
-S.~Park, {\em {Avionics and Control System Development for Mid-Air Rendezvous
-  of Two Unmanned Aerial Vehicles}}.
-\newblock PhD thesis, MIT, 2004.
-
-\bibitem{gu2006design}
-Y.~Gu, B.~Seanor, G.~Campa, M.~R. Napolitano, L.~Rowe, S.~Gururajan, and
-  S.~Wan, ``Design and flight testing evaluation of formation control laws,''
-  {\em Control Systems Technology, IEEE Transactions on}, vol.~14, no.~6,
-  pp.~1105--1112, 2006.
+\bibitem{shaw2007controller}
+E.~Shaw and J.~K. Hedrick, ``Controller design for string stable heterogeneous
+  vehicle strings,'' in {\em Decision and Control, 2007 46th IEEE Conference
+  on}, pp.~2868--2875, IEEE, 2007.
 
 \bibitem{Fahimi2007}
 F.~Fahimi, ``Sliding-mode formation control for underactuated surface
