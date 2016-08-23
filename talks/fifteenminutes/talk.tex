@@ -65,15 +65,13 @@
 \usebackgroundtemplate{}
 
 \begin{frame}{Outline}
-  $\Rightarrow$ Motivation\\
+  $\Rightarrow$ Why tight formation flight with small UAS?\\
   \vspace{1em}
-  $\Rightarrow$ Challenges \\
-  \vspace{1em}
-  $\Rightarrow$ Sliding Mode Control for relative position holding\\
+  $\Rightarrow$ Problem Statement\\
   \vspace{1em}  
   $\Rightarrow$ Predictive Discrete Sliding Mode Guidance laws \\
   \vspace{1em}  
-  $\Rightarrow$ Overview \\
+  $\Rightarrow$ Overview \& where to go from here\\
 \end{frame}
 
 \usebackgroundtemplate{
@@ -140,7 +138,7 @@ $\Rightarrow$ \textbf{(hopefully) less expensive}
 
 
 \usebackgroundtemplate{} 
-\begin{frame}{Benefit of tight and large formations \cite{Hummel1982}}
+\begin{frame}{Tight, large formations enhance range\cite{Hummel1982}}
 \begin{center}
 \includegraphics[width=0.6\paperwidth]{Aerodynamic-graph-rouge}
 \end{center}
@@ -209,7 +207,7 @@ NASA \textbf{A}utonomus \textbf{F}ormation \textbf{F}light Program: \\
 \includegraphics[width=\paperwidth,height=\paperheight]{ARSENL_swarm50}
 }
 
-\begin{frame}{Why is it hard?}
+\begin{frame}{Why is it hard for small UAS?}
 \centering
 \vspace{-6em}
 \begin{tcolorbox}[width=.99\textwidth,
@@ -218,9 +216,10 @@ standard jigsaw,
 opacityback=1,  % this works only in combination with the key "standard jigsaw"
 ]  
 \begin{itemize}
-\item dm-level relative position control under heavy perturbations in the wake 
-\item desirable property: only \textbf{local} relative state information
-\item Existing linear control approaches (\cite{shaw2007controller}), require leader information for mesh stability
+\item Dm-level relative position control under heavy perturbations in the wake 
+\item Desirable property: only \textbf{local} relative state information
+\item Fundamental result: linear control (\cite{shaw2007controller}) requires leader information for mesh stability \cite{Seiler2004}
+\item Look out for nonlinear approaches
 \end{itemize}
 \end{tcolorbox}
 \end{frame}
@@ -231,26 +230,11 @@ opacityback=1,  % this works only in combination with the key "standard jigsaw"
 \Large
 \vspace{3em}
 \begin{center}
-One promising candidate: \\
-Sliding Mode Control\\
+One candidate: \\
+Sliding Mode Control:\\
 performance \& mesh stability
 \end{center}
 \end{frame}
-
-\begin{frame}{Guidance level: system dynamics}
-\centering
-\includegraphics[width=4.4cm]{frames.pdf}    % The printed column width is 8.4 cm.
-\begin{align}
-\Delta \mbf{p}(t) &= \mbf{p}_\idxFollower(t) - \mbf{p}_\idxPredecessor(t) - \Delta \mbf{p}_c(t)  \nonumber \\
-\Delta \dot{\mbf{p}}(t) &= \mbf{v}_{\idxFollower}(t) - \mbf{v}_{\idxPredecessor}(t) -  \Delta \dot{\mbf{p}}_c(t) \nonumber \\
-\Delta \dot{\mbf{v}}(t) &= \mbf{a}_\idxFollower(t) - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
-{} &= \mbf{a}_{c,\idxFollower}(t) + \mbf{a}_{w,\idxFollower}(t)
- - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
-{} &= \mbf{u}(t) + \mbf{a}_{w,\idxFollower}(t)
- - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber
-\end{align}
-\end{frame}
-
 
 \usebackgroundtemplate{
 \includegraphics[width=\paperwidth,height=\paperheight]{smc-principle}
@@ -268,8 +252,9 @@ opacityback=.7]
 %    };%
 %\end{tikzpicture}
 \begin{itemize}
-\item Insensitive to \textbf{matched} perturbations
-\item nonlinear
+\item Straightforward controller design procedure
+\item Insensitive to {matched} perturbations
+\item Nonlinear
 \item Recently proposed for platooning \cite{Fahimi2007} and formation flight \cite{galzi2006uav}
 \end{itemize}
 \end{tcolorbox}
@@ -285,9 +270,9 @@ opacityback=.7]
 standard jigsaw,
 opacityback=.7]
 \begin{itemize}
-\item actuator dynamics $\Rightarrow$ perturbations unmatched 
-\item delays
-\item discrete implementation $\Rightarrow$ no infinite input switching
+\item Actuator dynamics $\Rightarrow$ perturbations \textbf{not matched} 
+\item \textbf{Delays}
+\item \textbf{Discrete} implementation + rate saturations $\Rightarrow$ no infinite input switching
 \end{itemize}
 \centering
 $\Rightarrow$ \textbf{ Chattering, loss of mesh stability} 
@@ -299,7 +284,8 @@ $\Rightarrow$ \textbf{ Chattering, loss of mesh stability}
 \Large
 \vspace{3em}
 \begin{center}
-Continuous Time Sliding Mode Control applied to the UAS guidance loop
+Continuous Time Sliding Mode Control applied to the UAS guidance loop:\\
+Longitudinal maneuver
 \end{center}
 \end{frame}
 
@@ -317,6 +303,20 @@ Continuous Time Sliding Mode Control applied to the UAS guidance loop
 \Large
 \vspace{3em}
 Reference: \textbf{T}ime \textbf{S}ampled \textbf{C}ontinuous Higher Order \textbf{S}liding \textbf{M}ode \textbf{C}ontroller \cite{galzi2006uav} \\
+\end{frame}
+
+\begin{frame}{Guidance level: system dynamics}
+\centering
+\includegraphics[width=4.4cm]{frames.pdf}    % The printed column width is 8.4 cm.
+\begin{align}
+\Delta \mbf{p}(t) &= \mbf{p}_\idxFollower(t) - \mbf{p}_\idxPredecessor(t) - \Delta \mbf{p}_c(t)  \nonumber \\
+\Delta \dot{\mbf{p}}(t) &= \mbf{v}_{\idxFollower}(t) - \mbf{v}_{\idxPredecessor}(t) -  \Delta \dot{\mbf{p}}_c(t) \nonumber \\
+\Delta \dot{\mbf{v}}(t) &= \mbf{a}_\idxFollower(t) - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
+{} &= \mbf{a}_{c,\idxFollower}(t) + \mbf{a}_{w,\idxFollower}(t)
+ - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
+{} &= \mbf{u}(t) + \mbf{a}_{w,\idxFollower}(t)
+ - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber
+\end{align}
 \end{frame}
 
 \end{comment}
@@ -339,7 +339,7 @@ Reference: \textbf{T}ime \textbf{S}ampled \textbf{C}ontinuous Higher Order \text
 \centering
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=PDSMC]
 \begin{itemize}
-\item Recent approach \cite{houda2013new}
+\item Extends recent approach \cite{houda2013new}
 \item Design directly in discrete time
 \item Preserve spirit of Sliding Mode Control: stay in boundary layer of sliding surface
 \item Minimizes boundary layer without tuning

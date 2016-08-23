@@ -4,15 +4,15 @@
 D.~Hummel, ``Aerodynamic aspects of formation flight in birds,'' {\em Journal
   of theoretical Biology}, 1982.
 
-\bibitem{jake2003f}
-V.~Jake, R.~Ray, K.~Ennix, and K.~Walsh, ``{F/A-18 Performance Benefits
-  Measured During the Autonomous Formation Flight Project},'' tech. rep.,
-  NASA/TM-2002-210732, Sept, 2003.
-
 \bibitem{shaw2007controller}
 E.~Shaw and J.~K. Hedrick, ``Controller design for string stable heterogeneous
   vehicle strings,'' in {\em Decision and Control, 2007 46th IEEE Conference
   on}, pp.~2868--2875, IEEE, 2007.
+
+\bibitem{Seiler2004}
+P.~Seiler, A.~Pant, and K.~Hedrick, ``Disturbance propagation in vehicle
+  strings,'' {\em Automatic Control, IEEE Transactions on}, vol.~49, no.~10,
+  pp.~1835--1842, 2004.
 
 \bibitem{Fahimi2007}
 F.~Fahimi, ``Sliding-mode formation control for underactuated surface
@@ -22,11 +22,6 @@ F.~Fahimi, ``Sliding-mode formation control for underactuated surface
 \bibitem{galzi2006uav}
 D.~Galzi and Y.~Shtessel, ``{UAV} formations control using high order sliding
   modes,'' in {\em American Control Conference, 2006}, pp.~6--pp, IEEE, 2006.
-
-\bibitem{dogan2005modeling}
-A.~Dogan, S.~Venkataramanan, and W.~Blake, ``Modeling of aerodynamic coupling
-  between aircraft in close proximity,'' {\em Journal of Aircraft}, vol.~42,
-  no.~4, pp.~941--955, 2005.
 
 \bibitem{houda2013new}
 B.~M. Houda, D.~Khadija, and N.~A. Said, ``New discrete predictive sliding mode
