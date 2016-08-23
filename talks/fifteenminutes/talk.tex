@@ -1,9 +1,10 @@
 % !TeX spellcheck = en_US
-\documentclass[12pt,svgnames,table,draft=false]{beamer}
+\documentclass[]{beamer}
 
 \usefonttheme{structurebold}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
 \usepackage{framed}
 \usepackage[caption=false]{subfig}
 \usepackage{tcolorbox}
@@ -11,7 +12,6 @@
 %\setbeamertemplate{blocks}[rounded][shadow=false]
 %\setbeamercovered{invisible}
 \setbeamertemplate{caption}[numbered]
-
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{epstopdf}
@@ -42,6 +42,16 @@
     \insertframenumber/\inserttotalframenumber
 }
 
+
+   
+\titlegraphic{
+   \includegraphics[width=2cm]{logo-isae}
+   \hspace*{5em}~
+   \includegraphics[width=2cm]{logo-onera-transparent}
+   \hspace*{5em}~
+   \includegraphics[width=2cm]{logo-IFAC}   
+}
+
 \begin{document}
 \usebackgroundtemplate{
 %\includegraphics[width=\paperwidth,height=\paperheight]{UAV3D_N=2_sky}
@@ -60,7 +70,10 @@
  
 \date{IFAC ACA'16}
 
-\maketitle
+%\maketitle
+
+\frame[plain]{\includegraphics[page=1,width=\textwidth]{titlelina2.pdf}}
+
 
 \usebackgroundtemplate{}
 
@@ -237,7 +250,7 @@ performance \& mesh stability
 \end{frame}
 
 \usebackgroundtemplate{
-\includegraphics[width=\paperwidth,height=\paperheight]{smc-principle}
+\includegraphics[width=.99\paperwidth,height=.98\paperheight]{smc-principle}
 }
 
 \begin{frame}\frametitle{}
@@ -262,7 +275,7 @@ opacityback=.7]
 \end{frame}
 
 \usebackgroundtemplate{
-\includegraphics[width=\paperwidth,height=\paperheight]{smc-principle-chattering}
+\includegraphics[width=.99\paperwidth,height=.98\paperheight]{smc-principle-chattering}
 }
 \begin{frame}\frametitle{}
 \centering
@@ -270,8 +283,7 @@ opacityback=.7]
 standard jigsaw,
 opacityback=.7]
 \begin{itemize}
-\item Actuator dynamics $\Rightarrow$ perturbations \textbf{not matched} 
-\item \textbf{Delays}
+\item Input dynamics $\Rightarrow$ perturbations \textbf{not matched} 
 \item \textbf{Discrete} implementation + rate saturations $\Rightarrow$ no infinite input switching
 \end{itemize}
 \centering
@@ -339,10 +351,10 @@ Reference: \textbf{T}ime \textbf{S}ampled \textbf{C}ontinuous Higher Order \text
 \centering
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=PDSMC]
 \begin{itemize}
-\item Extends recent approach \cite{houda2013new}
+\item Extends recent approach \cite{houda2013new}: input magnitude and rate \textbf{constraints}
 \item Design directly in discrete time
-\item Preserve spirit of Sliding Mode Control: stay in boundary layer of sliding surface
-\item Minimizes boundary layer without tuning
+\item Preserve spirit of Sliding Mode Control: stay in \textbf{boundary layer} of sliding surface
+\item Minimizes boundary layer without tuning parameters
 \end{itemize}
 \end{tcolorbox}
 \end{frame}
@@ -456,6 +468,7 @@ opacityback=1,  % this works only in combination with the key "standard jigsaw"
 \begin{itemize}
 \item Extend PDSMC further: inner loop dynamics, lower sampling rates, observation noise
 \item Better understand and quantify mesh instability
+\item Quantify maximum boundary layer thickness
 \end{itemize}
 \end{tcolorbox}
 
@@ -471,7 +484,8 @@ opacityback=1,  % this works only in combination with the key "standard jigsaw"
 \usebackgroundtemplate{}
 
 \frametitle{References}
-
+\footnotesize
+\vspace{2em}
 %\begin{frame}{References}
 \bibliographystyle{ieeetr}
 \bibliography{../../bibliography/bibliographyACA}        
