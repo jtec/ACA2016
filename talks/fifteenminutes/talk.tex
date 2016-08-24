@@ -229,10 +229,10 @@ standard jigsaw,
 opacityback=1,  % this works only in combination with the key "standard jigsaw"
 ]  
 \begin{itemize}
-\item Dm-level relative position control under heavy perturbations in the wake 
-\item Desirable property: only \textbf{local} relative state information
+\item $\frac{b}{10}$-level relative position control under heavy perturbations in the wake 
 \item Fundamental result: linear control (\cite{shaw2007controller}) requires leader information for mesh stability \cite{Seiler2004}
-\item Look out for nonlinear approaches
+\item Desirable property: only \textbf{local} relative state information, while \textbf{scalable = mesh stable}
+\item Nonlinear approaches?
 \end{itemize}
 \end{tcolorbox}
 \end{frame}
@@ -267,7 +267,6 @@ opacityback=.7]
 \begin{itemize}
 \item Straightforward controller design procedure
 \item Insensitive to {matched} perturbations
-\item Nonlinear
 \item Recently proposed for platooning \cite{Fahimi2007} and formation flight \cite{galzi2006uav}
 \end{itemize}
 \end{tcolorbox}
@@ -291,6 +290,29 @@ $\Rightarrow$ \textbf{ Chattering, loss of mesh stability}
 \end{tcolorbox}
 \end{frame}
 
+%begin{frame}{}
+%\centering
+%\Large
+%\vspace{3em}
+%Reference: \textbf{T}ime \textbf{S}ampled \textbf{C}ontinuous Higher Order \textbf{S}liding \textbf{M}ode \textbf{C}ontroller \cite{galzi2006uav} \\
+%\end{frame}
+
+\usebackgroundtemplate{}
+
+\begin{frame}{Guidance level: system dynamics}
+\centering
+\includegraphics[width=4.4cm]{frames.pdf}    % The printed column width is 8.4 cm.
+\begin{align}
+\Delta \mbf{p}(t) &= \mbf{p}_\idxFollower(t) - \mbf{p}_\idxPredecessor(t) - \Delta \mbf{p}_c(t)  \nonumber \\
+\Delta \dot{\mbf{p}}(t) &= \mbf{v}_{\idxFollower}(t) - \mbf{v}_{\idxPredecessor}(t) -  \Delta \dot{\mbf{p}}_c(t) \nonumber \\
+\Delta \dot{\mbf{v}}(t) &= \mbf{a}_\idxFollower(t) - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
+{} &= \mbf{a}_{c,\idxFollower}(t) + \mbf{a}_{w,\idxFollower}(t)
+ - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
+{} &= \mbf{u}(t) + \mbf{a}_{w,\idxFollower}(t)
+ - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber
+\end{align}
+\end{frame}
+
 \usebackgroundtemplate{}
 \begin{frame}
 \Large
@@ -309,29 +331,8 @@ Longitudinal maneuver
 \end{frame}
 
 \end{comment}
-\begin{comment}
-\begin{frame}{}
-\centering
-\Large
-\vspace{3em}
-Reference: \textbf{T}ime \textbf{S}ampled \textbf{C}ontinuous Higher Order \textbf{S}liding \textbf{M}ode \textbf{C}ontroller \cite{galzi2006uav} \\
-\end{frame}
 
-\begin{frame}{Guidance level: system dynamics}
-\centering
-\includegraphics[width=4.4cm]{frames.pdf}    % The printed column width is 8.4 cm.
-\begin{align}
-\Delta \mbf{p}(t) &= \mbf{p}_\idxFollower(t) - \mbf{p}_\idxPredecessor(t) - \Delta \mbf{p}_c(t)  \nonumber \\
-\Delta \dot{\mbf{p}}(t) &= \mbf{v}_{\idxFollower}(t) - \mbf{v}_{\idxPredecessor}(t) -  \Delta \dot{\mbf{p}}_c(t) \nonumber \\
-\Delta \dot{\mbf{v}}(t) &= \mbf{a}_\idxFollower(t) - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
-{} &= \mbf{a}_{c,\idxFollower}(t) + \mbf{a}_{w,\idxFollower}(t)
- - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber \\
-{} &= \mbf{u}(t) + \mbf{a}_{w,\idxFollower}(t)
- - \mbf{a}_\idxPredecessor(t) -  \Delta \ddot{\mbf{p}}_c(t) \nonumber
-\end{align}
-\end{frame}
 
-\end{comment}
 \begin{frame}{Longitudinal: TSCSMC \cite{galzi2006uav} at 1000Hz}
 \begin{center}
 \includegraphics[height=.6\paperwidth]{TSCSMC-1000Hz-TIMESCALESEPARATION-turbulence=1}    
